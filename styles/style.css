@@ -169,6 +169,65 @@ body {
     }
 }
 
+.home{
+    h1{
+        text-align: center;
+        color: var(--rare);
+        text-decoration: underline var(--third);
+        font-size: 3em;
+    }
+    
+}
+.search-home{
+    display: flex;
+    justify-content: center;
+    input{
+    width: 300px;
+    height: 50px;
+    border: 1px solid var(--third);
+    border-radius: 8px;
+    text-align: center;
+    font-size: large;
+    
+    }
+
+}
+
+.category{
+     display: block;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      
+}
+.category-item{
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 400px;
+    height: 300px;
+    
+
+}
+
+.discount{
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      
+}
+.discount-item{
+     display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 400px;
+    height: 300px;
+
+}
+
 .footer {
     background-color: var(--second);
     text-align: center;
