@@ -25,7 +25,7 @@ body {
     background-color: var(--second);
     position: sticky;
     top: 0;
-    height: 80px;
+    height: 70px;
     display: flex;            
     justify-content: center;
      
@@ -47,9 +47,9 @@ body {
     text-align: center;
     vertical-align: middle;
 
-    width: 40%;
-    height: 500px;
-    margin: auto;
+    width: 30%;
+    height: 450px;
+    margin: 30px auto;
     padding: 10px;
     background-color: var(--second);
     border-radius: 16px;
@@ -110,9 +110,9 @@ body {
     text-align: center;
     vertical-align: middle;
 
-    width: 40%;
-    height: 700px;
-    margin: auto;
+    width: 30%;
+    height: 650x;
+    margin: 30px auto;
     padding: 10px;
     background-color: var(--second);
     border-radius: 16px;
@@ -171,14 +171,13 @@ body {
 
 .footer {
     background-color: var(--second);
-    position: sticky;
-    top: 0;
-    height: 80px;
-    display: flex;            
-    justify-content: center;
-
-    padding: 20px;
+    text-align: center;
     margin-top: auto;
     color: var(--main);
-    height: 80px;
+    height: 70px;
+    
 }
+
+
+
+
