@@ -292,6 +292,61 @@ display: flex;
     
 }
 
+.products-page{
+    h1{
+        text-align: center;
+        color: var(--rare);
+        text-decoration: underline var(--third);
+        font-size: 3em;
+    }
+}
+
+.product-list{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-item{
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 350px;
+    height: 300px;
+
+    img{
+        width: 200px;
+        height: 150px;
+    }
+
+    h2{
+        color: var(--third);
+    }
+
+    p{
+        font-size: 1.2em;
+        font-weight: bold;
+        color: var(--discounts);
+    }
+
+    button{
+        width: 80%;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        background-color: var(--buy);
+        color: var(--main);
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3da63a;
+        color: var(--main);
+    }
+}
 
 
 
