@@ -292,6 +292,73 @@ display: flex;
     
 }
 
+.bicycles-page{
+    h1{
+        text-align: center;
+        color: var(--rare);
+        text-decoration: underline var(--third);
+        font-size: 3em;
+    }
+}
 
+.bike-subcategory{
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--main);
+    border: 1px solid var(--third);
+    border-radius: 8px;
+    h2{
+        font-size: 2em;
+        color: var(--second);
+        border-bottom: 2px solid var(--rare);
+        margin: 0px 0px 20px 0px;
+        padding-bottom: 10px;
+    }
+}
 
+.subcategory-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
 
+.item{
+    width: 350px;
+    margin: 10px;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    img{
+        width: 100%;
+        height: 200px;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+.price{
+    font-size: 20px;
+    color: var(--buy);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.view-more{
+    width: 200px;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: var(--rare);
+    color: var(--third);
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+.view-more:hover{
+        background-color: #e6b85c;
+        color: var(--main);
+}
