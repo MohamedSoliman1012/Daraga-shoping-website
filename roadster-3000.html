@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>TREK DOMAN+SLR 6 - Daraga Shop</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="js/navigation.js" defer></script>
 </head>
@@ -12,11 +12,9 @@
         <div class="L" id="menuToggle">
             <img src="images/icons/burger-bar.png" height="50px" width="50px" alt="Menu" title="Menu">
         </div>
-        <div class="M">
-        
+        <a href="home.html" class="M">
             <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
             <h1>DARAGA</h1>
-            </div>
         </a>
         <div class="R">
             <a href="#" id="cartIcon" title="Shopping Cart">
@@ -66,86 +64,93 @@
             <li><a href="signup.html">Sign Up</a></li>
         </ul>
     </nav>
-    <div class="home">
 
-        <div class="search-home">
-            <img src="images/icons/search-icon.png" height="50px" width="50px" alt="not sound">
-        <input type="search" placeholder="Search">
-        </div>
-    <h1>Categories</h1>
-    <div class="category">
-        
-        <div class="category-item">
-       <a href="bicycles.html"><img src="images/branding/categories.jpg" alt=""></a>
-       <div class="name">Bicycle</div>
-        </div>
-        <div class="category-item">
-            <a href="repair.html"><img src="images/branding/repair.jpg" alt=""></a>
-            
-            <div class="name">Bike Repair</div>
-        </div>
-        <div class="category-item">
-            <img src="images/branding/accessories.jpg" alt="">
-            <div class="name">Accessories</div>
-        </div>
-
-    </div>
-
-     <h1>Discount</h1>
-    <div class="discount">
-        <a href="roadster-3000.html" class="item-card-link">
-            <div class="item-card">
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <div class="product-image-container">
                 <div class="card-image" style="background-image:url('images/bikes/road/2.jpg')" aria-label="TREK DOMAN+SLR 6"></div>
-                <div class="card-body">
-                    <h3 class="card-title">TREK DOMAN+SLR 6</h3>
-                    <div class="card-price">$7,999</div>
+            </div>
+            
+            <div class="product-info">
+                <h1>TREK DOMAN+SLR 6</h1>
+                <div class="product-price">$7,999</div>
+                
+                <p class="product-description">
+                    The TREK DOMAN+SLR 6 is a premium road bike designed for serious cyclists who demand the best in performance, 
+                    comfort, and style. Built with cutting-edge materials and precision engineering, this bike delivers exceptional 
+                    speed and handling on both long-distance rides and competitive racing. Experience the perfect blend of aerodynamics 
+                    and comfort with the TREK DOMAN+SLR 6.
+                </p>
+
+                <div class="product-specs">
+                    <h2>Specifications</h2>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Frame Material:</span>
+                            <span class="spec-value">Carbon Fiber</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Frame Size:</span>
+                            <span class="spec-value">XS, S, M, L, XL</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Weight:</span>
+                            <span class="spec-value">7.2 kg (15.9 lbs)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Gears:</span>
+                            <span class="spec-value">22 Speed (2x11)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Brakes:</span>
+                            <span class="spec-value">Hydraulic Disc Brakes</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Wheels:</span>
+                            <span class="spec-value">700c Carbon Rims</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tires:</span>
+                            <span class="spec-value">25mm Tubeless Ready</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Groupset:</span>
+                            <span class="spec-value">Shimano Dura-Ace</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Handlebar:</span>
+                            <span class="spec-value">Carbon Aero Drop Bar</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Saddle:</span>
+                            <span class="spec-value">Premium Racing Saddle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-features">
+                    <h2>Key Features</h2>
+                    <ul class="features-list">
+                        <li>Ultra-lightweight carbon fiber frame for maximum speed</li>
+                        <li>Aerodynamic design reduces wind resistance by 15%</li>
+                        <li>Premium Shimano Dura-Ace groupset for smooth shifting</li>
+                        <li>Hydraulic disc brakes for superior stopping power</li>
+                        <li>Tubeless-ready wheels for reduced rolling resistance</li>
+                        <li>Ergonomic handlebar design for long-distance comfort</li>
+                        <li>Internal cable routing for clean aesthetics</li>
+                        <li>Compatible with electronic shifting systems</li>
+                        <li>5-year frame warranty included</li>
+                        <li>Professional assembly and fitting service available</li>
+                    </ul>
+                </div>
+
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick="alert('Added to cart! (Feature coming soon)')">Add to Cart</button>
+                    <button class="buy-now-btn" onclick="alert('Proceed to checkout! (Feature coming soon)')">Buy Now</button>
                 </div>
             </div>
-        </a>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/city/1.jpg')" aria-label="City Glide"></div>
-            <div class="card-body">
-                <h3 class="card-title">City Glide</h3>
-                <div class="card-price">$599</div>
-            </div>
         </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
-            <div class="card-body">
-                <h3 class="card-title">TrailMaster X</h3>
-                <div class="card-price">$1,199</div>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/road/1.jpg')" aria-label="Sprint Elite"></div>
-            <div class="card-body">
-                <h3 class="card-title">Sprint Elite</h3>
-                <div class="card-price">$4,299</div>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/2.jpg')" aria-label="RockRider Pro"></div>
-            <div class="card-body">
-                <h3 class="card-title">RockRider Pro</h3>
-                <div class="card-price">$1,899</div>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/city/2.jpg')" aria-label="Commuter Plus"></div>
-            <div class="card-body">
-                <h3 class="card-title">Commuter Plus</h3>
-                <div class="card-price">$749</div>
-            </div>
-        </div>
-
     </div>
-</div>
-
 
     <footer class="footer-main">
         <div class="footer-container">
@@ -204,6 +209,7 @@
         <div class="footer-bottom">
             <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
         </div>
-    </footer>   
+    </footer>
 </body>
 </html>
+
