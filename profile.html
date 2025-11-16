@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Profile - Daraga Shop</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="js/navigation.js" defer></script>
 </head>
@@ -29,17 +29,17 @@
                 </a>
                 <div class="profile-dropdown" id="profileDropdown">
                     <a href="profile.html" class="dropdown-item">
-                        <span>👤</span> Your Profile
+                        <span></span> Your Profile
                     </a>
                     <a href="#" class="dropdown-item" id="ordersLink">
-                        <span>📦</span> Your Orders
+                        <span></span> Your Orders
                     </a>
                     <a href="#" class="dropdown-item" id="cartLink">
-                        <span>🛒</span> Shopping Cart
+                        <span></span> Shopping Cart
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="index.html" class="dropdown-item logout">
-                        <span>🚪</span> Log Out
+                        <span></span> Log Out
                     </a>
                 </div>
             </div>
@@ -64,55 +64,70 @@
             <li><a href="signup.html">Sign Up</a></li>
         </ul>
     </nav>
-    <div class="home">
 
-        <div class="search-home">
-            <img src="images/icons/search-icon.png" height="50px" width="50px" alt="not sound">
-        <input type="search" placeholder="Search">
-        </div>
-    <h1>Categories</h1>
-    <div class="category">
-        
-        <div class="category-item">
-       <a href="bicycles.html"><img src="images/branding/categories.jpg" alt=""></a>
-       <div class="name">Bicycle</div>
-        </div>
-        <div class="category-item">
-            <img src="images/branding/repair.jpg" alt="">
-            <div class="name">Bike Repair</div>
-        </div>
-        <div class="category-item">
-            <img src="images/branding/accessories.jpg" alt="">
-            <div class="name">Accessories</div>
-        </div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="images/icons/avatar.png" alt="Profile Avatar">
+                </div>
+                <h1>Your Profile</h1>
+                <p class="profile-email">user@example.com</p>
+            </div>
 
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Personal Information</h2>
+                    <div class="profile-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" value="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" value="user@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" value="+1 234 567 8900">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" placeholder="Enter your address" rows="3">123 Main Street, City, State, ZIP</textarea>
+                        </div>
+                        <button type="button" class="save-btn">Save Changes</button>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Account Settings</h2>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Change Password</h3>
+                                <p>Update your account password</p>
+                            </div>
+                            <button class="setting-btn">Change</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Privacy Settings</h3>
+                                <p>Manage your privacy preferences</p>
+                            </div>
+                            <button class="setting-btn">Manage</button>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <h3>Notification Preferences</h3>
+                                <p>Control how you receive notifications</p>
+                            </div>
+                            <button class="setting-btn">Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-     <h1>Discount</h1>
-    <div class="discount">
-        
-        <div class="discount-item">
-
-        </div>
-        <div class="discount-item">
-            
-        </div>
-        <div class="discount-item">
-            
-        </div>
-        <div class="discount-item">
-            
-        </div>
-        <div class="discount-item">
-            
-        </div>
-        <div class="discount-item">
-            
-        </div>
-
-    </div>
-</div>
-
 
     <footer class="footer-main">
         <div class="footer-container">
@@ -171,6 +186,7 @@
         <div class="footer-bottom">
             <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
         </div>
-    </footer>   
+    </footer>
 </body>
 </html>
+
