@@ -5,19 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bicycles Page</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="js/navigation.js" defer></script>
 </head>
 <body>
     <header class="header-main">
-        <div class="L">
-            <img src="images/icons/burger-bar.png" height="50px" width="50px" alt="">
+        <div class="L" id="menuToggle">
+            <img src="images/icons/burger-bar.png" height="50px" width="50px" alt="Menu" title="Menu">
         </div>
-        <div class="M">
+        <a href="home.html" class="M">
             <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
             <h1>DARAGA</h1>
-        </div>
+        </a>
         <div class="R">
-            <img src="images/icons/notification.png" height="50px" width="50px" alt="">
-            <img src="images/icons/avatar.png" height="50px" width="50px" alt="">
+            <a href="#" id="cartIcon" title="Shopping Cart">
+                <img src="images/icons/shopping-cart.png" height="50px" width="50px" alt="Shopping Cart">
+            </a>
+            <a href="#" id="notificationIcon" title="Notifications">
+                <img src="images/icons/notification.png" height="50px" width="50px" alt="Notifications">
+            </a>
+            <div class="profile-dropdown-container">
+                <a href="#" id="profileIcon" title="Profile" class="profile-icon-link">
+                    <img src="images/icons/avatar.png" height="50px" width="50px" alt="Profile">
+                </a>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="profile.html" class="dropdown-item">
+                        <span>👤</span> Your Profile
+                    </a>
+                    <a href="#" class="dropdown-item" id="ordersLink">
+                        <span>📦</span> Your Orders
+                    </a>
+                    <a href="#" class="dropdown-item" id="cartLink">
+                        <span>🛒</span> Shopping Cart
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="index.html" class="dropdown-item logout">
+                        <span>🚪</span> Log Out
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -26,14 +51,21 @@
         <div class="bike-subcategory">
             <h2>Mountain Bikes</h2>
             <div class="subcategory-items">
-                <div class="item">
-                    <img src="images/bikes/mountain/1.jpg" alt="">
-                    <div class="price">$5900</div>
-                </div>
-                <div class="item">
-                    <img src="images/bikes/mountain/2.jpg" alt="">
-                    <div class="price">$9999</div>
-                </div>
+                <div class="item-card">
+            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
+            <div class="card-body">
+                <h3 class="card-title">TrailMaster X</h3>
+                <div class="card-price">$1,199</div>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
+            <div class="card-body">
+                <h3 class="card-title">Sprint Elite</h3>
+                <div class="card-price">$4,299</div>
+            </div>
+        </div>
                 <a href="mountain-bikes.html" class="view-more">View More</a>
             </div>
         </div>
@@ -41,14 +73,21 @@
         <div class="bike-subcategory">
             <h2>Road Bikes</h2>
             <div class="subcategory-items">
-                <div class="item">
-                    <img src="images/bikes/road/1.jpg" alt="">
-                    <div class="price">$6499</div>
-                </div>
-                <div class="item">
-                    <img src="images/bikes/road/2.jpg" alt="">
-                    <div class="price">$7999</div>
-                </div>
+                <div class="item-card">
+            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
+            <div class="card-body">
+                <h3 class="card-title">TrailMaster X</h3>
+                <div class="card-price">$1,199</div>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
+            <div class="card-body">
+                <h3 class="card-title">Sprint Elite</h3>
+                <div class="card-price">$4,299</div>
+            </div>
+        </div>
                 <a href="road-bikes.html" class="view-more">View More</a>
             </div>
         </div>
@@ -56,14 +95,21 @@
         <div class="bike-subcategory">
             <h2>City Bikes</h2>
             <div class="subcategory-items">
-                <div class="item">
-                    <img src="images/bikes/city/1.jpg" alt="">
-                    <div class="price">$6666</div>
-                </div>
-                <div class="item">
-                    <img src="images/bikes/city/2.jpg" alt="">
-                    <div class="price">$5555</div>
-                </div>
+                <div class="item-card">
+            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
+            <div class="card-body">
+                <h3 class="card-title">TrailMaster X</h3>
+                <div class="card-price">$1,199</div>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
+            <div class="card-body">
+                <h3 class="card-title">Sprint Elite</h3>
+                <div class="card-price">$4,299</div>
+            </div>
+        </div>
                 <a href="city-bikes.html" class="view-more">View More</a>
             </div>
         </div>

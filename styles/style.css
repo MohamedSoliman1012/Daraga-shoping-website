@@ -491,15 +491,154 @@ display: flex;
     padding: 0 20px;
 }
 
+/* discount-item should use the same styling as item-card */
 .discount-item {
-    display: inline-block;
-    margin: 16px;
+    background: white;
+    padding: 0;
     border: 2px solid rgba(0,0,0,0.1);
     border-radius: 12px;
-    width: 320px;
-    height: 240px;
-    background-color: white;
+    text-align: center;
+    width: 280px;
+    display: inline-block;
+    margin: 16px;
+    vertical-align: top;
+    overflow: hidden;
+    transition: transform 150ms ease, box-shadow 150ms ease;
     cursor: pointer;
+    min-height: 240px;
+}
+
+.discount-item img,
+.discount-item .card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: #f6f6f6;
+}
+
+.discount-item .card-image {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.discount-item .card-body {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.discount-item .card-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--third);
+    margin: 0;
+}
+
+.discount-item .card-price {
+    color: var(--buy);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.discount-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.item-card {
+    background: white;
+    padding: 0;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    text-align: center;
+    width: 280px;
+    display: inline-block;
+    margin: 16px;
+    vertical-align: top;
+    overflow: hidden;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+    cursor: pointer;
+}
+
+/* image area: ensure full image is visible, centered and scaled to fit */
+.item-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: #f6f6f6;
+}
+
+/* alternate image container using background-image - show full image */
+.item-card .card-image {
+    width: 100%;
+    height: 180px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    background-color: #f6f6f6;
+}
+
+/* content area */
+.item-card .card-body {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-card .card-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--third);
+    margin: 0;
+}
+
+.item-card .card-price {
+    color: var(--buy);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+/* hover/interaction */
+.item-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+    .item-card {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .item-card img,
+    .item-card .card-image {
+        height: 180px;
+        object-fit: contain;
+        object-position: center;
+    }
+    
+    .item {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .item img {
+        height: 180px;
+        object-fit: contain;
+        object-position: center;
+    }
 }
 
 /* Professional Footer Styles */
@@ -930,10 +1069,21 @@ display: flex;
         padding: 20px;
     }
     
-    .category-item,
-    .discount-item {
+    .category-item {
         width: 100%;
         max-width: 320px;
+    }
+    
+    .discount-item {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .discount-item img,
+    .discount-item .card-image {
+        height: 180px;
+        object-fit: contain;
+        object-position: center;
     }
     
     .profile-dropdown {
@@ -1007,10 +1157,16 @@ display: flex;
     margin: 10px;
     border: 1px solid var(--main);
     border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
     img{
         width: 100%;
         height: 200px;
         border-radius: 8px 8px 0 0;
+        object-fit: contain;
+        object-position: center;
+        background-color: #f6f6f6;
+        display: block;
     }
 }
 
@@ -1036,3 +1192,5 @@ display: flex;
     border: none;
     cursor: pointer;
 }
+
+/* Item card styles consolidated above - removed duplicate definition */
