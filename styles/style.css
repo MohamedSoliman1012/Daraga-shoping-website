@@ -23,7 +23,7 @@ body {
 }
 
 .header-main {
-    background-color: var(--rare);
+    background-color: var(--second);
     position: sticky;
     margin-bottom: 10px;
     height: 70px;
