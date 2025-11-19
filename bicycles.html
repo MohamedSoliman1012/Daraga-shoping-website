@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bicycles Page</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- JavaScript -->
     <script src="js/navigation.js" defer></script>
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header-main">
+        <!-- Left: Mobile Menu Toggle -->
         <div class="L" id="menuToggle">
             <img src="images/icons/burger-bar.png" height="50px" width="50px" alt="Menu" title="Menu">
         </div>
+        
+        <!-- Center: Logo and Brand Name -->
         <a href="home.html" class="M">
             <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
-            <h1>DARAGA</h1>
+            <h1 class="logo-text">DARAGA</h1>
         </a>
+        
+        <!-- Right: User Actions -->
         <div class="R">
+            <!-- Shopping Cart Icon -->
             <a href="#" id="cartIcon" title="Shopping Cart">
                 <img src="images/icons/shopping-cart.png" height="50px" width="50px" alt="Shopping Cart">
             </a>
+            
+            <!-- Notifications Icon -->
             <a href="#" id="notificationIcon" title="Notifications">
                 <img src="images/icons/notification.png" height="50px" width="50px" alt="Notifications">
             </a>
+            
+            <!-- Profile Dropdown Menu -->
             <div class="profile-dropdown-container">
                 <a href="#" id="profileIcon" title="Profile" class="profile-icon-link">
                     <img src="images/icons/avatar.png" height="50px" width="50px" alt="Profile">
@@ -45,34 +61,62 @@
             </div>
         </div>
     </header>
-
+    
+    <!-- Navigation Overlay (Mobile) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    
+    <!-- Navigation Menu (Mobile) -->
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="bicycles.html">Bicycles</a></li>
+            <li><a href="repair.html">Bike Repair</a></li>
+            <li><a href="home.html">Categories</a></li>
+            <li><a href="home.html">Special Offers</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content: Bicycles Page -->
     <div class="bicycles-page">
         <h1>Bicycles</h1>
+        
+        <!-- Mountain Bikes Section -->
         <div class="bike-subcategory">
             <h2>Mountain Bikes</h2>
             <div class="subcategory-items">
-                <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
-            <div class="card-body">
-                <h3 class="card-title">TrailMaster X</h3>
-                <div class="card-price">$1,199</div>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
-            <div class="card-body">
-                <h3 class="card-title">Sprint Elite</h3>
-                <div class="card-price">$4,299</div>
-            </div>
-        </div>
+                <!-- Product Card 1 -->
+                <a href="bikes/mountain-bikes.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">TrailMaster X</h3>
+                            <div class="card-price">$1,199</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product Card 2 -->
+                <a href="bikes/mountain-bikes.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Sprint Elite</h3>
+                            <div class="card-price">$4,299</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- View More Link -->
                 <a href="bikes/mountain-bikes.html" class="view-more">View More</a>
             </div>
         </div>
-
+        
+        <!-- Road Bikes Section -->
         <div class="bike-subcategory">
             <h2>Road Bikes</h2>
             <div class="subcategory-items">
+                <!-- Product Card 1 -->
                 <a href="roadster-3000.html" class="item-card-link">
                     <div class="item-card">
                         <div class="card-image" style="background-image:url('images/bikes/road/2.jpg')" aria-label="TREK DOMAN+SLR 6"></div>
@@ -82,55 +126,65 @@
                         </div>
                     </div>
                 </a>
-
-                <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
-            <div class="card-body">
-                <h3 class="card-title">TrailMaster X</h3>
-                <div class="card-price">$1,199</div>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
-            <div class="card-body">
-                <h3 class="card-title">Sprint Elite</h3>
-                <div class="card-price">$4,299</div>
-            </div>
-        </div>
+                
+                <!-- Product Card 2 -->
+                <a href="bikes/road-bikes.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/bikes/road/1.jpg')" aria-label="Road Bike Pro"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Road Bike Pro</h3>
+                            <div class="card-price">$2,499</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- View More Link -->
                 <a href="bikes/road-bikes.html" class="view-more">View More</a>
             </div>
         </div>
-
+        
+        <!-- City Bikes Section -->
         <div class="bike-subcategory">
             <h2>City Bikes</h2>
             <div class="subcategory-items">
-                <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
-            <div class="card-body">
-                <h3 class="card-title">TrailMaster X</h3>
-                <div class="card-price">$1,199</div>
-            </div>
-        </div>
-
-        <div class="item-card">
-            <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
-            <div class="card-body">
-                <h3 class="card-title">Sprint Elite</h3>
-                <div class="card-price">$4,299</div>
-            </div>
-        </div>
+                <!-- Product Card 1 -->
+                <a href="bikes/city-bikes.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/bikes/city/1.jpg')" aria-label="City Cruiser"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">City Cruiser</h3>
+                            <div class="card-price">$899</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product Card 2 -->
+                <a href="bikes/city-bikes.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/bikes/city/2.jpg')" aria-label="Urban Commuter"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Urban Commuter</h3>
+                            <div class="card-price">$1,299</div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- View More Link -->
                 <a href="bikes/city-bikes.html" class="view-more">View More</a>
             </div>
         </div>
     </div>
-
+    
+    <!-- Footer Section -->
     <footer class="footer-main">
         <div class="footer-container">
+            <!-- Brand Information -->
             <div class="footer-section footer-brand">
                 <img src="images/branding/logo.png" alt="Daraga Logo">
                 <h3 class="brand-name">DARAGA</h3>
                 <p>We are three Computer Science students passionate about technology and cycling. Our project aims to create a platform that serves cyclists by connecting them with everything they need — from bikes and repair tools to accessories and spare parts.</p>
+                
+                <!-- Social Media Links -->
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook">📘</a>
                     <a href="#" aria-label="Twitter">🐦</a>
@@ -139,17 +193,19 @@
                 </div>
             </div>
             
+            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Special Offers</a></li>
-                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="bicycles.html">Bicycles</a></li>
+                    <li><a href="repair.html">Repair Tools</a></li>
+                    <li><a href="home.html">Categories</a></li>
+                    <li><a href="home.html">Special Offers</a></li>
                 </ul>
             </div>
             
+            <!-- Customer Service -->
             <div class="footer-section">
                 <h3>Customer Service</h3>
                 <ul>
@@ -162,6 +218,7 @@
                 </ul>
             </div>
             
+            <!-- About Us & Legal -->
             <div class="footer-section">
                 <h3>About Us</h3>
                 <ul>
@@ -170,6 +227,7 @@
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
+                
                 <h3 style="margin-top: 30px;">Legal</h3>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
@@ -179,9 +237,10 @@
             </div>
         </div>
         
+        <!-- Footer Bottom: Copyright -->
         <div class="footer-bottom">
             <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
         </div>
-    </footer>   
+    </footer>
 </body>
 </html>

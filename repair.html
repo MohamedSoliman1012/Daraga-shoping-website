@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repair Tools</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- JavaScript -->
     <script src="js/navigation.js" defer></script>
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header-main">
+        <!-- Left: Mobile Menu Toggle -->
         <div class="L" id="menuToggle">
             <img src="images/icons/burger-bar.png" height="50px" width="50px" alt="Menu" title="Menu">
         </div>
+        
+        <!-- Center: Logo and Brand Name -->
         <a href="home.html" class="M">
             <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
-            <h1>DARAGA</h1>
+            <h1 class="logo-text">DARAGA</h1>
         </a>
+        
+        <!-- Right: User Actions -->
         <div class="R">
+            <!-- Shopping Cart Icon -->
             <a href="#" id="cartIcon" title="Shopping Cart">
                 <img src="images/icons/shopping-cart.png" height="50px" width="50px" alt="Shopping Cart">
             </a>
+            
+            <!-- Notifications Icon -->
             <a href="#" id="notificationIcon" title="Notifications">
                 <img src="images/icons/notification.png" height="50px" width="50px" alt="Notifications">
             </a>
+            
+            <!-- Profile Dropdown Menu -->
             <div class="profile-dropdown-container">
                 <a href="#" id="profileIcon" title="Profile" class="profile-icon-link">
                     <img src="images/icons/avatar.png" height="50px" width="50px" alt="Profile">
@@ -45,90 +61,141 @@
             </div>
         </div>
     </header>
-
+    
+    <!-- Navigation Overlay (Mobile) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    
+    <!-- Navigation Menu (Mobile) -->
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="bicycles.html">Bicycles</a></li>
+            <li><a href="repair.html">Bike Repair</a></li>
+            <li><a href="home.html">Categories</a></li>
+            <li><a href="home.html">Special Offers</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content: Repair Tools Page -->
     <div class="bicycles-page">
         <h1>Repair Tools</h1>
+        
+        <!-- Multi-Tools & Kits Section -->
         <div class="bike-subcategory">
             <h2>Multi-Tools & Kits</h2>
             <div class="subcategory-items">
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/Flyftrey Snowflake Multi-Tool, 18-in-1.jpg')" aria-label="Flyftrey Snowflake Multi-Tool"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Flyftrey Snowflake Multi-Tool, 18-in-1</h3>
-                        <div class="card-price">$24.99</div>
+                <!-- Product Card 1 -->
+                <a href="tools/multi-tools.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/Flyftrey Snowflake Multi-Tool, 18-in-1.jpg')" aria-label="Flyftrey Snowflake Multi-Tool"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Flyftrey Snowflake Multi-Tool, 18-in-1</h3>
+                            <div class="card-price">$24.99</div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/Multitool Bicycle Repair Kit Multi 16 Tools in One.jpg')" aria-label="Multitool Bicycle Repair Kit"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Multitool Bicycle Repair Kit Multi 16 Tools</h3>
-                        <div class="card-price">$19.99</div>
+                </a>
+                
+                <!-- Product Card 2 -->
+                <a href="tools/multi-tools.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/Multitool Bicycle Repair Kit Multi 16 Tools in One.jpg')" aria-label="Multitool Bicycle Repair Kit"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Multitool Bicycle Repair Kit Multi 16 Tools</h3>
+                            <div class="card-price">$19.99</div>
+                        </div>
                     </div>
-                </div>
-                <a href="#" class="view-more">View More</a>
+                </a>
+                
+                <!-- View More Link -->
+                <a href="tools/multi-tools.html" class="view-more">View More</a>
             </div>
         </div>
-
+        
+        <!-- Tire Repair Tools Section -->
         <div class="bike-subcategory">
             <h2>Tire Repair Tools</h2>
             <div class="subcategory-items">
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/VOSAREA 48Pcs 30mm Motor Bicycle Bike Tyre Tire Inner Tube Puncture Rubber Patches Repair Kit.jpg')" aria-label="VOSAREA Puncture Repair Kit"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">VOSAREA 48Pcs Puncture Repair Kit</h3>
-                        <div class="card-price">$12.99</div>
+                <!-- Product Card 1 -->
+                <a href="tools/tire-repair.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/VOSAREA 48Pcs 30mm Motor Bicycle Bike Tyre Tire Inner Tube Puncture Rubber Patches Repair Kit.jpg')" aria-label="VOSAREA Puncture Repair Kit"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">VOSAREA 48Pcs Puncture Repair Kit</h3>
+                            <div class="card-price">$12.99</div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/MySouq-Store Bicycle Tyre Lever Tube Remover.jpg')" aria-label="Bicycle Tyre Lever"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Bicycle Tyre Lever Tube Remover</h3>
-                        <div class="card-price">$8.99</div>
+                </a>
+                
+                <!-- Product Card 2 -->
+                <a href="tools/tire-repair.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/MySouq-Store Bicycle Tyre Lever Tube Remover.jpg')" aria-label="Bicycle Tyre Lever"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Bicycle Tyre Lever Tube Remover</h3>
+                            <div class="card-price">$8.99</div>
+                        </div>
                     </div>
-                </div>
-                <a href="#" class="view-more">View More</a>
+                </a>
+                
+                <!-- View More Link -->
+                <a href="tools/tire-repair.html" class="view-more">View More</a>
             </div>
         </div>
-
+        
+        <!-- Chain & Wrench Tools Section -->
         <div class="bike-subcategory">
             <h2>Chain & Wrench Tools</h2>
             <div class="subcategory-items">
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/Portable Bike Chain Tool Compact Bicycle Chain Splitter Cutter.jpg')" aria-label="Portable Bike Chain Tool"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Portable Bike Chain Tool Splitter</h3>
-                        <div class="card-price">$15.99</div>
+                <!-- Product Card 1 -->
+                <a href="tools/chain-wrench.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/Portable Bike Chain Tool Compact Bicycle Chain Splitter Cutter.jpg')" aria-label="Portable Bike Chain Tool"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Portable Bike Chain Tool Splitter</h3>
+                            <div class="card-price">$15.99</div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/Cycling Motorcycle Bicycle Chain Crankset Brush.jpg')" aria-label="Chain Crankset Brush"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Chain Crankset Brush</h3>
-                        <div class="card-price">$9.99</div>
+                </a>
+                
+                <!-- Product Card 2 -->
+                <a href="tools/chain-wrench.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/Cycling Motorcycle Bicycle Chain Crankset Brush.jpg')" aria-label="Chain Crankset Brush"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Chain Crankset Brush</h3>
+                            <div class="card-price">$9.99</div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="item-card">
-                    <div class="card-image" style="background-image:url('images/Tools/Gunpla 46 Piece  Drive Socket Wrench Driver.jpg')" aria-label="Socket Wrench Driver"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Gunpla 46 Piece Socket Wrench Driver</h3>
-                        <div class="card-price">$29.99</div>
+                </a>
+                
+                <!-- Product Card 3 -->
+                <a href="tools/chain-wrench.html" class="item-card-link">
+                    <div class="item-card">
+                        <div class="card-image" style="background-image:url('images/Tools/Gunpla 46 Piece  Drive Socket Wrench Driver.jpg')" aria-label="Socket Wrench Driver"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Gunpla 46 Piece Socket Wrench Driver</h3>
+                            <div class="card-price">$29.99</div>
+                        </div>
                     </div>
-                </div>
-                <a href="#" class="view-more">View More</a>
+                </a>
+                
+                <!-- View More Link -->
+                <a href="tools/chain-wrench.html" class="view-more">View More</a>
             </div>
         </div>
     </div>
-
+    
+    <!-- Footer Section -->
     <footer class="footer-main">
         <div class="footer-container">
+            <!-- Brand Information -->
             <div class="footer-section footer-brand">
                 <img src="images/branding/logo.png" alt="Daraga Logo">
                 <h3 class="brand-name">DARAGA</h3>
                 <p>We are three Computer Science students passionate about technology and cycling. Our project aims to create a platform that serves cyclists by connecting them with everything they need — from bikes and repair tools to accessories and spare parts.</p>
+                
+                <!-- Social Media Links -->
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook">📘</a>
                     <a href="#" aria-label="Twitter">🐦</a>
@@ -137,17 +204,19 @@
                 </div>
             </div>
             
+            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Special Offers</a></li>
-                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="bicycles.html">Bicycles</a></li>
+                    <li><a href="repair.html">Repair Tools</a></li>
+                    <li><a href="home.html">Categories</a></li>
+                    <li><a href="home.html">Special Offers</a></li>
                 </ul>
             </div>
             
+            <!-- Customer Service -->
             <div class="footer-section">
                 <h3>Customer Service</h3>
                 <ul>
@@ -160,6 +229,7 @@
                 </ul>
             </div>
             
+            <!-- About Us & Legal -->
             <div class="footer-section">
                 <h3>About Us</h3>
                 <ul>
@@ -168,6 +238,7 @@
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
+                
                 <h3 style="margin-top: 30px;">Legal</h3>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
@@ -177,9 +248,10 @@
             </div>
         </div>
         
+        <!-- Footer Bottom: Copyright -->
         <div class="footer-bottom">
             <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
         </div>
-    </footer>   
+    </footer>
 </body>
 </html>

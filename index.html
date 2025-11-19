@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Daraga Shop</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- JavaScript -->
+    <script src="js/navigation.js" defer></script>
 </head>
-
 <body>
-    <header class="header">
-        <a href="home.html">
-            <div>
-                <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
-                <h1>DARAGA</h1>
-            </div>
-        </a>
+    <!-- Header Section -->
+    <header class="header-main">
+        <!-- Center: Logo and Brand Name -->
+        <div class="M">
+            <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
+            <h1 class="logo-text">DARAGA</h1>
+        </div>
     </header>
-
-
+    
+    <!-- Main Content: Login Form -->
     <div class="login-card">
         <h1>Login</h1>
-        <form name="loginForm" action="home.html">
+        
+        <!-- Login Form -->
+        <form name="loginForm" id="loginForm">
             <input type="email" name="email" placeholder="Email" required>
-
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" ><b>Login</b></button>
+            
+            <!-- User Role Selection -->
+            <div class="role-selection">
+                <label class="role-label">Login as:</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="user" checked>
+                        <span>User</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="admin">
+                        <span>Admin</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit">Login</button>
         </form>
         
+        <!-- Divider -->
         <div class="divider">
             <span>or</span>
         </div>
         
-
-        <p class="auth-redirect">Don't have an account? <a href="signup.html">Sign up here</a></p>
+        <!-- Sign Up Link -->
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
     </div>
+    
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-container">
+            <!-- Brand Information -->
             <div class="footer-section footer-brand">
                 <img src="images/branding/logo.png" alt="Daraga Logo">
                 <h3 class="brand-name">DARAGA</h3>
                 <p>Your trusted destination for premium bicycles, expert repair services, and quality cycling accessories. We're passionate about making cycling accessible and enjoyable for everyone.</p>
+                
+                <!-- Social Media Links -->
                 <div class="footer-social">
-                    <a target="_blank" href="facebook.com" aria-label="Facebook">📘</a>
-                    <a target="_blank" href="facebook.com" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
                     <a href="#" aria-label="Instagram">📷</a>
                     <a href="#" aria-label="YouTube">▶️</a>
                 </div>
             </div>
             
+            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Special Offers</a></li>
-                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="bicycles.html">Bicycles</a></li>
+                    <li><a href="repair.html">Repair Tools</a></li>
+                    <li><a href="home.html">Categories</a></li>
+                    <li><a href="home.html">Special Offers</a></li>
                 </ul>
             </div>
             
+            <!-- Customer Service -->
             <div class="footer-section">
                 <h3>Customer Service</h3>
                 <ul>
@@ -71,6 +100,7 @@
                 </ul>
             </div>
             
+            <!-- Legal -->
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
@@ -82,10 +112,10 @@
             </div>
         </div>
         
+        <!-- Footer Bottom: Copyright -->
         <div class="footer-bottom">
             <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
         </div>
     </footer>
 </body>
-
 </html>

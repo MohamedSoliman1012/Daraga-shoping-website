@@ -1,1577 +1,1544 @@
+/* ============================================
+   CSS VARIABLES (Color Scheme)
+   ============================================ */
 :root {
-    --second: #2F2F2F;
-    --main: #F6F6F6;
-    --rare: #FFCB74;
-    --third: #111111;
-    --buy: #4dba47;
-    --discounts: rgb(214, 54, 67);
+    --second: #2F2F2F;      /* Dark gray - used for headers, footers, and dark backgrounds */
+    --main: #F6F6F6;        /* Light gray - main background color */
+    --rare: #FFCB74;        /* Gold/yellow - accent color for highlights and buttons */
+    --third: #111111;       /* Almost black - primary text color */
+    --buy: #4dba47;         /* Green - used for prices and buy buttons */
+    --discounts: rgb(214, 54, 67);  /* Red - used for discount indicators */
 }
 
-*{
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+/* Universal box-sizing reset - ensures padding and border are included in width/height */
+* {
     box-sizing: border-box;
 }
 
+/* Main body styling - sets up flexbox layout and base typography */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: var(--main);
-    color: var(--third);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Modern, readable font stack */
+    line-height: 1.6;           /* Improved readability with comfortable line spacing */
+    background-color: var(--main);  /* Light gray background */
+    color: var(--third);         /* Dark text color */
+    min-height: 100vh;           /* Ensures body takes full viewport height */
+    display: flex;               /* Flexbox layout for sticky footer */
+    flex-direction: column;      /* Stack content vertically */
+    margin: 0;                   /* Remove default margin */
 }
 
-.header-main {
-    background-color: var(--second);
-    position: sticky;
-    margin-bottom: 10px;
-    height: 70px;
-    display: flex;            
-    justify-content: space-between;
-    padding: 0px 20px;
-     
-
-    h1 {
-        color: var(--rare);
-        font-size: 3em;
-        margin: 0;
-        text-decoration: none;
-    }
-
-  
-    
-}
-.L{
-    display: flex;    
-    align-items: center;
-}
-.M{
-    border-radius: 16px;
-    background-color: var(--second);
-    display: flex;   
-    gap: 10px;
-    align-items: center;
-}
-.logo-text{
-    color: var(--rare);
-    font-size: 2.5rem;
-    margin: 0;
-    font-weight: 700;
-    line-height: 1;
-}
-.R{
-    display: flex;   
-    gap: 20px;  
- align-items: center;
-}
-
-
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+/* Main header container - sticky navigation bar at top of page */
+.header-main,
 .header {
-    background-color: var(--second);
-    position: sticky;
-    margin-bottom: 10px;
-    height: 70px;
-    display: flex;            
-    justify-content: center;
-     
-
-    
-
-    div {
-        display: flex;   
-        gap: 10px;              
-    }
+    background-color: var(--second);      /* Dark gray background */
+    position: sticky;                     /* Stays at top when scrolling */
+    top: 0;                              /* Position at top of viewport */
+    z-index: 100;                        /* Above other content */
+    margin-bottom: 10px;                 /* Space below header */
+    height: 70px;                         /* Fixed header height */
+    display: flex;                        /* Flexbox for horizontal layout */
+    justify-content: space-between;       /* Space items apart */
+    align-items: center;                  /* Vertically center items */
+    padding: 0 20px;                      /* Horizontal padding */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);  /* Subtle shadow for depth */
 }
 
-
-
-/* Profile Dropdown Menu */
-.profile-dropdown-container {
-    position: relative;
+/* Center-aligned header variant (used on login/signup pages) */
+.header {
+    justify-content: center;              /* Center all content */
 }
 
-.profile-icon-link {
-    display: flex;
-    align-items: center;
-}
-
-.profile-dropdown {
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    background-color: var(--second);
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    min-width: 200px;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-    padding: 8px 0;
-    margin-top: 5px;
-}
-
-.profile-dropdown.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    color: var(--main);
-    text-decoration: none;
-    font-size: 0.95rem;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-}
-
-.dropdown-item span {
-    font-size: 1.2rem;
-    width: 24px;
-    display: inline-block;
-    text-align: center;
-}
-
-.dropdown-divider {
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 8px 0;
-}
-
-.dropdown-item.logout {
-    color: #ff6b6b;
-}
-
+/* Header title/logo text styling */
+.header-main h1,
+.header h1,
 .header-main .M h1 {
-    color: var(--rare);
-    font-size: 1.8rem;
-    margin: 0;
+    color: var(--rare);                   /* Gold/yellow color */
+    font-size: 1.8rem;                    /* Large, prominent size */
+    margin: 0;                            /* Remove default margin */
 }
 
-/* Navigation Menu */
-.nav-menu {
-    position: fixed;
-    top: 70px;
-    left: -300px;
-    width: 280px;
-    height: calc(100vh - 70px);
-    background-color: var(--second);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-    z-index: 99;
-    overflow-y: auto;
-    padding: 20px 0;
+/* Left and Right header sections - container for menu toggle and user actions */
+.L, .R {
+    display: flex;                        /* Flexbox for horizontal alignment */
+    align-items: center;                  /* Vertically center items */
+    gap: 20px;                           /* Space between items */
 }
 
-.nav-menu.active {
-    left: 0;
+/* Center header section - logo container */
+.M {
+    border-radius: 16px;                  /* Rounded corners */
+    background-color: var(--second);      /* Dark background */
+    display: flex;                        /* Flexbox layout */
+    gap: 10px;                           /* Space between logo and text */
+    align-items: center;                  /* Vertically center */
+    text-decoration: none;                 /* Remove link underline */
+    color: inherit;                       /* Inherit text color */
 }
 
-.nav-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Logo text styling - brand name */
+.logo-text {
+    color: var(--rare);                   /* Gold/yellow color */
+    font-size: 2.5rem;                    /* Large, bold text */
+    margin: 0;                            /* Remove margin */
+    font-weight: 700;                     /* Bold weight */
+    line-height: 1;                       /* Tight line spacing */
 }
 
-.nav-menu ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* Logo image container */
+.logo-img {
+    display: block;                       /* Block display for proper spacing */
 }
 
-.nav-menu ul li a {
-    display: block;
-    padding: 15px 25px;
-    color: var(--main);
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.nav-overlay {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: rgba(0,0,0,0.5);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 98;
-}
-
-.nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.header {
-    background-color: var(--second);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 10px;
-    height: 70px;
-    display: flex;            
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
+/* Header div children - nested containers */
 .header > div {
-    display: flex;   
-    gap: 10px;              
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
+    display: flex;                        /* Flexbox layout */
+    gap: 10px;                           /* Space between items */
+    align-items: center;                  /* Vertical alignment */
+    cursor: pointer;                     /* Pointer cursor on hover */
 }
 
+/* Links inside header divs */
 .header > div a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+    display: flex;                        /* Flexbox for alignment */
+    align-items: center;                  /* Vertical centering */
+    gap: 10px;                           /* Space between icon and text */
+    text-decoration: none;                /* Remove underline */
 }
 
-.header h1 {
-    color: var(--rare);
-    font-size: 1.8rem;
-    margin: 0 0 0 6px;
+/* ============================================
+   PROFILE DROPDOWN MENU
+   ============================================ */
+/* Container for profile dropdown - relative positioning for absolute child */
+.profile-dropdown-container {
+    position: relative;                    /* Positioning context for dropdown */
 }
 
-.logo-img{
-    display: block;
+/* Profile icon link wrapper */
+.profile-icon-link {
+    display: flex;                        /* Flexbox layout */
+    align-items: center;                  /* Vertical centering */
 }
 
-.login-card {
-    text-align: center;
-    vertical-align: middle;
-    width: 90%;
-    max-width: 420px;
-    margin: 40px auto;
-    padding: 22px;
-    background-color: var(--second);
-    border-radius: 12px;
-    margin-top: 100px;
-    margin-bottom: 160px;
-    color: var(--main);
+/* Dropdown menu - hidden by default, shown when active */
+.profile-dropdown {
+    position: absolute;                   /* Positioned relative to container */
+    top: calc(100% + 10px);               /* Below profile icon with gap */
+    right: 0;                            /* Aligned to right */
+    background-color: var(--second);      /* Dark background */
+    border-radius: 8px;                   /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);  /* Strong shadow for depth */
+    min-width: 200px;                     /* Minimum width */
+    opacity: 0;                          /* Hidden by default */
+    visibility: hidden;                  /* Not visible */
+    z-index: 1000;                       /* Above all other content */
+    padding: 8px 0;                      /* Vertical padding */
+    margin-top: 5px;                     /* Small top margin */
 }
 
-.login-card h1{
-    margin-top: 10px;
-    margin-bottom: 6px;
-    color: var(--rare);
-    font-size: 2.2rem;
+/* Active state - dropdown is visible */
+.profile-dropdown.active {
+    opacity: 1;                          /* Fully visible */
+    visibility: visible;                  /* Show dropdown */
 }
 
-.login-card form{
-    margin-top: 18px;
+/* Individual dropdown menu items */
+.dropdown-item {
+    display: flex;                        /* Flexbox layout */
+    align-items: center;                  /* Vertical centering */
+    gap: 12px;                           /* Space between icon and text */
+    padding: 12px 20px;                  /* Comfortable padding */
+    color: var(--main);                   /* Light text color */
+    text-decoration: none;                /* Remove underline */
+    font-size: 0.95rem;                   /* Slightly smaller text */
+    border: none;                        /* No border */
+    background: none;                     /* Transparent background */
+    width: 100%;                         /* Full width */
+    text-align: left;                    /* Left-aligned text */
+    cursor: pointer;                     /* Pointer cursor */
 }
 
-.login-card input {
-    width: 100%;
-    height: 44px;
-    margin: 12px 0;
-    padding: 0 16px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--main);
+/* Icon span inside dropdown items */
+.dropdown-item span {
+    font-size: 1.2rem;                    /* Larger icon size */
+    width: 24px;                         /* Fixed width for alignment */
+    display: inline-block;                /* Block display */
+    text-align: center;                  /* Centered icon */
 }
 
-.login-card input:focus {
-    outline: none;
-    border-color: var(--rare);
-    background-color: rgba(255, 255, 255, 0.1);
+/* Divider line between dropdown sections */
+.dropdown-divider {
+    height: 1px;                         /* Thin line */
+    background-color: rgba(255, 255, 255, 0.1);  /* Subtle white line */
+    margin: 8px 0;                       /* Vertical spacing */
 }
 
-.login-card input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+/* Logout item - different color to indicate action */
+.dropdown-item.logout {
+    color: #ff6b6b;                      /* Red color for logout */
 }
 
-.login-card button {
-    width: 100%;
-    height: 48px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--rare);
-    color: var(--third);
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
-}
-.login-card button:hover {
-    background-color: #ffb347;
-    transform: scale(1.03);
+/* ============================================
+   NAVIGATION MENU (Mobile)
+   ============================================ */
+/* Side navigation menu - slides in from left on mobile */
+.nav-menu {
+    position: fixed;                      /* Fixed position */
+    top: 70px;                           /* Below header */
+    left: -300px;                        /* Hidden off-screen to left */
+    width: 280px;                        /* Menu width */
+    height: calc(100vh - 70px);          /* Full height minus header */
+    background-color: var(--second);     /* Dark background */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);  /* Shadow on right side */
+    z-index: 99;                         /* Above content, below dropdowns */
+    overflow-y: auto;                     /* Scrollable if content overflows */
+    padding: 20px 0;                     /* Vertical padding */
 }
 
+/* Active state - menu slides into view */
+.nav-menu.active {
+    left: 0;                             /* Visible on screen */
+}
+
+/* Navigation menu list - remove default list styling */
+.nav-menu ul {
+    list-style: none;                    /* No bullets */
+    padding: 0;                          /* No padding */
+    margin: 0;                           /* No margin */
+}
+
+/* Navigation menu list items */
+.nav-menu ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle divider between items */
+}
+
+/* Navigation menu links */
+.nav-menu ul li a {
+    display: block;                       /* Block display for full click area */
+    padding: 15px 25px;                  /* Comfortable padding */
+    color: var(--main);                   /* Light text color */
+    text-decoration: none;                /* No underline */
+    font-size: 1rem;                     /* Standard text size */
+}
+
+/* Navigation overlay - dark background when menu is open */
+.nav-overlay {
+    position: fixed;                      /* Fixed position */
+    top: 70px;                           /* Below header */
+    left: 0;                             /* Full width */
+    width: 100%;                         /* Full screen width */
+    height: calc(100vh - 70px);          /* Full height minus header */
+    background-color: rgba(0,0,0,0.5);   /* Semi-transparent black */
+    opacity: 0;                          /* Hidden by default */
+    visibility: hidden;                  /* Not visible */
+    z-index: 98;                         /* Above content, below menu */
+}
+
+/* Active overlay - visible when menu is open */
+.nav-overlay.active {
+    opacity: 1;                          /* Fully visible */
+    visibility: visible;                  /* Show overlay */
+}
+
+/* ============================================
+   FORM CARDS (Login & Signup)
+   ============================================ */
+/* Login and signup card containers */
+.login-card,
+.signup-card {
+    text-align: center;                   /* Center all content */
+    width: 90%;                          /* 90% of container width */
+    max-width: 420px;                    /* Maximum width for login */
+    margin: 100px auto 160px;            /* Top and bottom margins, centered */
+    padding: 22px;                       /* Internal padding */
+    background-color: var(--second);     /* Dark background */
+    border-radius: 12px;                 /* Rounded corners */
+    color: var(--main);                   /* Light text color */
+}
+
+/* Signup card - slightly wider */
+.signup-card {
+    max-width: 520px;                    /* Wider than login card */
+}
+
+/* Card headings */
+.login-card h1,
+.signup-card h1 {
+    color: var(--rare);                   /* Gold/yellow color */
+    font-size: 2.2rem;                   /* Large heading */
+    margin: 10px 0 6px;                   /* Top and bottom margins */
+}
+
+/* Signup heading - slightly smaller */
+.signup-card h1 {
+    font-size: 2rem;                     /* Slightly smaller */
+    margin: 8px 0;                       /* Adjusted margins */
+}
+
+/* Form containers inside cards */
+.login-card form,
+.signup-card form {
+    margin-top: 18px;                    /* Space above form */
+}
+
+/* Input fields in login/signup forms */
+.login-card input,
+.signup-card input {
+    width: 100%;                         /* Full width */
+    height: 44px;                        /* Comfortable height */
+    margin: 12px 0;                      /* Vertical spacing */
+    padding: 0 16px;                     /* Horizontal padding */
+    border: 2px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
+    border-radius: 8px;                  /* Rounded corners */
+    font-size: 1rem;                     /* Standard text size */
+    background-color: rgba(255, 255, 255, 0.05);  /* Slightly transparent white */
+    color: var(--main);                   /* Light text color */
+}
+
+/* Input focus state - highlight when active */
+.login-card input:focus,
+.signup-card input:focus {
+    outline: none;                       /* Remove default outline */
+    border-color: var(--rare);           /* Gold border on focus */
+    background-color: rgba(255, 255, 255, 0.1);  /* Lighter background */
+}
+
+/* Placeholder text styling */
+.login-card input::placeholder,
+.signup-card input::placeholder {
+    color: rgba(255, 255, 255, 0.6);     /* Semi-transparent white */
+}
+
+/* Submit buttons in forms */
+.login-card button,
+.signup-card button {
+    width: 100%;                         /* Full width */
+    height: 48px;                        /* Button height */
+    margin-top: 12px;                    /* Space above button */
+    border: none;                        /* No border */
+    border-radius: 8px;                  /* Rounded corners */
+    background-color: var(--rare);       /* Gold background */
+    color: var(--third);                 /* Dark text */
+    font-size: 1.1rem;                   /* Slightly larger text */
+    cursor: pointer;                     /* Pointer cursor */
+    font-weight: 600;                    /* Semi-bold text */
+}
+
+/* Button hover effect */
+.login-card button:hover,
+.signup-card button:hover {
+    background-color: #ffb347;           /* Lighter gold on hover */
+    transform: scale(1.03);              /* Slight scale up */
+}
+
+/* Paragraph text in cards */
+.login-card p,
+.signup-card p {
+    margin-top: 18px;                    /* Space above paragraph */
+    font-size: 0.95rem;                  /* Slightly smaller text */
+    color: var(--main);                   /* Light text color */
+}
+
+/* Links in cards */
+.login-card a,
+.signup-card a {
+    color: rgb(11, 102, 192);            /* Blue link color */
+    text-decoration: none;                /* No underline */
+}
+
+/* Link hover effect */
+.login-card a:hover,
+.signup-card a:hover {
+    text-decoration: underline;           /* Underline on hover */
+    color: #e6b85c;                      /* Lighter gold */
+}
+
+/* Divider between form and link (e.g., "or" divider) */
 .divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 24px 0;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    display: flex;                       /* Flexbox for alignment */
+    align-items: center;                 /* Vertical centering */
+    text-align: center;                  /* Center text */
+    margin: 24px 0;                      /* Vertical margins */
+    color: rgba(255, 255, 255, 0.5);     /* Semi-transparent white */
+    font-size: 0.9rem;                   /* Smaller text */
 }
 
+/* Divider lines before and after text */
 .divider::before,
 .divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    content: '';                         /* Empty content for pseudo-element */
+    flex: 1;                            /* Take remaining space */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* Horizontal line */
 }
 
+/* Text span in divider */
 .divider span {
-    padding: 0 16px;
+    padding: 0 16px;                     /* Horizontal padding around text */
 }
 
-.login-card p {
-    margin-top: 18px;
-    font-size: 0.95rem;
-    color: var(--main);
+/* Role Selection Radio Buttons */
+.role-selection {
+    margin: 20px 0;                      /* Vertical margins */
+    text-align: left;                    /* Left-aligned label */
 }
 
-.login-card a {
-    color: rgb(11, 102, 192);
-    text-decoration: none;
-}
-.login-card a:hover {
-    text-decoration: underline;
-    color: #e6b85c;
-}
-
-.signup-card {
-    text-align: center;
-    width: 90%;
-    max-width: 520px;
-    margin: 40px auto;
-    padding: 22px;
-    background-color: var(--second);
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    color: var(--main);
+.role-label {
+    display: block;                       /* Block display */
+    color: var(--main);                   /* Light text color */
+    font-size: 0.95rem;                  /* Slightly smaller text */
+    font-weight: 600;                    /* Semi-bold */
+    margin-bottom: 12px;                 /* Space below label */
 }
 
-.signup-card form {
-    margin-top: 18px;
+.radio-group {
+    display: flex;                       /* Flexbox layout */
+    gap: 20px;                           /* Space between options */
+    justify-content: center;              /* Center options */
 }
 
-.signup-card input {
-    width: 100%;
-    height: 44px;
-    margin: 12px 0;
-    padding: 0 16px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--main);
+.radio-option {
+    display: flex;                       /* Flexbox for alignment */
+    align-items: center;                 /* Vertical centering */
+    gap: 8px;                            /* Space between radio and text */
+    cursor: pointer;                     /* Pointer cursor */
+    color: var(--main);                   /* Light text color */
+    font-size: 0.95rem;                  /* Slightly smaller text */
+    padding: 8px 16px;                   /* Comfortable padding */
+    border-radius: 8px;                  /* Rounded corners */
+    transition: background-color 0.2s ease;  /* Smooth transition */
 }
 
-.signup-card input:focus {
-    outline: none;
-    border-color: var(--rare);
-    background-color: rgba(255, 255, 255, 0.1);
+.radio-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);  /* Light background on hover */
 }
 
-.signup-card input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+.radio-option input[type="radio"] {
+    width: 18px;                         /* Radio button width */
+    height: 18px;                        /* Radio button height */
+    cursor: pointer;                     /* Pointer cursor */
+    accent-color: var(--rare);            /* Gold color for checked state */
 }
 
-.signup-card button {
-    width: 100%;
-    height: 48px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--rare);
-    color: var(--third);
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
+.radio-option input[type="radio"]:checked + span {
+    color: var(--rare);                   /* Gold text when selected */
+    font-weight: 600;                    /* Semi-bold when selected */
 }
 
-.signup-card button:hover {
-    background-color: #ffb347;
-    transform: scale(1.03);
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+/* Main page headings */
+.home h1,
+.bicycles-page h1 {
+    text-align: center;                  /* Center heading */
+    color: var(--rare);                   /* Gold color */
+    text-decoration: underline var(--third);  /* Underline with dark color */
+    font-size: 2.4rem;                   /* Large size */
+    margin: 40px 0 20px;                 /* Top and bottom margins */
+    font-weight: 700;                     /* Bold weight */
 }
 
-
-.signup-card p {
-    margin-top: 18px;
-    font-size: 0.95rem;
-    color: var(--main);
+/* Bicycles page heading - larger */
+.bicycles-page h1 {
+    font-size: 3rem;                     /* Extra large */
 }
 
-.signup-card a {
-    color: rgb(11, 102, 192);
-    text-decoration: none;
-}
-
-.signup-card a:hover {
-    text-decoration: underline;
-    color: #e6b85c;
-}
-
-.signup-card h1{ color: var(--rare); font-size: 2rem; margin:8px 0 }
-
-.home h1 {
-    text-align: center;
-    color: var(--rare);
-    text-decoration: underline var(--third);
-    font-size: 2.4rem;
-    margin: 40px 0 20px;
-    font-weight: 700;
-}
-
+/* Search bar container */
 .search-home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 30px 0;
-    padding: 0 20px;
+    display: flex;                       /* Flexbox layout */
+    justify-content: center;              /* Center horizontally */
+    align-items: center;                 /* Center vertically */
+    gap: 10px;                           /* Space between icon and input */
+    margin: 30px 0;                      /* Vertical margins */
+    padding: 0 20px;                     /* Horizontal padding */
 }
 
+/* Search input field */
 .search-home input {
-    width: 100%;
-    max-width: 500px;
-    height: 50px;
-    border: 2px solid var(--third);
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0 20px;
+    width: 100%;                         /* Full width */
+    max-width: 500px;                    /* Maximum width */
+    height: 50px;                        /* Input height */
+    border: 2px solid var(--third);      /* Dark border */
+    border-radius: 8px;                  /* Rounded corners */
+    text-align: center;                  /* Centered text */
+    font-size: 1rem;                     /* Standard text size */
+    padding: 0 20px;                     /* Horizontal padding */
 }
 
+/* Search icon */
 .search-home img {
-    cursor: pointer;
+    cursor: pointer;                     /* Pointer cursor */
 }
 
-.category {
-    display: block;
-    margin: 40px 0;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.category-item {
-    display: inline-block;
-    margin: 16px;
-    border: 2px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
-    width: 320px;
-    height: 240px;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: white;
-}
-
-.category-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.name {
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 20px;
-    color: var(--third);
-    padding: 10px;
-    text-align: center;
-}
-
+/* Category and discount sections */
+.category,
 .discount {
-    display: block;
-    margin: 40px 0;
-    text-align: center;
-    padding: 0 20px;
-}
-.discount a.item-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    vertical-align: top;
-    margin: 16px;
+    display: block;                       /* Block display */
+    margin: 40px 0;                      /* Vertical margins */
+    text-align: center;                  /* Center content */
+    padding: 0 20px;                     /* Horizontal padding */
 }
 
-/* discount-item should use the same styling as item-card */
+/* Category item cards */
+.category-item {
+    display: inline-block;               /* Inline block for side-by-side */
+    margin: 16px;                        /* Spacing around items */
+    border: 2px solid rgba(0,0,0,0.1);  /* Subtle border */
+    border-radius: 12px;                 /* Rounded corners */
+    width: 320px;                        /* Fixed width */
+    height: 240px;                       /* Fixed height */
+    overflow: hidden;                    /* Hide overflow */
+    cursor: pointer;                     /* Pointer cursor */
+    background-color: white;             /* White background */
+}
+
+/* Category item images */
+.category-item img {
+    width: 100%;                         /* Full width */
+    height: 100%;                        /* Full height */
+    object-fit: cover;                  /* Cover entire area */
+}
+
+/* Category name text */
+.name {
+    font-weight: bold;                   /* Bold text */
+    margin-top: 10px;                    /* Space above */
+    font-size: 20px;                     /* Large text */
+    color: var(--third);                 /* Dark color */
+    padding: 10px;                       /* Padding */
+    text-align: center;                  /* Center text */
+}
+
+/* ============================================
+   ITEM CARDS (Product Cards)
+   ============================================ */
+/* Product card containers */
+.item-card,
 .discount-item {
-    background: white;
-    padding: 0;
-    border: 2px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
-    text-align: center;
-    width: 280px;
-    display: inline-block;
-    margin: 16px;
-    vertical-align: top;
-    overflow: hidden;
-    transition: transform 150ms ease, box-shadow 150ms ease;
-    cursor: pointer;
-    min-height: 240px;
+    background: white;                    /* White background */
+    padding: 0;                          /* No padding */
+    border: 2px solid rgba(0,0,0,0.1);  /* Subtle border */
+    border-radius: 12px;                 /* Rounded corners */
+    text-align: center;                  /* Center content */
+    width: 280px;                        /* Fixed width */
+    display: inline-block;               /* Inline block layout */
+    margin: 16px;                        /* Spacing around cards */
+    vertical-align: top;                 /* Align to top */
+    overflow: hidden;                    /* Hide overflow */
+    transition: transform 0.15s ease, box-shadow 0.15s ease;  /* Smooth transitions */
+    cursor: pointer;                     /* Pointer cursor */
 }
 
+/* Discount items - minimum height */
+.discount-item {
+    min-height: 240px;                   /* Ensure consistent height */
+}
+
+/* Product card images */
+.item-card img,
+.item-card .card-image,
 .discount-item img,
 .discount-item .card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    background-color: #f6f6f6;
+    width: 100%;                         /* Full width */
+    height: 180px;                       /* Fixed height */
+    object-fit: contain;                 /* Show full image */
+    object-position: center;             /* Center image */
+    display: block;                      /* Block display */
+    background-color: #f6f6f6;           /* Light gray background */
 }
 
+/* Background image containers */
+.item-card .card-image,
 .discount-item .card-image {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: contain;            /* Fit image within container */
+    background-position: center;         /* Center image */
+    background-repeat: no-repeat;       /* No repetition */
 }
 
+/* Card body - product info area */
+.item-card .card-body,
 .discount-item .card-body {
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
+    padding: 12px;                        /* Internal padding */
+    display: flex;                       /* Flexbox layout */
+    justify-content: space-between;      /* Space items apart */
+    align-items: center;                 /* Vertical centering */
+    gap: 8px;                            /* Space between title and price */
 }
 
+/* Product title */
+.item-card .card-title,
 .discount-item .card-title {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--third);
-    margin: 0;
+    font-weight: 700;                     /* Bold text */
+    font-size: 1rem;                     /* Standard size */
+    color: var(--third);                 /* Dark color */
+    margin: 0;                           /* No margin */
 }
 
+/* Product price */
+.item-card .card-price,
 .discount-item .card-price {
-    color: var(--buy);
-    font-weight: 800;
-    font-size: 1rem;
+    color: var(--buy);                   /* Green color */
+    font-weight: 800;                     /* Extra bold */
+    font-size: 1rem;                     /* Standard size */
 }
 
-.discount-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-.item-card {
-    background: white;
-    padding: 0;
-    border: 2px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
-    text-align: center;
-    width: 280px;
-    display: inline-block;
-    margin: 16px;
-    vertical-align: top;
-    overflow: hidden;
-    transition: transform 150ms ease, box-shadow 150ms ease;
-    cursor: pointer;
-}
-
-/* image area: ensure full image is visible, centered and scaled to fit */
-.item-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    background-color: #f6f6f6;
-}
-
-/* alternate image container using background-image - show full image */
-.item-card .card-image {
-    width: 100%;
-    height: 180px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: block;
-    background-color: #f6f6f6;
-}
-
-/* content area */
-.item-card .card-body {
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-}
-
-.item-card .card-title {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--third);
-    margin: 0;
-}
-
-.item-card .card-price {
-    color: var(--buy);
-    font-weight: 800;
-    font-size: 1rem;
-}
-
-/* hover/interaction */
-.item-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-/* Ensure card links work properly */
-a.item-card-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-a.item-card-link .item-card {
-    display: inline-block;
-    text-decoration: none;
-    width: 280px;
-    margin: 0;
-    vertical-align: top;
-}
-
+/* Card hover effect - lift up with shadow */
+.item-card:hover,
+.discount-item:hover,
 a.item-card-link:hover .item-card {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(-6px);           /* Move up 6px */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);  /* Enhanced shadow */
 }
 
-/* responsive adjustments */
-@media (max-width: 768px) {
-    .item-card {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-    }
-
-    .item-card img,
-    .item-card .card-image {
-        height: 180px;
-        object-fit: contain;
-        object-position: center;
-    }
-    
-    .item {
-        width: 100%;
-        max-width: 320px;
-    }
-    
-    .item img {
-        height: 180px;
-        object-fit: contain;
-        object-position: center;
-    }
+/* Product card links */
+a.item-card-link,
+.discount a.item-card-link {
+    text-decoration: none;               /* No underline */
+    color: inherit;                       /* Inherit text color */
+    display: inline-block;                /* Inline block */
+    vertical-align: top;                  /* Top alignment */
+    margin: 16px;                        /* Spacing */
 }
 
-/* Professional Footer Styles */
-.footer-main {
-    background-color: var(--second);
-    color: var(--main);
-    margin-top: auto;
-    padding: 50px 20px 20px;
-    border-top: 3px solid var(--rare);
+/* Card inside link */
+a.item-card-link .item-card {
+    display: inline-block;                /* Inline block */
+    text-decoration: none;                /* No underline */
+    width: 280px;                        /* Fixed width */
+    margin: 0;                           /* No margin */
 }
 
-.footer-main .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-.footer-main .footer-section h3 {
-    color: var(--rare);
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.footer-main .footer-section p {
-    color: var(--main);
-    line-height: 1.8;
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-.footer-main .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-main .footer-section ul li {
-    margin-bottom: 12px;
-}
-
-.footer-main .footer-section ul li a {
-    color: var(--main);
-    text-decoration: none;
-    font-size: 0.95rem;
-    display: inline-block;
-}
-
-.footer-main .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.footer-main .footer-brand img {
-    width: 60px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.footer-main .footer-brand .brand-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--rare);
-    margin: 0;
-}
-
-.footer-main .footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.footer-main .footer-social a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 203, 116, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--rare);
-    text-decoration: none;
-}
-
-.footer-main .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    text-align: center;
-    color: var(--main);
-    font-size: 0.9rem;
-}
-
-.footer-main .footer-bottom p {
-    margin: 0;
-    opacity: 0.8;
-}
-
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+/* Footer containers */
+.footer-main,
 .footer {
-    background-color: var(--second);
-    color: var(--main);
-    margin-top: auto;
-    padding: 50px 20px 20px;
-    border-top: 3px solid var(--rare);
+    background-color: var(--second);     /* Dark background */
+    color: var(--main);                   /* Light text */
+    margin-top: auto;                    /* Push to bottom (flexbox) */
+    padding: 50px 20px 20px;            /* Top and side padding */
+    border-top: 3px solid var(--rare);   /* Gold top border */
 }
 
+/* Footer content container */
+.footer-main .footer-container,
 .footer .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 30px;
+    max-width: 1200px;                   /* Maximum width */
+    margin: 0 auto 30px;                 /* Centered with bottom margin */
+    display: grid;                       /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* Responsive columns */
+    gap: 40px;                           /* Space between columns */
 }
 
+/* Footer section headings */
+.footer-main .footer-section h3,
 .footer .footer-section h3 {
-    color: var(--rare);
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: var(--rare);                   /* Gold color */
+    font-size: 1.2rem;                   /* Medium size */
+    margin-bottom: 20px;                 /* Space below heading */
+    font-weight: 600;                    /* Semi-bold */
+    text-transform: uppercase;            /* Uppercase text */
+    letter-spacing: 0.5px;               /* Letter spacing */
 }
 
+/* Footer paragraph text */
+.footer-main .footer-section p,
 .footer .footer-section p {
-    color: var(--main);
-    line-height: 1.8;
-    font-size: 0.95rem;
-    margin: 0;
+    color: var(--main);                   /* Light text */
+    line-height: 1.8;                    /* Comfortable line spacing */
+    font-size: 0.95rem;                  /* Slightly smaller */
+    margin: 0;                           /* No margin */
 }
 
+/* Footer lists */
+.footer-main .footer-section ul,
 .footer .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none;                    /* No bullets */
+    padding: 0;                          /* No padding */
+    margin: 0;                           /* No margin */
 }
 
+/* Footer list items */
+.footer-main .footer-section ul li,
 .footer .footer-section ul li {
-    margin-bottom: 12px;
+    margin-bottom: 12px;                 /* Space between items */
 }
 
+/* Footer links */
+.footer-main .footer-section ul li a,
 .footer .footer-section ul li a {
-    color: var(--main);
-    text-decoration: none;
-    font-size: 0.95rem;
-    display: inline-block;
+    color: var(--main);                   /* Light text */
+    text-decoration: none;                /* No underline */
+    font-size: 0.95rem;                  /* Slightly smaller */
+    display: inline-block;               /* Inline block */
 }
 
+/* Footer brand section */
+.footer-main .footer-brand,
 .footer .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: flex;                       /* Flexbox layout */
+    flex-direction: column;              /* Vertical stack */
+    gap: 15px;                           /* Space between items */
 }
 
+/* Footer brand logo */
+.footer-main .footer-brand img,
 .footer .footer-brand img {
-    width: 60px;
-    height: auto;
-    margin-bottom: 10px;
+    width: 60px;                         /* Logo width */
+    height: auto;                        /* Maintain aspect ratio */
+    margin-bottom: 10px;                 /* Space below logo */
 }
 
+/* Footer brand name */
+.footer-main .footer-brand .brand-name,
 .footer .footer-brand .brand-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--rare);
-    margin: 0;
+    font-size: 1.5rem;                   /* Large text */
+    font-weight: bold;                   /* Bold weight */
+    color: var(--rare);                   /* Gold color */
+    margin: 0;                           /* No margin */
 }
 
+/* Footer social media container */
+.footer-main .footer-social,
 .footer .footer-social {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
+    display: flex;                       /* Flexbox layout */
+    gap: 15px;                           /* Space between icons */
+    margin-top: 15px;                    /* Space above */
 }
 
+/* Footer social media links */
+.footer-main .footer-social a,
 .footer .footer-social a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 203, 116, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--rare);
-    text-decoration: none;
+    width: 40px;                         /* Icon width */
+    height: 40px;                        /* Icon height */
+    background-color: rgba(255, 203, 116, 0.1);  /* Light gold background */
+    border-radius: 50%;                  /* Circular */
+    display: flex;                       /* Flexbox for centering */
+    align-items: center;                 /* Vertical centering */
+    justify-content: center;             /* Horizontal centering */
+    color: var(--rare);                   /* Gold color */
+    text-decoration: none;                /* No underline */
 }
 
+/* Footer bottom section */
+.footer-main .footer-bottom,
 .footer .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    text-align: center;
-    color: var(--main);
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle top border */
+    padding-top: 20px;                   /* Space above content */
+    text-align: center;                  /* Center text */
+    color: var(--main);                   /* Light text */
+    font-size: 0.9rem;                   /* Smaller text */
 }
 
+/* Footer bottom paragraph */
+.footer-main .footer-bottom p,
 .footer .footer-bottom p {
-    margin: 0;
-    opacity: 0.8;
+    margin: 0;                           /* No margin */
+    opacity: 0.8;                        /* Slightly transparent */
 }
 
-@media (min-width: 900px){
-    .login-card{ max-width:420px }
-}
-
-/* Profile Page Styles */
+/* ============================================
+   PROFILE PAGE STYLES
+   ============================================ */
+/* Profile page container */
 .profile-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 900px;                    /* Maximum width */
+    margin: 40px auto;                   /* Centered with top margin */
+    padding: 0 20px;                     /* Horizontal padding */
 }
 
+/* Profile card container */
 .profile-card {
-    background-color: var(--second);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
-    color: var(--main);
+    background-color: var(--second);     /* Dark background */
+    border-radius: 12px;                 /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);  /* Shadow for depth */
+    overflow: hidden;                    /* Hide overflow */
+    color: var(--main);                   /* Light text */
 }
 
+/* Profile header section with gradient */
 .profile-header {
-    background: linear-gradient(135deg, var(--rare) 0%, #e6b85c 100%);
-    padding: 40px;
-    text-align: center;
-    color: var(--third);
+    background: linear-gradient(135deg, var(--rare) 0%, #e6b85c 100%);  /* Gold gradient */
+    padding: 40px;                        /* Padding */
+    text-align: center;                  /* Center content */
+    color: var(--third);                 /* Dark text */
 }
 
+/* Profile avatar container */
 .profile-avatar {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background-color: var(--second);
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 120px;                        /* Avatar width */
+    height: 120px;                       /* Avatar height */
+    margin: 0 auto 20px;                 /* Centered with bottom margin */
+    border-radius: 50%;                 /* Circular */
+    background-color: var(--second);     /* Dark background */
+    padding: 5px;                        /* Border padding */
+    display: flex;                       /* Flexbox for centering */
+    align-items: center;                 /* Vertical centering */
+    justify-content: center;             /* Horizontal centering */
 }
 
+/* Profile avatar image */
 .profile-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 100%;                         /* Full width */
+    height: 100%;                        /* Full height */
+    border-radius: 50%;                 /* Circular */
+    object-fit: cover;                  /* Cover area */
 }
 
+/* Profile header heading */
 .profile-header h1 {
-    color: var(--third);
-    font-size: 2rem;
-    margin: 10px 0;
+    color: var(--third);                 /* Dark text */
+    font-size: 2rem;                     /* Large size */
+    margin: 10px 0;                      /* Vertical margins */
 }
 
+/* Profile email text */
 .profile-email {
-    color: rgba(0,0,0,0.7);
-    font-size: 1rem;
-    margin: 0;
+    color: rgba(0,0,0,0.7);              /* Semi-transparent black */
+    font-size: 1rem;                     /* Standard size */
+    margin: 0;                           /* No margin */
 }
 
+/* Profile content section */
 .profile-content {
-    padding: 40px;
+    padding: 40px;                        /* Internal padding */
 }
 
+/* Profile section containers */
 .profile-section {
-    margin-bottom: 40px;
+    margin-bottom: 40px;                 /* Space between sections */
 }
 
+/* Last profile section - no bottom margin */
 .profile-section:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0;                    /* Remove margin */
 }
 
+/* Profile section headings */
 .profile-section h2 {
-    color: var(--rare);
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 203, 116, 0.2);
+    color: var(--rare);                   /* Gold color */
+    font-size: 1.5rem;                   /* Medium-large size */
+    margin-bottom: 25px;                 /* Space below */
+    padding-bottom: 10px;                /* Space for border */
+    border-bottom: 2px solid rgba(255, 203, 116, 0.2);  /* Gold underline */
 }
 
+/* Profile form container */
 .profile-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: flex;                       /* Flexbox layout */
+    flex-direction: column;              /* Vertical stack */
+    gap: 20px;                           /* Space between fields */
 }
 
+/* Form group - label and input container */
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    display: flex;                       /* Flexbox layout */
+    flex-direction: column;              /* Vertical stack */
+    gap: 8px;                            /* Space between label and input */
 }
 
+/* Form labels */
 .form-group label {
-    color: var(--main);
-    font-weight: 600;
-    font-size: 0.95rem;
+    color: var(--main);                   /* Light text */
+    font-weight: 600;                    /* Semi-bold */
+    font-size: 0.95rem;                  /* Slightly smaller */
 }
 
+/* Form inputs and textareas */
 .form-group input,
 .form-group textarea {
-    padding: 12px 16px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--main);
-    font-size: 1rem;
-    font-family: inherit;
+    padding: 12px 16px;                  /* Comfortable padding */
+    border: 2px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
+    border-radius: 8px;                  /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.05);  /* Slightly transparent */
+    color: var(--main);                   /* Light text */
+    font-size: 1rem;                     /* Standard size */
+    font-family: inherit;                 /* Inherit font */
 }
 
+/* Form input focus state */
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: var(--rare);
-    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;                       /* Remove default outline */
+    border-color: var(--rare);           /* Gold border */
+    background-color: rgba(255, 255, 255, 0.1);  /* Lighter background */
 }
 
+/* Form placeholder text */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);     /* Semi-transparent white */
 }
 
+/* Save button */
 .save-btn {
-    padding: 14px 30px;
-    background-color: var(--rare);
-    color: var(--third);
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    align-self: flex-start;
-    margin-top: 10px;
+    padding: 14px 30px;                   /* Button padding */
+    background-color: var(--rare);       /* Gold background */
+    color: var(--third);                 /* Dark text */
+    border: none;                        /* No border */
+    border-radius: 8px;                  /* Rounded corners */
+    font-size: 1rem;                     /* Standard size */
+    font-weight: 600;                    /* Semi-bold */
+    cursor: pointer;                     /* Pointer cursor */
+    align-self: flex-start;             /* Align to left */
+    margin-top: 10px;                    /* Space above */
 }
 
+/* Settings list container */
 .settings-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: flex;                       /* Flexbox layout */
+    flex-direction: column;              /* Vertical stack */
+    gap: 15px;                           /* Space between items */
 }
 
+/* Individual setting item */
 .setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;                       /* Flexbox layout */
+    justify-content: space-between;      /* Space items apart */
+    align-items: center;                 /* Vertical centering */
+    padding: 20px;                       /* Internal padding */
+    background-color: rgba(255, 255, 255, 0.05);  /* Slightly transparent */
+    border-radius: 8px;                  /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle border */
 }
 
+/* Setting info heading */
 .setting-info h3 {
-    color: var(--main);
-    font-size: 1.1rem;
-    margin: 0 0 5px 0;
+    color: var(--main);                   /* Light text */
+    font-size: 1.1rem;                   /* Slightly larger */
+    margin: 0 0 5px 0;                   /* Bottom margin only */
 }
 
+/* Setting info description */
 .setting-info p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    margin: 0;
+    color: rgba(255, 255, 255, 0.7);     /* Semi-transparent white */
+    font-size: 0.9rem;                   /* Smaller text */
+    margin: 0;                           /* No margin */
 }
 
+/* Setting button */
 .setting-btn {
-    padding: 10px 20px;
-    background-color: transparent;
-    color: var(--rare);
-    border: 2px solid var(--rare);
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
+    padding: 10px 20px;                   /* Button padding */
+    background-color: transparent;        /* Transparent background */
+    color: var(--rare);                   /* Gold text */
+    border: 2px solid var(--rare);        /* Gold border */
+    border-radius: 6px;                  /* Rounded corners */
+    font-size: 0.9rem;                   /* Smaller text */
+    font-weight: 600;                    /* Semi-bold */
+    cursor: pointer;                     /* Pointer cursor */
 }
 
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.2rem;
-    }
-    
-    .header-main .M h1 {
-        font-size: 1.2rem;
-    }
-    
-    .header-main {
-        padding: 0px 10px;
-    }
-    
-    .R {
-        gap: 10px;
-    }
-    
-    .R img,
-    .L img {
-        height: 40px;
-        width: 40px;
-    }
-    
-    .nav-menu {
-        width: 250px;
-    }
-    
-    .footer-main .footer-container,
-    .footer .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-    
-    .footer-main .footer-brand,
-    .footer .footer-brand {
-        align-items: center;
-        text-align: center;
-    }
-    
-    .footer-main .footer-social,
-    .footer .footer-social {
-        justify-content: center;
-    }
-    
-    .login-card {
-        margin: 20px auto;
-        padding: 20px;
-    }
-    
-    .signup-card {
-        margin: 20px auto;
-        padding: 20px;
-    }
-    
-    .category-item {
-        width: 100%;
-        max-width: 320px;
-    }
-    
-    .discount-item {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .discount-item img,
-    .discount-item .card-image {
-        height: 180px;
-        object-fit: contain;
-        object-position: center;
-    }
-    
-    .profile-dropdown {
-        right: -10px;
-        min-width: 180px;
-    }
-    
-    .profile-container {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-    
-    .profile-header {
-        padding: 30px 20px;
-    }
-    
-    .profile-avatar {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .profile-content {
-        padding: 25px 20px;
-    }
-    
-    .setting-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .setting-btn {
-        width: 100%;
-    }
+/* ============================================
+   BICYCLES PAGE STYLES
+   ============================================ */
+/* Bike subcategory container */
+.bike-subcategory {
+    width: 80%;                          /* 80% of container width */
+    margin: 30px auto;                   /* Centered with vertical margin */
+    padding: 20px;                       /* Internal padding */
+    background-color: var(--main);       /* Light background */
+    border: 1px solid var(--third);      /* Dark border */
+    border-radius: 8px;                  /* Rounded corners */
 }
 
-.bicycles-page{
-    h1{
-        text-align: center;
-        color: var(--rare);
-        text-decoration: underline var(--third);
-        font-size: 3em;
-    }
+/* Bike subcategory heading */
+.bike-subcategory h2 {
+    font-size: 2rem;                     /* Large size */
+    color: var(--second);                /* Dark gray */
+    border-bottom: 2px solid var(--rare);  /* Gold underline */
+    margin: 0 0 20px 0;                 /* Bottom margin only */
+    padding-bottom: 10px;                /* Space for border */
 }
 
-.bike-subcategory{
-    width: 80%;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: var(--main);
-    border: 1px solid var(--third);
-    border-radius: 8px;
-    h2{
-        font-size: 2em;
-        color: var(--second);
-        border-bottom: 2px solid var(--rare);
-        margin: 0px 0px 20px 0px;
-        padding-bottom: 10px;
-    }
+/* Subcategory items container */
+.subcategory-items {
+    display: flex;                       /* Flexbox layout */
+    justify-content: space-around;       /* Space items evenly */
+    align-items: center;                 /* Vertical centering */
+    padding: 10px;                       /* Internal padding */
 }
 
-.subcategory-items{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
+/* Individual item container (legacy style) */
+.item {
+    width: 350px;                        /* Fixed width */
+    margin: 10px;                        /* Spacing */
+    border: 1px solid var(--main);      /* Light border */
+    border-radius: 8px;                  /* Rounded corners */
+    overflow: hidden;                    /* Hide overflow */
+    background-color: white;             /* White background */
 }
 
-.item{
-    width: 350px;
-    margin: 10px;
-    border: 1px solid var(--main);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: white;
-    img{
-        width: 100%;
-        height: 200px;
-        border-radius: 8px 8px 0 0;
-        object-fit: contain;
-        object-position: center;
-        background-color: #f6f6f6;
-        display: block;
-    }
+/* Item images */
+.item img {
+    width: 100%;                         /* Full width */
+    height: 200px;                       /* Fixed height */
+    border-radius: 8px 8px 0 0;         /* Rounded top corners */
+    object-fit: contain;                 /* Show full image */
+    object-position: center;             /* Center image */
+    background-color: #f6f6f6;           /* Light gray background */
+    display: block;                      /* Block display */
 }
 
-.price{
-    font-size: 20px;
-    color: var(--buy);
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
+/* Price display */
+.price {
+    font-size: 20px;                     /* Large text */
+    color: var(--buy);                   /* Green color */
+    padding: 10px;                       /* Padding */
+    text-align: center;                  /* Center text */
+    font-weight: bold;                   /* Bold weight */
 }
 
-.view-more{
-    width: 200px;
-    margin: 10px;
-    padding: 15px 30px;
-    background-color: var(--rare);
-    color: var(--third);
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
+/* View More button */
+.view-more {
+    width: 200px;                        /* Fixed width */
+    margin: 10px;                        /* Spacing */
+    padding: 15px 30px;                  /* Button padding */
+    background-color: var(--rare);       /* Gold background */
+    color: var(--third);                 /* Dark text */
+    font-size: 1.3rem;                   /* Large text */
+    font-weight: bold;                   /* Bold weight */
+    text-align: center;                  /* Center text */
+    text-decoration: none;               /* No underline */
+    border-radius: 8px;                  /* Rounded corners */
+    border: none;                        /* No border */
+    cursor: pointer;                     /* Pointer cursor */
 }
 
-/* Item card styles consolidated above - removed duplicate definition */
-
-/* Product Detail Page Styles */
+/* ============================================
+   PRODUCT DETAIL PAGE STYLES
+   ============================================ */
+/* Product detail page container */
 .product-detail-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1200px;                   /* Maximum width */
+    margin: 40px auto;                   /* Centered with top margin */
+    padding: 0 20px;                     /* Horizontal padding */
 }
 
+/* Product detail grid layout */
 .product-detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: white;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
+    display: grid;                       /* Grid layout */
+    grid-template-columns: 1fr 1fr;      /* Two equal columns */
+    gap: 40px;                           /* Space between columns */
+    background: white;                   /* White background */
+    border-radius: 12px;                 /* Rounded corners */
+    padding: 40px;                       /* Internal padding */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);  /* Shadow for depth */
+    margin-bottom: 40px;                 /* Space below */
 }
 
+/* Product image container */
 .product-image-container {
-    width: 100%;
-    background-color: #f6f6f6;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-    max-height: 500px;
+    width: 100%;                         /* Full width */
+    background-color: #f6f6f6;           /* Light gray background */
+    border-radius: 12px;                 /* Rounded corners */
+    overflow: hidden;                    /* Hide overflow */
+    display: flex;                       /* Flexbox for centering */
+    align-items: center;                 /* Vertical centering */
+    justify-content: center;             /* Horizontal centering */
+    min-height: 500px;                   /* Minimum height */
+    max-height: 500px;                   /* Maximum height */
 }
 
+/* Product image */
 .product-image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
+    width: 100%;                         /* Full width */
+    height: auto;                        /* Maintain aspect ratio */
+    object-fit: contain;                 /* Show full image */
+    display: block;                      /* Block display */
 }
 
+/* Product background image container */
 .product-image-container .card-image {
-    width: 100%;
-    height: 500px;
-    min-height: 500px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #f6f6f6;
-    display: block;
+    width: 100%;                         /* Full width */
+    height: 500px;                       /* Fixed height */
+    min-height: 500px;                   /* Minimum height */
+    background-size: contain;            /* Fit image */
+    background-position: center;         /* Center image */
+    background-repeat: no-repeat;        /* No repetition */
+    background-color: #f6f6f6;           /* Light gray background */
+    display: block;                      /* Block display */
 }
 
+/* Product info heading */
 .product-info h1 {
-    color: var(--third);
-    font-size: 2.5rem;
-    margin: 0 0 20px 0;
-    font-weight: 700;
+    color: var(--third);                 /* Dark text */
+    font-size: 2.5rem;                   /* Extra large */
+    margin: 0 0 20px 0;                 /* Bottom margin only */
+    font-weight: 700;                    /* Bold weight */
 }
 
+/* Product price display */
 .product-price {
-    font-size: 2rem;
-    color: var(--buy);
-    font-weight: 800;
-    margin: 20px 0;
+    font-size: 2rem;                     /* Large size */
+    color: var(--buy);                   /* Green color */
+    font-weight: 800;                    /* Extra bold */
+    margin: 20px 0;                      /* Vertical margins */
 }
 
+/* Product description text */
 .product-description {
-    color: var(--third);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin: 30px 0;
+    color: var(--third);                 /* Dark text */
+    font-size: 1.1rem;                   /* Slightly larger */
+    line-height: 1.8;                    /* Comfortable spacing */
+    margin: 30px 0;                      /* Vertical margins */
 }
 
-.product-specs {
-    margin: 30px 0;
-}
-
-.product-specs h2 {
-    color: var(--rare);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--rare);
-    padding-bottom: 10px;
-}
-
-.specs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.spec-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background-color: #f6f6f6;
-    border-radius: 8px;
-}
-
-.spec-label {
-    font-weight: 600;
-    color: var(--second);
-}
-
-.spec-value {
-    color: var(--third);
-}
-
+/* Product specs and features sections */
+.product-specs,
 .product-features {
-    margin: 30px 0;
+    margin: 30px 0;                     /* Vertical margins */
 }
 
+/* Specs and features headings */
+.product-specs h2,
 .product-features h2 {
-    color: var(--rare);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--rare);
-    padding-bottom: 10px;
+    color: var(--rare);                   /* Gold color */
+    font-size: 1.5rem;                   /* Medium-large size */
+    margin-bottom: 20px;                 /* Space below */
+    border-bottom: 2px solid var(--rare);  /* Gold underline */
+    padding-bottom: 10px;                /* Space for border */
 }
 
+/* Specs grid layout */
+.specs-grid {
+    display: grid;                       /* Grid layout */
+    grid-template-columns: 1fr 1fr;      /* Two columns */
+    gap: 15px;                           /* Space between items */
+    margin-top: 20px;                    /* Space above */
+}
+
+/* Individual spec item */
+.spec-item {
+    display: flex;                       /* Flexbox layout */
+    justify-content: space-between;      /* Space label and value apart */
+    padding: 12px;                       /* Internal padding */
+    background-color: #f6f6f6;           /* Light gray background */
+    border-radius: 8px;                  /* Rounded corners */
+}
+
+/* Spec label text */
+.spec-label {
+    font-weight: 600;                    /* Semi-bold */
+    color: var(--second);                /* Dark gray */
+}
+
+/* Spec value text */
+.spec-value {
+    color: var(--third);                 /* Dark text */
+}
+
+/* Features list */
 .features-list {
-    list-style: none;
-    padding: 0;
+    list-style: none;                    /* No bullets */
+    padding: 0;                          /* No padding */
 }
 
+/* Feature list items */
 .features-list li {
-    padding: 12px 0;
-    padding-left: 30px;
-    position: relative;
-    color: var(--third);
-    font-size: 1rem;
+    padding: 12px 0 12px 30px;           /* Padding with space for checkmark */
+    position: relative;                  /* Positioning context for pseudo-element */
+    color: var(--third);                 /* Dark text */
+    font-size: 1rem;                     /* Standard size */
 }
 
+/* Checkmark before each feature */
 .features-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--buy);
-    font-weight: bold;
-    font-size: 1.2rem;
+    content: "✓";                       /* Checkmark character */
+    position: absolute;                  /* Absolute positioning */
+    left: 0;                             /* Left side */
+    color: var(--buy);                   /* Green color */
+    font-weight: bold;                   /* Bold weight */
+    font-size: 1.2rem;                   /* Larger size */
 }
 
-.add-to-cart-btn {
-    width: 100%;
-    padding: 18px 30px;
-    background-color: var(--rare);
-    color: var(--third);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #ffb347;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 203, 116, 0.4);
-}
-
+/* Add to cart and buy now buttons */
+.add-to-cart-btn,
 .buy-now-btn {
-    width: 100%;
-    padding: 18px 30px;
-    background-color: var(--buy);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;                         /* Full width */
+    padding: 18px 30px;                  /* Button padding */
+    border: none;                        /* No border */
+    border-radius: 8px;                  /* Rounded corners */
+    font-size: 1.2rem;                   /* Large text */
+    font-weight: 700;                    /* Bold weight */
+    cursor: pointer;                     /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease;  /* Smooth transitions */
 }
 
+/* Add to cart button */
+.add-to-cart-btn {
+    background-color: var(--rare);       /* Gold background */
+    color: var(--third);                 /* Dark text */
+    margin-top: 30px;                    /* Space above */
+}
+
+/* Add to cart button hover */
+.add-to-cart-btn:hover {
+    background-color: #ffb347;           /* Lighter gold */
+    transform: translateY(-2px);         /* Move up slightly */
+    box-shadow: 0 4px 15px rgba(255, 203, 116, 0.4);  /* Gold shadow */
+}
+
+/* Buy now button */
+.buy-now-btn {
+    background-color: var(--buy);         /* Green background */
+    color: white;                        /* White text */
+    margin-top: 15px;                    /* Space above */
+}
+
+/* Buy now button hover */
 .buy-now-btn:hover {
-    background-color: #45a844;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(77, 186, 71, 0.4);
+    background-color: #45a844;           /* Darker green */
+    transform: translateY(-2px);         /* Move up slightly */
+    box-shadow: 0 4px 15px rgba(77, 186, 71, 0.4);  /* Green shadow */
 }
 
+/* Product actions container */
 .product-actions {
-    margin-top: 30px;
+    margin-top: 30px;                    /* Space above */
 }
 
+/* ============================================
+   ADMIN PAGE STYLES
+   ============================================ */
+/* Admin page container */
+.admin-container {
+    width: 100%;                         /* Full width */
+    max-width: 100%;                     /* No max width limit */
+    margin: 40px 0;                      /* Vertical margins */
+    padding: 20px 40px;                  /* Internal padding */
+    box-sizing: border-box;              /* Include padding in width */
+}
+
+/* Admin header section */
+.admin-header {
+    text-align: center;                  /* Center content */
+    margin-bottom: 40px;                 /* Space below */
+}
+
+/* Admin header heading */
+.admin-header h1 {
+    color: var(--rare);                   /* Gold color */
+    font-size: 2.5rem;                   /* Large size */
+    margin-bottom: 10px;                 /* Space below */
+}
+
+/* Admin stats grid */
+.admin-stats {
+    display: grid;                       /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsive columns */
+    gap: 20px;                           /* Space between cards */
+    margin-bottom: 40px;                 /* Space below */
+    width: 100%;                        /* Full width */
+}
+
+/* Stat card container */
+.stat-card {
+    background: white;                   /* White background */
+    border-radius: 10px;                 /* Rounded corners */
+    padding: 25px;                       /* Internal padding */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);  /* Shadow for depth */
+    text-align: center;                  /* Center content */
+}
+
+/* Stat card heading */
+.stat-card h3 {
+    color: var(--rare);                   /* Gold color */
+    margin-bottom: 10px;                 /* Space below */
+    font-size: 1rem;                     /* Standard size */
+}
+
+/* Stat value display */
+.stat-card .stat-value {
+    font-size: 2.5rem;                   /* Extra large */
+    font-weight: bold;                   /* Bold weight */
+    color: var(--third);                 /* Dark text */
+    margin: 10px 0;                      /* Vertical margins */
+}
+
+/* Admin sections grid */
+.admin-sections {
+    display: grid;                       /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Responsive columns */
+    gap: 30px;                           /* Space between sections */
+    margin-bottom: 40px;                 /* Space below */
+    width: 100%;                        /* Full width */
+}
+
+/* Admin section container */
+.admin-section {
+    background: white;                   /* White background */
+    border-radius: 10px;                 /* Rounded corners */
+    padding: 25px;                      /* Internal padding */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);  /* Shadow for depth */
+}
+
+/* Admin section heading */
+.admin-section h2 {
+    color: var(--rare);                   /* Gold color */
+    margin-bottom: 20px;                 /* Space below */
+    font-size: 1.5rem;                   /* Medium-large size */
+    border-bottom: 2px solid var(--third);  /* Dark underline */
+    padding-bottom: 10px;                /* Space for border */
+}
+
+/* Admin section lists */
+.admin-section ul {
+    list-style: none;                    /* No bullets */
+    padding: 0;                          /* No padding */
+}
+
+/* Admin section list items */
+.admin-section li {
+    padding: 12px;                       /* Internal padding */
+    margin-bottom: 10px;                 /* Space between items */
+    background: #f8f9fa;                 /* Light gray background */
+    border-radius: 5px;                  /* Rounded corners */
+    border-left: 4px solid var(--third);  /* Dark left border */
+}
+
+/* Admin section links */
+.admin-section a {
+    color: var(--rare);                   /* Gold color */
+    text-decoration: none;                /* No underline */
+    display: block;                       /* Block display */
+    transition: color 0.3s;               /* Smooth color transition */
+}
+
+/* Admin section link hover */
+.admin-section a:hover {
+    color: var(--third);                 /* Dark color on hover */
+}
+
+/* Admin actions container */
+.admin-actions {
+    display: flex;                       /* Flexbox layout */
+    flex-wrap: wrap;                     /* Wrap to new line if needed */
+    gap: 15px;                           /* Space between buttons */
+    margin-top: 20px;                    /* Space above */
+}
+
+/* Admin button base styles */
+.admin-btn {
+    padding: 12px 24px;                   /* Button padding */
+    background: var(--third);            /* Dark background */
+    color: white;                        /* White text */
+    border: none;                        /* No border */
+    border-radius: 5px;                  /* Rounded corners */
+    cursor: pointer;                     /* Pointer cursor */
+    font-size: 1rem;                     /* Standard size */
+    transition: background 0.3s;          /* Smooth background transition */
+    text-decoration: none;               /* No underline */
+    display: inline-block;                /* Inline block */
+}
+
+/* Admin button hover */
+.admin-btn:hover {
+    background: var(--rare);             /* Gold background on hover */
+}
+
+/* Danger button variant (red) */
+.admin-btn.danger {
+    background: #e74c3c;                 /* Red background */
+}
+
+/* Danger button hover */
+.admin-btn.danger:hover {
+    background: #c0392b;                 /* Darker red */
+}
+
+/* Success button variant (green) */
+.admin-btn.success {
+    background: #27ae60;                 /* Green background */
+}
+
+/* Success button hover */
+.admin-btn.success:hover {
+    background: #229954;                  /* Darker green */
+}
+
+/* Recent orders container */
+.recent-orders {
+    margin-top: 20px;                    /* Space above */
+}
+
+/* Order item container */
+.order-item {
+    padding: 15px;                       /* Internal padding */
+    margin-bottom: 10px;                 /* Space between items */
+    background: #f8f9fa;                 /* Light gray background */
+    border-radius: 5px;                  /* Rounded corners */
+    border-left: 4px solid var(--third);  /* Dark left border */
+}
+
+/* Order item strong text */
+.order-item strong {
+    color: var(--rare);                   /* Gold color */
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (Media Queries)
+   ============================================ */
+/* Large screens - login card max width */
+@media (min-width: 900px) {
+    .login-card {
+        max-width: 420px;                /* Maximum width on large screens */
+    }
+}
+
+/* Medium screens - product detail adjustments */
 @media (max-width: 968px) {
+    /* Product detail - single column layout */
     .product-detail {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 30px 20px;
+        grid-template-columns: 1fr;      /* Single column */
+        gap: 30px;                       /* Reduced gap */
+        padding: 30px 20px;              /* Reduced padding */
     }
     
+    /* Product image - smaller height */
     .product-image-container,
     .product-image-container .card-image {
-        min-height: 400px;
-        height: 400px;
+        min-height: 400px;               /* Reduced height */
+        height: 400px;                   /* Fixed height */
     }
     
+    /* Specs grid - single column */
     .specs-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;      /* Single column */
     }
 }
 
-.admin-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 40px 0;
-    padding: 20px 40px;
-    box-sizing: border-box;
-}
-
-.admin-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.admin-header h1 {
-    color: var(--rare, #2c3e50);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.admin-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.stat-card {
-    background: white;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.stat-card h3 {
-    color: var(--rare, #2c3e50);
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.stat-card .stat-value {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--third, #3498db);
-    margin: 10px 0;
-}
-
-.admin-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-    width: 100%;
-}
-
-.admin-section {
-    background: white;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.admin-section h2 {
-    color: var(--rare, #2c3e50);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--third, #3498db);
-    padding-bottom: 10px;
-}
-
-.admin-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.admin-section li {
-    padding: 12px;
-    margin-bottom: 10px;
-    background: #f8f9fa;
-    border-radius: 5px;
-    border-left: 4px solid var(--third, #3498db);
-}
-
-.admin-section a {
-    color: var(--rare, #2c3e50);
-    text-decoration: none;
-    display: block;
-    transition: color 0.3s;
-}
-
-.admin-section a:hover {
-    color: var(--third, #3498db);
-}
-
-.admin-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.admin-btn {
-    padding: 12px 24px;
-    background: var(--third, #3498db);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.admin-btn:hover {
-    background: var(--rare, #2c3e50);
-}
-
-.admin-btn.danger {
-    background: #e74c3c;
-}
-
-.admin-btn.danger:hover {
-    background: #c0392b;
-}
-
-.admin-btn.success {
-    background: #27ae60;
-}
-
-.admin-btn.success:hover {
-    background: #229954;
-}
-
-.recent-orders {
-    margin-top: 20px;
-}
-
-.order-item {
-    padding: 15px;
-    margin-bottom: 10px;
-    background: #f8f9fa;
-    border-radius: 5px;
-    border-left: 4px solid var(--third, #3498db);
-}
-
-.order-item strong {
-    color: var(--rare, #2c3e50);
+/* Small screens - mobile adjustments */
+@media (max-width: 768px) {
+    /* Header headings - smaller size */
+    .header h1,
+    .header-main .M h1 {
+        font-size: 1.2rem;               /* Smaller text */
+    }
+    
+    /* Header - reduced padding */
+    .header-main {
+        padding: 0 10px;                 /* Less horizontal padding */
+    }
+    
+    /* Right header section - reduced gap */
+    .R {
+        gap: 10px;                       /* Smaller gap */
+    }
+    
+    /* Header icons - smaller size */
+    .R img,
+    .L img {
+        height: 40px;                    /* Smaller height */
+        width: 40px;                     /* Smaller width */
+    }
+    
+    /* Navigation menu - narrower width */
+    .nav-menu {
+        width: 250px;                    /* Reduced width */
+    }
+    
+    /* Footer - single column layout */
+    .footer-main .footer-container,
+    .footer .footer-container {
+        grid-template-columns: 1fr;      /* Single column */
+        gap: 30px;                       /* Reduced gap */
+        text-align: center;              /* Center content */
+    }
+    
+    /* Footer brand - centered */
+    .footer-main .footer-brand,
+    .footer .footer-brand {
+        align-items: center;             /* Center alignment */
+        text-align: center;              /* Center text */
+    }
+    
+    /* Footer social - centered */
+    .footer-main .footer-social,
+    .footer .footer-social {
+        justify-content: center;         /* Center icons */
+    }
+    
+    /* Login/signup cards - adjusted margins */
+    .login-card,
+    .signup-card {
+        margin: 20px auto;               /* Reduced margins */
+        padding: 20px;                   /* Reduced padding */
+    }
+    
+    /* Category items - responsive width */
+    .category-item {
+        width: 100%;                     /* Full width */
+        max-width: 320px;                /* Maximum width */
+    }
+    
+    /* Item cards - responsive width */
+    .item-card,
+    .discount-item {
+        width: 100%;                     /* Full width */
+        max-width: 280px;                /* Maximum width */
+        height: auto;                    /* Auto height */
+    }
+    
+    /* Card images - maintain height */
+    .item-card img,
+    .item-card .card-image,
+    .discount-item img,
+    .discount-item .card-image,
+    .item img {
+        height: 180px;                   /* Fixed height */
+        object-fit: contain;             /* Show full image */
+        object-position: center;         /* Center image */
+    }
+    
+    /* Item containers - responsive width */
+    .item {
+        width: 100%;                     /* Full width */
+        max-width: 320px;                /* Maximum width */
+    }
+    
+    /* Profile dropdown - adjusted position */
+    .profile-dropdown {
+        right: -10px;                    /* Slight right offset */
+        min-width: 180px;                /* Reduced width */
+    }
+    
+    /* Profile container - adjusted margins */
+    .profile-container {
+        margin: 20px auto;               /* Reduced margins */
+        padding: 0 15px;                 /* Reduced padding */
+    }
+    
+    /* Profile header - reduced padding */
+    .profile-header {
+        padding: 30px 20px;              /* Reduced padding */
+    }
+    
+    /* Profile avatar - smaller size */
+    .profile-avatar {
+        width: 100px;                    /* Smaller width */
+        height: 100px;                   /* Smaller height */
+    }
+    
+    /* Profile content - reduced padding */
+    .profile-content {
+        padding: 25px 20px;              /* Reduced padding */
+    }
+    
+    /* Setting items - vertical layout */
+    .setting-item {
+        flex-direction: column;          /* Vertical stack */
+        align-items: flex-start;         /* Left alignment */
+        gap: 15px;                       /* Space between items */
+    }
+    
+    /* Setting button - full width */
+    .setting-btn {
+        width: 100%;                     /* Full width */
+    }
 }
