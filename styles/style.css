@@ -841,6 +841,17 @@ a.item-card-link:hover .item-card {
     opacity: 0.8;
 }
 
+.back-to-top-link {
+    margin-left: 10px;
+    color: var(--rare);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-to-top-link:hover {
+    text-decoration: underline;
+}
+
 /* ============================================
    PROFILE PAGE STYLES
    ============================================ */

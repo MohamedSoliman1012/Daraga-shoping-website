@@ -32,8 +32,8 @@ window.onload = function() {
     setupLogoutLinks();
     setupAdminMenu();
     setupUserButtons();
-    setupStaticButtons();
     setupCatalogSearch();
+    initFooterActions();
 };
 
 // -----------------------------
@@ -185,48 +185,6 @@ function setupUserButtons() {
 }
 
 // -----------------------------
-//  BASIC BUTTON ALERTS
-// -----------------------------
-function setupStaticButtons() {
-    attachAlert('cartIcon', 'Shopping cart coming soon!');
-    attachAlert('notificationIcon', 'No new notifications');
-    attachAlert('ordersLink', 'Orders page coming soon!');
-    attachAlert('cartLink', 'Shopping cart page coming soon!');
-
-    attachToAll('.add-to-cart-btn', 'Item added to cart!');
-    attachToAll('.buy-now-btn', 'Proceeding to checkout!');
-    attachToAll('.setting-btn', 'Feature coming soon!');
-    attachToAll('.admin-btn', 'Feature coming soon!');
-
-    var saveBtn = document.querySelector('.save-btn');
-    if (saveBtn) {
-        saveBtn.onclick = function(e) {
-            e.preventDefault();
-            alert('Profile saved successfully!');
-        };
-    }
-}
-
-function attachAlert(elementId, message) {
-    var target = document.getElementById(elementId);
-    if (!target) return;
-    target.onclick = function(e) {
-        e.preventDefault();
-        alert(message);
-    };
-}
-
-function attachToAll(selector, message) {
-    var buttons = document.querySelectorAll(selector);
-    buttons.forEach(function(btn) {
-        btn.onclick = function(e) {
-            e.preventDefault();
-            alert(message);
-        };
-    });
-}
-
-// -----------------------------
 //  SIMPLE KEYWORD SEARCH
 // -----------------------------
 function setupCatalogSearch() {
@@ -246,6 +204,30 @@ function setupCatalogSearch() {
                 alert('Try the sample keywords shown under the search bar.');
             }
         };
+    });
+}
+
+// -----------------------------
+//  FOOTER HELPERS
+// -----------------------------
+function initFooterActions() {
+    var currentYear = new Date().getFullYear();
+    var yearHolders = document.querySelectorAll('.footer-year');
+    yearHolders.forEach(function(holder) {
+        holder.textContent = currentYear;
+    });
+
+    var topLinks = document.querySelectorAll('.back-to-top-link');
+    topLinks.forEach(function(link) {
+        link.onclick = function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    });
+
+    var footerEmails = document.querySelectorAll('[data-footer-email]');
+    footerEmails.forEach(function(link) {
+        link.href = 'mailto:support@daragashop.com';
     });
 }
 
