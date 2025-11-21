@@ -1,289 +1,153 @@
-/**
- * Simple site helper scripts.
- * Every function is small and has a short comment so beginners can follow along.
- */
-
-var ROLE_KEY = 'daragaRole';
-
-var CATEGORY_KEYWORDS = {
-    bicycles: [
-        { keywords: ['mountain', 'trail', 'downhill'], target: 'mountain-bikes' },
-        { keywords: ['road', 'race', 'speed'], target: 'road-bikes' },
-        { keywords: ['city', 'urban', 'commuter', 'hybrid', 'bmx', 'kids'], target: 'city-bikes' }
-    ],
-    accessories: [
-        { keywords: ['helmet', 'head'], target: 'helmets' },
-        { keywords: ['light', 'lamp'], target: 'bike-lights' },
-        { keywords: ['lock', 'security'], target: 'locks' }
-    ],
-    repair: [
-        { keywords: ['multi', 'kit', 'tool'], target: 'multi-tools' },
-        { keywords: ['tire', 'tube', 'patch'], target: 'tire-tools' },
-        { keywords: ['chain', 'wrench'], target: 'chain-wrench' }
-    ]
-};
-
+// Wait for page to load
 window.onload = function() {
-    protectAdminPages();
-    setupMenuToggle();
-    setupProfileMenu();
-    setupLoginForm();
-    setupSignupForm();
-    setupLogoutLinks();
-    setupAdminMenu();
-    setupUserButtons();
-    setupCatalogSearch();
-    setupHomepageSearch();
-    initFooterActions();
-};
-
-// -----------------------------
-//  ACCESS CONTROL
-// -----------------------------
-function protectAdminPages() {
-    var currentRole = sessionStorage.getItem(ROLE_KEY);
-    var isAdminPage = document.body.classList.contains('admin-page');
-
-    if (currentRole === 'admin' && !isAdminPage) {
-        window.location.href = 'admin-dashboard.html';
-    }
-
-    if (currentRole !== 'admin' && isAdminPage) {
-        window.location.href = 'page-login.html';
-    }
-}
-
-// -----------------------------
-//  HEADER MENU
-// -----------------------------
-function setupMenuToggle() {
+    
+    // Menu Button
     var menuBtn = document.getElementById('menuToggle');
     var menu = document.getElementById('navMenu');
     var overlay = document.getElementById('navOverlay');
-
-    if (!menuBtn || !menu) return;
-
-    menuBtn.onclick = function() {
-        menu.classList.toggle('active');
-        if (overlay) overlay.classList.toggle('active');
-    };
-
+    
+    if (menuBtn) {
+        menuBtn.onclick = function() {
+            if (menu) menu.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        };
+    }
+    
     if (overlay) {
         overlay.onclick = function() {
-            menu.classList.remove('active');
+            if (menu) menu.classList.remove('active');
             overlay.classList.remove('active');
         };
     }
-}
-
-// -----------------------------
-//  PROFILE MENU
-// -----------------------------
-function setupProfileMenu() {
+    
+    // Profile Button
     var profileBtn = document.getElementById('profileIcon');
     var profileMenu = document.getElementById('profileDropdown');
-    if (!profileBtn || !profileMenu) return;
-
-    profileBtn.onclick = function(e) {
-        e.preventDefault();
-        profileMenu.classList.toggle('active');
-    };
-
-    document.addEventListener('click', function(e) {
-        if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
-            profileMenu.classList.remove('active');
+    
+    if (profileBtn && profileMenu) {
+        profileBtn.onclick = function(e) {
+            e.preventDefault();
+            profileMenu.classList.toggle('active');
+        };
+    }
+    
+    // Close profile when clicking outside
+    document.onclick = function(e) {
+        if (profileBtn && profileMenu) {
+            if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+                profileMenu.classList.remove('active');
+            }
         }
-    });
-}
-
-// -----------------------------
-//  FORMS (LOGIN & SIGNUP)
-// -----------------------------
-function setupLoginForm() {
+    };
+    
+    // Login Button
     var loginForm = document.getElementById('loginForm');
-    if (!loginForm) return;
-
-    loginForm.onsubmit = function(e) {
-        e.preventDefault();
-        var selectedRole = loginForm.querySelector('input[name="role"]:checked');
-        var roleValue = selectedRole ? selectedRole.value : 'user';
-        sessionStorage.setItem(ROLE_KEY, roleValue);
-        if (roleValue === 'admin') {
-            window.location.href = 'admin-dashboard.html';
-        } else {
-            window.location.href = 'page-home.html';
-        }
-    };
-}
-
-function setupSignupForm() {
-    var signupForm = document.querySelector('form[name="signupForm"]');
-    if (!signupForm) return;
-
-    signupForm.onsubmit = function(e) {
-        e.preventDefault();
-        var pass1 = signupForm.querySelector('input[name="password"]');
-        var pass2 = signupForm.querySelector('input[name="confirmPassword"]');
-        if (pass1.value !== pass2.value) {
-            alert('Passwords do not match!');
-        } else {
-            window.location.href = 'page-home.html';
-        }
-    };
-}
-
-function setupLogoutLinks() {
-    var logoutLinks = document.querySelectorAll('.logout');
-    logoutLinks.forEach(function(link) {
-        link.onclick = function() {
-            sessionStorage.removeItem(ROLE_KEY);
-        };
-    });
-}
-
-// -----------------------------
-//  ADMIN MENU + USER BUTTONS
-// -----------------------------
-function setupAdminMenu() {
-    var adminMenuToggle = document.getElementById('adminActionsToggle');
-    var adminMenuList = document.getElementById('adminActionsMenu');
-    if (!adminMenuToggle || !adminMenuList) return;
-
-    adminMenuToggle.onclick = function(e) {
-        e.preventDefault();
-        adminMenuList.classList.toggle('active');
-    };
-
-    document.addEventListener('click', function(e) {
-        if (!adminMenuList.contains(e.target) && e.target !== adminMenuToggle) {
-            adminMenuList.classList.remove('active');
-        }
-    });
-}
-
-function setupUserButtons() {
-    var userViewBtns = document.querySelectorAll('.user-view-btn');
-    userViewBtns.forEach(function(btn) {
-        btn.onclick = function() {
-            var name = btn.getAttribute('data-user') || 'this user';
-            alert('Viewing details for ' + name + '.');
-        };
-    });
-
-    var userRemoveBtns = document.querySelectorAll('.user-remove-btn');
-    userRemoveBtns.forEach(function(btn) {
-        btn.onclick = function(e) {
+    if (loginForm) {
+        loginForm.onsubmit = function(e) {
             e.preventDefault();
-            var name = btn.getAttribute('data-user') || 'this user';
-            if (confirm('Remove ' + name + ' from the list?')) {
-                var row = findParentRow(btn);
-                if (row && row.parentElement) {
-                    row.parentElement.removeChild(row);
-                }
-            }
-        };
-    });
-}
-
-// -----------------------------
-//  SIMPLE KEYWORD SEARCH
-// -----------------------------
-function setupCatalogSearch() {
-    var categorySearchForms = document.querySelectorAll('.category-search');
-    categorySearchForms.forEach(function(form) {
-        form.onsubmit = function(e) {
-            e.preventDefault();
-            var scope = form.getAttribute('data-scope');
-            var input = form.querySelector('input');
-            var targetId = getCategoryTarget(scope, input ? input.value : '');
-            if (targetId) {
-                var targetEl = document.getElementById(targetId);
-                if (targetEl) {
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+            var adminRadio = document.querySelector('input[value="admin"]');
+            if (adminRadio && adminRadio.checked) {
+                window.location.href = 'admin.html';
             } else {
-                alert('Try the sample keywords shown under the search bar.');
+                window.location.href = 'home.html';
             }
         };
-    });
-}
-
-// -----------------------------
-//  HOMEPAGE SEARCH
-// -----------------------------
-function setupHomepageSearch() {
-    var homeSearchForm = document.getElementById('homeSearchForm');
-    if (!homeSearchForm) return;
-
-    homeSearchForm.onsubmit = function(e) {
-        e.preventDefault();
-        var input = document.getElementById('homeSearchInput');
-        if (!input || !input.value.trim()) return;
-
-        var searchTerm = input.value.toLowerCase().trim();
-        
-        // Simple keyword matching - redirect to appropriate page
-        if (searchTerm.indexOf('bicycle') !== -1 || searchTerm.indexOf('bike') !== -1 || 
-            searchTerm.indexOf('mountain') !== -1 || searchTerm.indexOf('road') !== -1 || 
-            searchTerm.indexOf('city') !== -1) {
-            window.location.href = 'page-bicycles.html';
-        } else if (searchTerm.indexOf('accessory') !== -1 || searchTerm.indexOf('helmet') !== -1 || 
-                   searchTerm.indexOf('light') !== -1 || searchTerm.indexOf('lock') !== -1) {
-            window.location.href = 'page-accessories.html';
-        } else if (searchTerm.indexOf('repair') !== -1 || searchTerm.indexOf('tool') !== -1 || 
-                   searchTerm.indexOf('tire') !== -1 || searchTerm.indexOf('chain') !== -1 || 
-                   searchTerm.indexOf('wrench') !== -1) {
-            window.location.href = 'page-repair.html';
-        } else {
-            // Default: show all categories on homepage
-            alert('Searching for: ' + input.value + '\n\nTry keywords like: bicycle, accessory, repair, tool');
-        }
-    };
-}
-
-// -----------------------------
-//  FOOTER HELPERS
-// -----------------------------
-function initFooterActions() {
-    var currentYear = new Date().getFullYear();
-    var yearHolders = document.querySelectorAll('.footer-year');
-    yearHolders.forEach(function(holder) {
-        holder.textContent = currentYear;
-    });
-
-    var topLinks = document.querySelectorAll('.back-to-top-link');
-    topLinks.forEach(function(link) {
-        link.onclick = function(e) {
+    }
+    
+    // Signup Button
+    var signupForm = document.querySelector('form[name="signupForm"]');
+    if (signupForm) {
+        signupForm.onsubmit = function(e) {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    });
-
-    var footerEmails = document.querySelectorAll('[data-footer-email]');
-    footerEmails.forEach(function(link) {
-        link.href = 'mailto:support@daragashop.com';
-    });
-}
-
-function getCategoryTarget(scope, value) {
-    if (!scope || !value) return null;
-    var entries = CATEGORY_KEYWORDS[scope];
-    if (!entries) return null;
-    var term = value.toLowerCase();
-    for (var i = 0; i < entries.length; i++) {
-        var entry = entries[i];
-        for (var j = 0; j < entry.keywords.length; j++) {
-            if (term.indexOf(entry.keywords[j]) !== -1) {
-                return entry.target;
+            var pass1 = signupForm.querySelector('input[name="password"]');
+            var pass2 = signupForm.querySelector('input[name="confirmPassword"]');
+            if (pass1.value !== pass2.value) {
+                alert('Passwords do not match!');
+            } else {
+                window.location.href = 'home.html';
             }
-        }
+        };
     }
-    return null;
-}
-
-function findParentRow(element) {
-    while (element && element.tagName !== 'TR') {
-        element = element.parentElement;
+    
+    // Cart Icon
+    var cartIcon = document.getElementById('cartIcon');
+    if (cartIcon) {
+        cartIcon.onclick = function(e) {
+            e.preventDefault();
+            alert('Shopping cart coming soon!');
+        };
     }
-    return element;
-}
+    
+    // Notification Icon
+    var notifIcon = document.getElementById('notificationIcon');
+    if (notifIcon) {
+        notifIcon.onclick = function(e) {
+            e.preventDefault();
+            alert('No new notifications');
+        };
+    }
+    
+    // Orders Link
+    var ordersLink = document.getElementById('ordersLink');
+    if (ordersLink) {
+        ordersLink.onclick = function(e) {
+            e.preventDefault();
+            alert('Orders page coming soon!');
+        };
+    }
+    
+    // Cart Link
+    var cartLink = document.getElementById('cartLink');
+    if (cartLink) {
+        cartLink.onclick = function(e) {
+            e.preventDefault();
+            alert('Shopping cart page coming soon!');
+        };
+    }
+    
+    // Add to Cart Buttons
+    var addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
+    for (var i = 0; i < addToCartBtns.length; i++) {
+        addToCartBtns[i].onclick = function(e) {
+            e.preventDefault();
+            alert('Item added to cart!');
+        };
+    }
+    
+    // Buy Now Buttons
+    var buyNowBtns = document.querySelectorAll('.buy-now-btn');
+    for (var i = 0; i < buyNowBtns.length; i++) {
+        buyNowBtns[i].onclick = function(e) {
+            e.preventDefault();
+            alert('Proceeding to checkout!');
+        };
+    }
+    
+    // Save Button
+    var saveBtn = document.querySelector('.save-btn');
+    if (saveBtn) {
+        saveBtn.onclick = function(e) {
+            e.preventDefault();
+            alert('Profile saved successfully!');
+        };
+    }
+    
+    // Setting Buttons
+    var settingBtns = document.querySelectorAll('.setting-btn');
+    for (var i = 0; i < settingBtns.length; i++) {
+        settingBtns[i].onclick = function(e) {
+            e.preventDefault();
+            alert('Feature coming soon!');
+        };
+    }
+    
+    // Admin Buttons
+    var adminBtns = document.querySelectorAll('.admin-btn');
+    for (var i = 0; i < adminBtns.length; i++) {
+        adminBtns[i].onclick = function(e) {
+            e.preventDefault();
+            alert('Feature coming soon!');
+        };
+    }
+    
+};

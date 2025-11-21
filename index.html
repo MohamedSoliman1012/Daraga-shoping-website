@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Daraga Shop</title>
+    <title>Login - Daraga Shop</title>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
@@ -13,7 +13,6 @@
     <script src="js/navigation.js" defer></script>
 </head>
 <body>
-    <!-- PAGE NOTE: Simple signup page with form and footer reference links -->
     <!-- Header Section -->
     <header class="header-main">
         <!-- Left: Empty space for alignment -->
@@ -29,21 +28,40 @@
         <div class="R"></div>
     </header>
     
-    <!-- Main Content: Sign Up Form -->
-    <div class="signup-card">
-        <h1>Sign Up</h1>
+    <!-- Main Content: Login Form -->
+    <div class="login-card">
+        <h1>Login</h1>
         
-        <!-- Sign Up Form -->
-        <form name="signupForm" action="page-home.html" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
+        <!-- Login Form -->
+        <form name="loginForm" id="loginForm">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-            <button type="submit">Sign Up</button>
+            
+            <!-- User Role Selection -->
+            <div class="role-selection">
+                <label class="role-label">Login as:</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="user" checked>
+                        <span>User</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="admin">
+                        <span>Admin</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit">Login</button>
         </form>
         
-        <!-- Login Link -->
-        <p>Already have an account? <a href="page-login.html">Login here</a></p>
+        <!-- Divider -->
+        <div class="divider">
+            <span>or</span>
+        </div>
+        
+        <!-- Sign Up Link -->
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
     </div>
     
     <!-- Footer Section -->
@@ -64,41 +82,45 @@
                 </div>
             </div>
             
+            <!-- Quick Links -->
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="page-home.html">Home</a></li>
-                    <li><a href="page-bicycles.html">Bicycles</a></li>
-                    <li><a href="page-repair.html">Repair Tools</a></li>
-                    <li><a href="page-accessories.html">Accessories</a></li>
-                    <li><a href="page-support.html">Support Center</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="bicycles.html">Bicycles</a></li>
+                    <li><a href="repair.html">Repair Tools</a></li>
+                    <li><a href="home.html">Categories</a></li>
+                    <li><a href="home.html">Special Offers</a></li>
                 </ul>
             </div>
             
+            <!-- Customer Service -->
             <div class="footer-section">
                 <h3>Customer Service</h3>
                 <ul>
-                    <li><a href="mailto:support@daragashop.com" data-footer-email>Contact Us</a></li>
-                    <li><a href="page-support.html#faq">FAQ</a></li>
-                    <li><a href="page-support.html#shipping">Shipping Info</a></li>
-                    <li><a href="page-support.html#returns">Returns & Exchanges</a></li>
-                    <li><a href="page-support.html#tracking">Track Order</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Track Order</a></li>
                 </ul>
             </div>
             
+            <!-- Legal -->
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="page-support.html#privacy">Privacy Policy</a></li>
-                    <li><a href="page-support.html#terms">Terms of Service</a></li>
-                    <li><a href="page-support.html#cookies">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
                 </ul>
             </div>
         </div>
         
         <!-- Footer Bottom: Copyright -->
         <div class="footer-bottom">
-            <p>&copy; <span class="footer-year">2025</span> Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists · <a href="#" class="back-to-top-link">Back to top</a></p>
+            <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
         </div>
     </footer>
 </body>
