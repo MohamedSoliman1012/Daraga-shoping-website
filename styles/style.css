@@ -507,6 +507,41 @@ body {
     cursor: pointer;
 }
 
+/* Added: lightweight keyword search bars inside the catalog pages */
+.category-search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.category-search input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.category-search button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--rare);
+    color: var(--third);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.category-search-note {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.7);
+    padding: 0 20px;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
 .category {
     display: block;
     margin: 40px 0;
@@ -1349,6 +1384,218 @@ a.item-card-link:hover .item-card {
     margin-top: 20px;
 }
 
+.admin-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: var(--second);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.admin-branding {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-branding-text h1 {
+    margin: 0;
+    color: var(--rare);
+    font-size: 1.8rem;
+}
+
+.admin-label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+}
+
+.admin-actions-wrapper {
+    position: relative;
+}
+
+.admin-actions-btn {
+    background: var(--rare);
+    color: var(--third);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-actions-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.admin-actions-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: var(--second);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    padding: 10px 0;
+    min-width: 220px;
+    display: none;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.admin-actions-menu.active {
+    display: block;
+}
+
+.admin-actions-menu .admin-link {
+    display: block;
+    padding: 12px 20px;
+    color: var(--main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.admin-actions-menu .admin-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.admin-actions-menu .logout {
+    color: #ff6b6b;
+}
+
+.admin-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.admin-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.admin-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: var(--rare, #2c3e50);
+    gap: 8px;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #dfe6e9;
+    font-size: 1rem;
+    background: #fdfdfd;
+}
+
+.admin-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Added: helper card under the add product form */
+.admin-panel-hint {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.admin-panel-hint h2 {
+    margin-top: 0;
+    color: var(--rare);
+}
+
+.admin-panel-hint ul {
+    padding-left: 20px;
+    margin: 10px 0 0;
+}
+
+.admin-panel-hint a {
+    color: var(--third);
+    text-decoration: none;
+}
+
+.admin-panel-hint a:hover {
+    text-decoration: underline;
+}
+
+.admin-table-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    padding: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table thead {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.admin-table th {
+    font-size: 0.9rem;
+    color: var(--rare, #2c3e50);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-pill.active {
+    background: rgba(39, 174, 96, 0.15);
+    color: #27ae60;
+}
+
+.status-pill.suspended {
+    background: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+}
+
+.status-pill.pending {
+    background: rgba(243, 156, 18, 0.15);
+    color: #f39c12;
+}
+
 .admin-btn {
     padding: 12px 24px;
     background: var(--third);
@@ -1360,6 +1607,17 @@ a.item-card-link:hover .item-card {
     transition: background 0.3s;
     text-decoration: none;
     display: inline-block;
+}
+
+.admin-btn.outline {
+    background: transparent;
+    color: var(--third);
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.admin-btn.outline:hover {
+    background: rgba(0,0,0,0.05);
+    color: var(--third);
 }
 
 .admin-btn:hover {

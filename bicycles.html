@@ -79,9 +79,16 @@
     <!-- Main Content: Bicycles Page -->
     <div class="bicycles-page">
         <h1>Bicycles</h1>
+
+        <!-- Added: quick keyword search so it scrolls to the right bike type -->
+        <form class="category-search" data-scope="bicycles">
+            <input type="search" name="bicycleSearch" placeholder="Type mountain, road, city, kids..." aria-label="Search bicycle categories">
+            <button type="submit">Go</button>
+        </form>
+        <p class="category-search-note">Example keywords: mountain, road, city, hybrid, BMX, kids.</p>
         
         <!-- Mountain Bikes Section -->
-        <div class="bike-subcategory">
+        <div class="bike-subcategory" id="mountain-bikes">
             <h2>Mountain Bikes</h2>
             <div class="subcategory-items">
                 <!-- Product Card 1 -->
@@ -112,7 +119,7 @@
         </div>
         
         <!-- Road Bikes Section -->
-        <div class="bike-subcategory">
+        <div class="bike-subcategory" id="road-bikes">
             <h2>Road Bikes</h2>
             <div class="subcategory-items">
                 <!-- Product Card 1 -->
@@ -143,7 +150,7 @@
         </div>
         
         <!-- City Bikes Section -->
-        <div class="bike-subcategory">
+        <div class="bike-subcategory" id="city-bikes">
             <h2>City Bikes</h2>
             <div class="subcategory-items">
                 <!-- Product Card 1 -->
