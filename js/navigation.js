@@ -33,6 +33,7 @@ window.onload = function() {
     setupAdminMenu();
     setupUserButtons();
     setupCatalogSearch();
+    setupHomepageSearch();
     initFooterActions();
 };
 
@@ -205,6 +206,39 @@ function setupCatalogSearch() {
             }
         };
     });
+}
+
+// -----------------------------
+//  HOMEPAGE SEARCH
+// -----------------------------
+function setupHomepageSearch() {
+    var homeSearchForm = document.getElementById('homeSearchForm');
+    if (!homeSearchForm) return;
+
+    homeSearchForm.onsubmit = function(e) {
+        e.preventDefault();
+        var input = document.getElementById('homeSearchInput');
+        if (!input || !input.value.trim()) return;
+
+        var searchTerm = input.value.toLowerCase().trim();
+        
+        // Simple keyword matching - redirect to appropriate page
+        if (searchTerm.indexOf('bicycle') !== -1 || searchTerm.indexOf('bike') !== -1 || 
+            searchTerm.indexOf('mountain') !== -1 || searchTerm.indexOf('road') !== -1 || 
+            searchTerm.indexOf('city') !== -1) {
+            window.location.href = 'page-bicycles.html';
+        } else if (searchTerm.indexOf('accessory') !== -1 || searchTerm.indexOf('helmet') !== -1 || 
+                   searchTerm.indexOf('light') !== -1 || searchTerm.indexOf('lock') !== -1) {
+            window.location.href = 'page-accessories.html';
+        } else if (searchTerm.indexOf('repair') !== -1 || searchTerm.indexOf('tool') !== -1 || 
+                   searchTerm.indexOf('tire') !== -1 || searchTerm.indexOf('chain') !== -1 || 
+                   searchTerm.indexOf('wrench') !== -1) {
+            window.location.href = 'page-repair.html';
+        } else {
+            // Default: show all categories on homepage
+            alert('Searching for: ' + input.value + '\n\nTry keywords like: bicycle, accessory, repair, tool');
+        }
+    };
 }
 
 // -----------------------------

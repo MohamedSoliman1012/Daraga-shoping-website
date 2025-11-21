@@ -79,11 +79,11 @@
     
     <!-- Main Content: Home Page -->
     <div class="home">
-        <!-- Search Bar -->
-        <div class="search-home">
-            <img src="images/icons/search-icon.png" height="50px" width="50px" alt="Search">
-            <input type="search" placeholder="Search products..." aria-label="Search products">
-        </div>
+        <!-- Simple Search Bar -->
+        <form class="search-home" id="homeSearchForm">
+            <input type="search" id="homeSearchInput" placeholder="Search bicycles, accessories, tools..." aria-label="Search products" required>
+            <button type="submit">Search</button>
+        </form>
         
         <!-- Categories Section -->
         <h1>Categories</h1>

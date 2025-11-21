@@ -483,28 +483,46 @@ body {
     font-weight: 700;
 }
 
+/* Simple homepage search bar */
 .search-home {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 30px 0;
+    margin: 30px auto;
     padding: 0 20px;
+    max-width: 600px;
 }
 
 .search-home input {
-    width: 100%;
-    max-width: 500px;
-    height: 50px;
+    flex: 1;
+    height: 45px;
     border: 2px solid var(--third);
-    border-radius: 8px;
-    text-align: center;
+    border-radius: 6px;
     font-size: 1rem;
-    padding: 0 20px;
+    padding: 0 15px;
+    outline: none;
 }
 
-.search-home img {
+.search-home input:focus {
+    border-color: var(--rare);
+}
+
+.search-home button {
+    height: 45px;
+    padding: 0 25px;
+    background: var(--rare);
+    color: var(--third);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-home button:hover {
+    background: #ffb347;
 }
 
 /* Added: lightweight keyword search bars inside the catalog pages */
