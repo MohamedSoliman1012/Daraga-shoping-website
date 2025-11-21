@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repair Tools</title>
+    <title>Bicycles Page</title>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
@@ -13,6 +13,7 @@
     <script src="js/navigation.js" defer></script>
 </head>
 <body>
+    <!-- PAGE NOTE: Bicycle category page with quick search and sub sections -->
     <!-- Header Section -->
     <header class="header-main">
         <!-- Left: Mobile Menu Toggle -->
@@ -21,7 +22,7 @@
         </div>
         
         <!-- Center: Logo and Brand Name -->
-        <a href="home.html" class="M">
+        <a href="page-home.html" class="M">
             <img src="images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
             <h1 class="logo-text">DARAGA</h1>
         </a>
@@ -44,7 +45,7 @@
                     <img src="images/icons/avatar.png" height="50px" width="50px" alt="Profile">
                 </a>
                 <div class="profile-dropdown" id="profileDropdown">
-                    <a href="profile.html" class="dropdown-item">
+                    <a href="page-profile.html" class="dropdown-item">
                         <span>👤</span> Your Profile
                     </a>
                     <a href="#" class="dropdown-item" id="ordersLink">
@@ -54,7 +55,7 @@
                         <span>🛒</span> Shopping Cart
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="index.html" class="dropdown-item logout">
+                    <a href="page-login.html" class="dropdown-item logout">
                         <span>🚪</span> Log Out
                     </a>
                 </div>
@@ -68,126 +69,115 @@
     <!-- Navigation Menu (Mobile) -->
     <nav class="nav-menu" id="navMenu">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="bicycles.html">Bicycles</a></li>
-            <li><a href="repair.html">Bike Repair</a></li>
-            <li><a href="accessories.html">Accessories</a></li>
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="page-home.html">Home</a></li>
+            <li><a href="page-bicycles.html">Bicycles</a></li>
+            <li><a href="page-repair.html">Bike Repair</a></li>
+            <li><a href="page-accessories.html">Accessories</a></li>
+            <li><a href="page-profile.html">Profile</a></li>
         </ul>
     </nav>
     
-    <!-- Main Content: Repair Tools Page -->
+    <!-- Main Content: Bicycles Page -->
     <div class="bicycles-page">
-        <h1>Repair Tools</h1>
+        <h1>Bicycles</h1>
 
-        <!-- Added: keyword search to jump to the right repair tool set -->
-        <form class="category-search" data-scope="repair">
-            <input type="search" name="repairSearch" placeholder="Type multi-tool, tire, chain..." aria-label="Search repair categories">
+        <!-- Added: quick keyword search so it scrolls to the right bike type -->
+        <form class="category-search" data-scope="bicycles">
+            <input type="search" name="bicycleSearch" placeholder="Type mountain, road, city, kids..." aria-label="Search bicycle categories">
             <button type="submit">Go</button>
         </form>
-        <p class="category-search-note">Try words like multi-tool, tire, chain, or wrench.</p>
+        <p class="category-search-note">Example keywords: mountain, road, city, hybrid, BMX, kids.</p>
         
-        <!-- Multi-Tools & Kits Section -->
-        <div class="bike-subcategory" id="multi-tools">
-            <h2>Multi-Tools & Kits</h2>
+        <!-- Mountain Bikes Section -->
+        <div class="bike-subcategory" id="mountain-bikes">
+            <h2>Mountain Bikes</h2>
             <div class="subcategory-items">
                 <!-- Product Card 1 -->
-                <a href="tools/multi-tools.html" class="item-card-link">
+                <a href="bikes/mountain-bikes.html" class="item-card-link">
                     <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/Flyftrey Snowflake Multi-Tool, 18-in-1.jpg')" aria-label="Flyftrey Snowflake Multi-Tool"></div>
+                        <div class="card-image" style="background-image:url('images/bikes/mountain/3.jpg')" aria-label="TrailMaster X"></div>
                         <div class="card-body">
-                            <h3 class="card-title">Flyftrey Snowflake Multi-Tool, 18-in-1</h3>
-                            <div class="card-price">$24.99</div>
+                            <h3 class="card-title">TrailMaster X</h3>
+                            <div class="card-price">$1,199</div>
                         </div>
                     </div>
                 </a>
                 
                 <!-- Product Card 2 -->
-                <a href="tools/multi-tools.html" class="item-card-link">
+                <a href="bikes/mountain-bikes.html" class="item-card-link">
                     <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/Multitool Bicycle Repair Kit Multi 16 Tools in One.jpg')" aria-label="Multitool Bicycle Repair Kit"></div>
+                        <div class="card-image" style="background-image:url('images/bikes/mountain/4.jpg')" aria-label="Sprint Elite"></div>
                         <div class="card-body">
-                            <h3 class="card-title">Multitool Bicycle Repair Kit Multi 16 Tools</h3>
-                            <div class="card-price">$19.99</div>
+                            <h3 class="card-title">Sprint Elite</h3>
+                            <div class="card-price">$4,299</div>
                         </div>
                     </div>
                 </a>
                 
                 <!-- View More Link -->
-                <a href="tools/multi-tools.html" class="view-more">View More</a>
+                <a href="bikes/mountain-bikes.html" class="view-more">View More</a>
             </div>
         </div>
         
-        <!-- Tire Repair Tools Section -->
-        <div class="bike-subcategory" id="tire-tools">
-            <h2>Tire Repair Tools</h2>
+        <!-- Road Bikes Section -->
+        <div class="bike-subcategory" id="road-bikes">
+            <h2>Road Bikes</h2>
             <div class="subcategory-items">
                 <!-- Product Card 1 -->
-                <a href="tools/tire-repair.html" class="item-card-link">
+                <a href="product-roadster-3000.html" class="item-card-link">
                     <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/VOSAREA 48Pcs 30mm Motor Bicycle Bike Tyre Tire Inner Tube Puncture Rubber Patches Repair Kit.jpg')" aria-label="VOSAREA Puncture Repair Kit"></div>
+                        <div class="card-image" style="background-image:url('images/bikes/road/2.jpg')" aria-label="TREK DOMAN+SLR 6"></div>
                         <div class="card-body">
-                            <h3 class="card-title">VOSAREA 48Pcs Puncture Repair Kit</h3>
-                            <div class="card-price">$12.99</div>
+                            <h3 class="card-title">TREK DOMAN+SLR 6</h3>
+                            <div class="card-price">$7,999</div>
                         </div>
                     </div>
                 </a>
                 
                 <!-- Product Card 2 -->
-                <a href="tools/tire-repair.html" class="item-card-link">
+                <a href="bikes/road-bikes.html" class="item-card-link">
                     <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/MySouq-Store Bicycle Tyre Lever Tube Remover.jpg')" aria-label="Bicycle Tyre Lever"></div>
+                        <div class="card-image" style="background-image:url('images/bikes/road/1.jpg')" aria-label="Road Bike Pro"></div>
                         <div class="card-body">
-                            <h3 class="card-title">Bicycle Tyre Lever Tube Remover</h3>
-                            <div class="card-price">$8.99</div>
+                            <h3 class="card-title">Road Bike Pro</h3>
+                            <div class="card-price">$2,499</div>
                         </div>
                     </div>
                 </a>
                 
                 <!-- View More Link -->
-                <a href="tools/tire-repair.html" class="view-more">View More</a>
+                <a href="bikes/road-bikes.html" class="view-more">View More</a>
             </div>
         </div>
         
-        <!-- Chain & Wrench Tools Section -->
-        <div class="bike-subcategory" id="chain-wrench">
-            <h2>Chain & Wrench Tools</h2>
+        <!-- City Bikes Section -->
+        <div class="bike-subcategory" id="city-bikes">
+            <h2>City Bikes</h2>
             <div class="subcategory-items">
                 <!-- Product Card 1 -->
-                <a href="tools/chain-wrench.html" class="item-card-link">
+                <a href="bikes/city-bikes.html" class="item-card-link">
                     <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/Portable Bike Chain Tool Compact Bicycle Chain Splitter Cutter.jpg')" aria-label="Portable Bike Chain Tool"></div>
+                        <div class="card-image" style="background-image:url('images/bikes/city/1.jpg')" aria-label="City Cruiser"></div>
                         <div class="card-body">
-                            <h3 class="card-title">Portable Bike Chain Tool Splitter</h3>
-                            <div class="card-price">$15.99</div>
+                            <h3 class="card-title">City Cruiser</h3>
+                            <div class="card-price">$899</div>
                         </div>
                     </div>
                 </a>
                 
                 <!-- Product Card 2 -->
-                <a href="tools/chain-wrench.html" class="item-card-link">
+                <a href="bikes/city-bikes.html" class="item-card-link">
                     <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/Cycling Motorcycle Bicycle Chain Crankset Brush.jpg')" aria-label="Chain Crankset Brush"></div>
+                        <div class="card-image" style="background-image:url('images/bikes/city/2.jpg')" aria-label="Urban Commuter"></div>
                         <div class="card-body">
-                            <h3 class="card-title">Chain Crankset Brush</h3>
-                            <div class="card-price">$9.99</div>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Product Card 3 -->
-                <a href="tools/chain-wrench.html" class="item-card-link">
-                    <div class="item-card">
-                        <div class="card-image" style="background-image:url('images/Tools/Gunpla 46 Piece  Drive Socket Wrench Driver.jpg')" aria-label="Socket Wrench Driver"></div>
-                        <div class="card-body">
-                            <h3 class="card-title">Gunpla 46 Piece Socket Wrench Driver</h3>
-                            <div class="card-price">$29.99</div>
+                            <h3 class="card-title">Urban Commuter</h3>
+                            <div class="card-price">$1,299</div>
                         </div>
                     </div>
                 </a>
                 
                 <!-- View More Link -->
-                <a href="tools/chain-wrench.html" class="view-more">View More</a>
+                <a href="bikes/city-bikes.html" class="view-more">View More</a>
             </div>
         </div>
     </div>
@@ -214,11 +204,11 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="bicycles.html">Bicycles</a></li>
-                    <li><a href="repair.html">Repair Tools</a></li>
-                    <li><a href="home.html">Categories</a></li>
-                    <li><a href="home.html">Special Offers</a></li>
+                    <li><a href="page-home.html">Home</a></li>
+                    <li><a href="page-bicycles.html">Bicycles</a></li>
+                    <li><a href="page-repair.html">Repair Tools</a></li>
+                    <li><a href="page-home.html">Categories</a></li>
+                    <li><a href="page-home.html">Special Offers</a></li>
                 </ul>
             </div>
             

@@ -51,13 +51,17 @@ Daraga Shop is an e-commerce platform designed by three Computer Science student
 ```
 web-development-project/
 │
-├── index.html              # Login page
-├── signup.html             # User registration
-├── home.html               # Homepage
-├── bicycles.html           # Bicycles category page
-├── repair.html             # Repair tools category page
-├── profile.html            # User profile page
-├── roadster-3000.html     # Product detail page (example)
+├── page-login.html              # Login page
+├── page-signup.html             # User registration
+├── page-home.html               # Homepage
+├── page-bicycles.html           # Bicycles category page
+├── page-accessories.html        # Accessories category page
+├── page-repair.html             # Repair tools category page
+├── page-profile.html            # User profile page
+├── product-roadster-3000.html   # Product detail page (example)
+├── admin-dashboard.html         # Primary admin panel
+├── admin-product-add.html       # Admin add-product form
+├── admin-users-manage.html      # Admin user management
 │
 ├── bikes/                  # Bicycle subcategory pages
 │   ├── mountain-bikes.html
@@ -95,7 +99,7 @@ web-development-project/
    ```
 
 2. **Open in browser**
-   - Simply open `index.html` in your web browser
+   - Simply open `page-login.html` in your web browser
    - Or use a local server:
      ```bash
      # Using Python
@@ -110,25 +114,31 @@ web-development-project/
 
 3. **Navigate to the application**
    - Open `http://localhost:8000` in your browser
-   - Start from `index.html` (login page)
+   - Start from `page-login.html` (login page)
 
 ## 📄 Pages Overview
 
 ### Authentication Pages
-- **`index.html`**: User login page with email and password authentication
-- **`signup.html`**: New user registration page
+- **`page-login.html`**: User login page with email and password authentication
+- **`page-signup.html`**: New user registration page
 
 ### Main Pages
-- **`home.html`**: Main homepage with featured products and categories
-- **`bicycles.html`**: Bicycle category page with subcategories (Mountain, Road, City)
-- **`repair.html`**: Repair tools category page with organized tool categories
-- **`profile.html`**: User profile management page
+- **`page-home.html`**: Main homepage with featured products and categories
+- **`page-bicycles.html`**: Bicycle category page with subcategories (Mountain, Road, City)
+- **`page-accessories.html`**: Accessories category page for helmets, locks, and lights
+- **`page-repair.html`**: Repair tools category page with organized tool categories
+- **`page-profile.html`**: User profile management page
 
 ### Product Pages
-- **`roadster-3000.html`**: Example product detail page
+- **`product-roadster-3000.html`**: Example product detail page
 - **`bikes/mountain-bikes.html`**: Mountain bikes subcategory
 - **`bikes/road-bikes.html`**: Road bikes subcategory
 - **`bikes/city-bikes.html`**: City bikes subcategory
+
+### Admin Pages
+- **`admin-dashboard.html`**: Overview of orders, products, and users
+- **`admin-product-add.html`**: Simple form to publish a new item
+- **`admin-users-manage.html`**: Minimal table for viewing or removing users
 
 ## 🎨 Styling
 

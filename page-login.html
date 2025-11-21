@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Daraga Shop</title>
+    <title>Login - Daraga Shop</title>
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/style.css">
@@ -13,6 +13,7 @@
     <script src="js/navigation.js" defer></script>
 </head>
 <body>
+    <!-- PAGE NOTE: Login screen with brand header, form, and footer links -->
     <!-- Header Section -->
     <header class="header-main">
         <!-- Left: Empty space for alignment -->
@@ -28,21 +29,40 @@
         <div class="R"></div>
     </header>
     
-    <!-- Main Content: Sign Up Form -->
-    <div class="signup-card">
-        <h1>Sign Up</h1>
+    <!-- Main Content: Login Form -->
+    <div class="login-card">
+        <h1>Login</h1>
         
-        <!-- Sign Up Form -->
-        <form name="signupForm" action="home.html" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
+        <!-- Login Form -->
+        <form name="loginForm" id="loginForm">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-            <button type="submit">Sign Up</button>
+            
+            <!-- User Role Selection -->
+            <div class="role-selection">
+                <label class="role-label">Login as:</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="user" checked>
+                        <span>User</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="admin">
+                        <span>Admin</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit">Login</button>
         </form>
         
-        <!-- Login Link -->
-        <p>Already have an account? <a href="index.html">Login here</a></p>
+        <!-- Divider -->
+        <div class="divider">
+            <span>or</span>
+        </div>
+        
+        <!-- Sign Up Link -->
+        <p>Don't have an account? <a href="page-signup.html">Sign up here</a></p>
     </div>
     
     <!-- Footer Section -->
@@ -67,11 +87,11 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="bicycles.html">Bicycles</a></li>
-                    <li><a href="repair.html">Repair Tools</a></li>
-                    <li><a href="home.html">Categories</a></li>
-                    <li><a href="home.html">Special Offers</a></li>
+                    <li><a href="page-home.html">Home</a></li>
+                    <li><a href="page-bicycles.html">Bicycles</a></li>
+                    <li><a href="page-repair.html">Repair Tools</a></li>
+                    <li><a href="page-home.html">Categories</a></li>
+                    <li><a href="page-home.html">Special Offers</a></li>
                 </ul>
             </div>
             
