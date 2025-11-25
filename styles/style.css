@@ -514,12 +514,6 @@ body {
     padding: 0 20px;
 }
 
-.discount {
-    display: block;
-    margin: 40px 0;
-    text-align: center;
-    padding: 0 20px;
-}
 
 .category-item {
     display: inline-block;
@@ -535,7 +529,7 @@ body {
 
 .category-item img {
     width: 100%;
-    height: 100%;
+    height: 70%;
     object-fit: cover;
 }
 
@@ -566,21 +560,7 @@ body {
     cursor: pointer;
 }
 
-.discount-item {
-    background: white;
-    padding: 0;
-    border: 2px solid rgba(0,0,0,0.1);
-    border-radius: 12px;
-    text-align: center;
-    width: 280px;
-    display: inline-block;
-    margin: 16px;
-    vertical-align: top;
-    overflow: hidden;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    cursor: pointer;
-    min-height: 240px;
-}
+
 
 .item-card img {
     width: 100%;
@@ -603,26 +583,9 @@ body {
     background-repeat: no-repeat;
 }
 
-.discount-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    background-color: #f6f6f6;
-}
 
-.discount-item .card-image {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-    background-color: #f6f6f6;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
+
 
 .item-card .card-body {
     padding: 12px;
@@ -632,13 +595,6 @@ body {
     gap: 8px;
 }
 
-.discount-item .card-body {
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-}
 
 .item-card .card-title {
     font-weight: 700;
@@ -647,12 +603,6 @@ body {
     margin: 0;
 }
 
-.discount-item .card-title {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--third);
-    margin: 0;
-}
 
 .item-card .card-price {
     color: var(--buy);
@@ -660,21 +610,14 @@ body {
     font-size: 1rem;
 }
 
-.discount-item .card-price {
-    color: var(--buy);
-    font-weight: 800;
-    font-size: 1rem;
-}
+
 
 .item-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
-.discount-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
+
 
 a.item-card-link {
     text-decoration: none;
