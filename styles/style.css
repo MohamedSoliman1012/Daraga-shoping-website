@@ -184,7 +184,7 @@ body {
 }
 
 /* ============================================
-   NAVIGATION MENU (Mobile)
+   NAVIGATION MENU
    ============================================ */
 .nav-menu {
     position: fixed;
@@ -1714,51 +1714,6 @@ a.item-card-link:hover .item-card {
     transform: translateY(-2px);
 }
 
-/* Responsive Design for Cart and Orders */
-@media (max-width: 768px) {
-    .cart-item,
-    .order-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .cart-item-image,
-    .order-item-image {
-        width: 100%;
-        height: 200px;
-    }
-    
-    .order-header {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .order-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .order-actions {
-        width: 100%;
-    }
-    
-    .track-order-btn,
-    .reorder-btn,
-    .remove-btn,
-    .cancel-order-btn {
-        flex: 1;
-        width: 100%;
-    }
-    
-    .cart-actions {
-        flex-direction: column;
-    }
-    
-    .continue-shopping-btn,
-    .checkout-btn {
-        width: 100%;
-    }
-}
 
 /* ============================================
    PAGE TITLE STYLES
@@ -1965,11 +1920,4 @@ a.item-card-link:hover .item-card {
    ============================================ */
 .footer-legal-title {
     margin-top: 30px;
-}
-
-/* Responsive for Checkout */
-@media (max-width: 768px) {
-    .form-row {
-        grid-template-columns: 1fr;
-    }
 }
