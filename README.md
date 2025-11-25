@@ -1,6 +1,6 @@
 # 🚴 Daraga Shop - Bicycle E-Commerce Platform
 
-A modern, responsive e-commerce website for bicycles, repair tools, and cycling accessories. Built with HTML, CSS, and JavaScript, Daraga Shop provides a seamless shopping experience for cycling enthusiasts.
+A modern e-commerce website for bicycles, repair tools, and cycling accessories. Built with HTML, CSS, and JavaScript, Daraga Shop provides a seamless shopping experience for cycling enthusiasts.
 
 ## 📋 Table of Contents
 
@@ -26,7 +26,7 @@ Daraga Shop is an e-commerce platform designed by three Computer Science student
 - **Accessories**: Cycling accessories and spare parts
 
 ### 🎨 User Interface
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Desktop Optimized**: Designed for optimal desktop viewing experience (1200px width)
 - **Modern UI/UX**: Clean, intuitive interface with smooth navigation
 - **Interactive Elements**: Dropdown menus, shopping cart, notifications, and profile management
 - **Category Organization**: Well-organized product categories with subcategories
@@ -42,7 +42,7 @@ Daraga Shop is an e-commerce platform designed by three Computer Science student
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup for structure
-- **CSS3**: Modern styling with responsive design
+- **CSS3**: Modern styling with fixed-width layout
 - **JavaScript (Vanilla)**: Interactive functionality and navigation
 - **No Framework Dependencies**: Pure vanilla implementation for fast loading
 
@@ -133,22 +133,20 @@ web-development-project/
 ## 🎨 Styling
 
 The project uses a single comprehensive stylesheet (`styles/style.css`) that includes:
-- Responsive grid layouts
+- Fixed-width grid layouts
 - Modern card-based product displays
 - Navigation menu styling
 - Footer design
 - Form styling
 - Interactive element hover effects
-- Mobile-responsive breakpoints
 
 ## 🔧 JavaScript Functionality
 
 The `js/navigation.js` file handles:
-- Mobile menu toggle
+- Slide-out navigation menu
 - Profile dropdown menu
-- Shopping cart interactions (placeholder)
-- Notification system (placeholder)
-- Keyboard navigation (Escape key to close menus)
+- Shopping cart functionality
+- Order management
 - Click-outside-to-close functionality
 
 ## 📦 Product Categories

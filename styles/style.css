@@ -1864,3 +1864,42 @@ a.item-card-link:hover .item-card {
 .footer-legal-title {
     margin-top: 30px;
 }
+
+/* ============================================
+   PAGE TITLE INLINE STYLES (moved from HTML)
+   ============================================ */
+.bikes-page-title {
+    text-align: center;
+    color: var(--rare);
+    text-decoration: underline var(--third);
+    font-size: 2.4rem;
+    margin: 40px 0 20px;
+    font-weight: 700;
+}
+
+/* ============================================
+   ADMIN PANEL STYLES
+   ============================================ */
+.admin-container-full {
+    width: 100%;
+}
+
+.order-status-completed {
+    color: #27ae60;
+}
+
+.order-status-processing {
+    color: #f39c12;
+}
+
+.order-status-shipped {
+    color: #3498db;
+}
+
+.order-status-pending {
+    color: #f39c12;
+}
+
+.checkout-link-hidden {
+    display: none;
+}
