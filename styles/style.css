@@ -1002,6 +1002,9 @@ a.item-card-link:hover .item-card {
     border: none;
     cursor: pointer;
 }
+.view-more:hover{
+    background-color: #fdcc1b;
+}
 
 /* ============================================
    PRODUCT DETAIL PAGE STYLES
