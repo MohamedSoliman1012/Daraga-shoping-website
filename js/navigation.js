@@ -1,11 +1,8 @@
-// Wait for page to load
+
 window.onload = function() {
     
-    // Clear old orders only on first page load in this session
-    if (!sessionStorage.getItem('ordersInitialized')) {
-        localStorage.removeItem('orders');
-        sessionStorage.setItem('ordersInitialized', 'true');
-    }
+    
+
     
     // Menu Button
     var menuBtn = document.getElementById('menuToggle');
