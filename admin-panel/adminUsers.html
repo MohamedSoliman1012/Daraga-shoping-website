@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Users</title>
+    <link rel="stylesheet" href="../styles/AdminStyle.css">
+    <script src="../js/AdminScript.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="adminHome.html" class="logo">Admin<b class="logo-highlight">Panel</b></a>
+        <nav class="navbar">
+            <a href="adminHome.html">Home</a>
+            <a href="adminProducts.html">Products</a>
+            <a href="adminOrders.html">Orders</a>
+            <a href="adminUsers.html">Users</a>
+        </nav>
+        <div class="icons">
+            <a href="#" id="adminLogoutLink">👤 Admin</a>
+        </div>
+    </header>
+
+    <h1 class="title">USER ACCOUNTS</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <p> Username : <b class="value-text">Ahmed Mohamed</b> </p>
+            <p> Email : <b class="value-text">ahmed@gmail.com</b> </p>
+            <p> User Type : <b class="value-text type-admin">Admin</b> </p>
+            <a href="#" class="delete-btn" onclick="return confirm('Delete this user?');">Delete User</a>
+        </div>
+
+        <div class="box">
+            <p> Username : <b class="value-text">Mona Sayed</b> </p>
+            <p> Email : <b class="value-text">mona@gmail.com</b> </p>
+            <p> User Type : <b class="value-text">User</b> </p>
+            <a href="#" class="delete-btn" onclick="return confirm('Delete this user?');">Delete User</a>
+        </div>
+
+        <div class="box">
+            <p> Username : <b class="value-text">Khaled Ali</b> </p>
+            <p> Email : <b class="value-text">khaled@gmail.com</b> </p>
+            <p> User Type : <b class="value-text">User</b> </p>
+            <a href="#" class="delete-btn" onclick="return confirm('Delete this user?');">Delete User</a>
+        </div>
+
+    </div>
+</body>
+
+</html>

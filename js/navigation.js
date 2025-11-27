@@ -46,28 +46,38 @@ window.onload = function() {
     // Login Button
     var loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        loginForm.onsubmit = function(e) {
+        loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            var adminRadio = document.querySelector('input[value="admin"]');
+            // look for radio inside the form with value "admin"
+            var adminRadio = loginForm.querySelector('input[type="radio"][value="admin"]');
             if (adminRadio && adminRadio.checked) {
-                window.location.href = 'admin.html';
+                window.location.href = '../admin-panel/adminHome.html';
+            } else {
+                // go to home by default
+                window.location.href = 'home.html';
             }
-        };
+        });
     }
     
     // Signup Button
     var signupForm = document.querySelector('form[name="signupForm"]');
     if (signupForm) {
-        signupForm.onsubmit = function(e) {
+        signupForm.addEventListener('submit', function(e) {
             e.preventDefault();
             var pass1 = signupForm.querySelector('input[name="password"]');
             var pass2 = signupForm.querySelector('input[name="confirmPassword"]');
+            if (!pass1 || !pass2) {
+                alert('Please enter password and confirmation.');
+                return;
+            }
             if (pass1.value !== pass2.value) {
                 alert('Passwords do not match!');
-            } else {
-                window.location.href = 'home.html';
+                pass1.focus();
+                return;
             }
-        };
+            // simple success action
+            window.location.href = 'home.html';
+        });
     }
     
     // Cart Icon

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Products</title>
+    <link rel="stylesheet" href="../styles/AdminStyle.css">
+    <script src="../js/AdminScript.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="adminHome.html" class="logo">Admin<b class="logo-highlight">Panel</b></a>
+        <nav class="navbar">
+            <a href="adminHome.html">Home</a>
+            <a href="adminProducts.html">Products</a>
+            <a href="adminOrders.html">Orders</a>
+            <a href="adminUsers.html">Users</a>
+        </nav>
+        <div class="icons">
+            <a href="#" id="adminLogoutLink">👤 Admin</a>
+        </div>
+    </header>
+
+    <h1 class="title">SHOP PRODUCTS</h1>
+
+    <div class="add-product-form">
+        <h3>ADD PRODUCT</h3>
+        <form>
+            <input type="text" name="name" placeholder="Enter product name" class="box" required>
+            <input type="number" name="price" min="0" placeholder="Enter product price" class="box" required>
+            <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
+            <input type="submit" value="Add product" name="add_product" class="btn">
+        </form>
+    </div>
+
+    <h1 class="title">PRODUCTS</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="../images/bikes/mountain/6.jpg" alt="not found" class="product-image-box">
+            <div class="name product-name-admin">Mountain Bike X1</div>
+            <div class="price product-price-admin">$500/-</div>
+            <a href="#" class="option-btn">Update</a>
+            <a href="#" class="delete-btn">Delete</a>
+        </div>
+
+        <div class="box">
+            <img src="../images/tools/Flyftrey Snowflake Multi-Tool, 18-in-1.jpg" alt="not found"
+                class="product-image-box">
+            <div class="name product-name-admin">Repair Kit Pro</div>
+            <div class="price product-price-admin">$45/-</div>
+            <a href="#" class="option-btn">Update</a>
+            <a href="#" class="delete-btn">Delete</a>
+        </div>
+
+        <div class="box">
+            <img src="../images/branding/accessories.jpg" alt="not found" class="product-image-box">
+            <div class="name product-name-admin">Safety Helmet</div>
+            <div class="price product-price-admin">$75/-</div>
+            <a href="#" class="option-btn">Update</a>
+            <a href="#" class="delete-btn">Delete</a>
+        </div>
+
+    </div>
+</body>
+
+</html>

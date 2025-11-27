@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Orders</title>
+    <link rel="stylesheet" href="../styles/AdminStyle.css">
+    <script src="../js/AdminScript.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="adminHome.html" class="logo">Admin<b class="logo-highlight">Panel</b></a>
+        <nav class="navbar">
+            <a href="adminHome.html">Home</a>
+            <a href="adminProducts.html">Products</a>
+            <a href="adminOrders.html">Orders</a>
+            <a href="adminUsers.html">Users</a>
+        </nav>
+        <div class="icons">
+            <a href="#" id="adminLogoutLink">👤 Admin</a>
+        </div>
+    </header>
+
+    <h1 class="title">PLACED ORDERS</h1>
+
+    <div class="box-container">
+
+        <div class="box order-box">
+            <p> User Id : <b class="value-text">1</b> </p>
+            <p> Placed On : <b class="value-text">26-Nov-2025</b> </p>
+            <p> Name : <b class="value-text">Omar Ali</b> </p>
+            <p> Number : <b class="value-text">01012345678</b> </p>
+            <p> Email : <b class="value-text">omar@gmail.com</b> </p>
+            <p> Address : <b class="value-text">Cairo, Egypt, Street 10</b> </p>
+            <p> Total Products : <b class="value-text">Mountain Bike (1)</b> </p>
+            <p> Total Price : <b class="value-text">$500/-</b> </p>
+            <p> Payment Method : <b class="value-text">Cash on delivery</b> </p>
+
+            <div class="order-status-static pending">Pending</div>
+
+            <a href="#" class="delete-btn" onclick="return confirm('Delete this order?');">Delete</a>
+        </div>
+
+        <div class="box order-box">
+            <p> User Id : <b class="value-text">2</b> </p>
+            <p> Placed On : <b class="value-text">27-Nov-2025</b> </p>
+            <p> Name : <b class="value-text">Sarah Ahmed</b> </p>
+            <p> Number : <b class="value-text">01198765432</b> </p>
+            <p> Email : <b class="value-text">sarah@gmail.com</b> </p>
+            <p> Address : <b class="value-text">Alexandria, Egypt, Street 9</b> </p>
+            <p> Total Products : <b class="value-text">Road Bike (1)</b> </p>
+            <p> Total Price : <b class="value-text">$1200/-</b> </p>
+            <p> Payment Method : <b class="value-text">Credit Card</b> </p>
+
+            <div class="order-status-static completed">Completed</div>
+            <a href="#" class="delete-btn" onclick="return confirm('Delete this order?');">Delete</a>
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
