@@ -7,7 +7,6 @@
     --rare: #FFCB74;
     --third: #111111;
     --buy: #4dba47;
-    --discounts: rgb(214, 54, 67);
 }
 
 /* ============================================
@@ -438,7 +437,7 @@ width: 70%;
 .item-details h2{
     text-align: center;
     margin: 10px auto;
-    color: rgb(1, 180, 1); 
+    color: var(--buy); 
 }
 
 .item-details p{
@@ -485,7 +484,7 @@ width: 70%;
     font-size: large;
     font-weight: bold;
     color: var(--main);
-    background-color: rgb(19, 176, 19);
+    background-color: var(--buy);
     padding: 10px;
     border-radius: 10px;
 
