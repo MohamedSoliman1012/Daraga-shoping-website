@@ -67,6 +67,19 @@ body {
     color: var(--rare);
 }
 
+.header .icons a{
+    margin: 0 10px;
+    font-size: 18px;
+    color: var(--rare);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.header .icons a:hover{
+     background-color: var(--third);
+    color: var(--main);
+}
+
 /* --- Main Content Styling --- */
 .title {
     text-align: center;
