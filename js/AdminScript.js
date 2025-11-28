@@ -1,8 +1,8 @@
 window.onload = function() {
-    var adminLogoutLink = document.getElementById('adminLogoutLink');
+    var logout = document.getElementById('logout-icon');
 
-    if (adminLogoutLink) {
-        adminLogoutLink.onclick = function(e) {
+    if (logout) {
+        logout.onclick = function(e) {
             e.preventDefault();
 
             var confirmLogout = confirm('Are you sure you want to log out?');

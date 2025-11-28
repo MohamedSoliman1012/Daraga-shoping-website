@@ -50,7 +50,7 @@ body {
 
 .header .logo {
     font-size: 25px;
-    color: var(--main);
+    color: var(--rare);
     font-weight: bold;
 }
 
@@ -90,6 +90,9 @@ body {
 .header .icons a:hover{
      background-color: var(--third);
     color: var(--main);
+}
+.header h1{
+    color: var(--rare);
 }
 /* ============================================
    PROFILE DROPDOWN MENU
@@ -1336,26 +1339,31 @@ body {
     margin: 100px auto 160px;
     display: block;
     padding: 20px;
+    text-align: center;
    }
    .cart-details h1{
     color: var(--rare);
     }
    .cart-items{
+    
     display: flex;
     gap: 30px;
     margin: 15px;
+    padding: 10px;
+    border-bottom: 0.5px solid var(--main);
    }
    .cart-items img{
     height: 20%;
     width: 20%;
    }
    .cart-items p{
-    font-size: 2em;
+
+    font-size: 1.5em;
     font-weight: bold;
     color: var(--main);
    }
    .order-sum{
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: var(--rare);
    }
    .order-sum label{
