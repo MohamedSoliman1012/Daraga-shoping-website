@@ -25,7 +25,7 @@
 
 * h1{
     color: var(--third);
-    font-size: 2.5em;
+  
     margin: 20px auto;
     font-weight: 700;
 }
@@ -55,51 +55,42 @@ body {
     justify-content: space-between;
 }
 
-.header .logo {
+.logo {
     font-size: 25px;
     color: var(--rare);
     font-weight: bold;
 }
 
 
-.header .navbar a {
+.navbar a {
     margin: 0 10px;
     font-size: 18px;
     color: var(--rare);
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.header .navbar a:hover {
+.navbar a:hover {
     background-color: var(--third);
     color: var(--main);
 }
 
-.header .icons div {
-    font-size: 18px;
-    color: var(--third);
-    cursor: pointer;
+
+.icons a{
+    font-size: 25px;
+    color: var(--rare);
     padding: 10px;
-}
-
-.header .icons div:hover {
-    color: var(--rare);
-}
-
-.header .icons a{
-    margin: 0 10px;
-    font-size: 18px;
-    color: var(--rare);
-    padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .header .icons a:hover{
      background-color: var(--third);
-    color: var(--main);
 }
+
 .header h1{
     color: var(--rare);
+    font-size: 1.5em;
+    margin: 0 auto;
 }
 
 
