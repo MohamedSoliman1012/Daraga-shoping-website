@@ -663,9 +663,8 @@ width: 70%;
      border-top: 0.5px solid var(--main);
    }
    .cart-buttons button{
-        font-weight: bold;
-
-    font-size: 1.2em;
+    font-size: large;
+    font-weight: bold;
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
