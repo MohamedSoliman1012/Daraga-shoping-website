@@ -2,16 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=1200">
-    <title>Shopping Cart - Daraga Shop</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="js/navigation.js"></script>
+    <title>Accessories</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!-- JavaScript -->
+    <script src="../js/navigation.js" defer></script>
 </head>
 
 <body>
     <!-- Header Section -->
-    <header class="header">
+   <header class="header">
         <a href="home.html" class="logo">User Panel</a>
         <nav class="navbar">
             <a href="home.html">Home</a>
@@ -22,22 +27,56 @@
             <a href="orders.html">Your Orders</a>
         </nav>
         <div class="icons">
-            <a href="index.html" id="logout-icon">👤</a>
+            <a href="#" id="logout-icon" onclick="logout()">👤</a>
         </div>
     </header>
 
-    
 
-    <div class="order-container">
-        <h1>Your Orders</h1>
-        <p>You have no orders yet. Start shopping!</p>
+    <h1 class="bikes-page-title">Accessories</h1>
+
+    <div class="category">
+       
+            <div class="item-card">
+                <div class="card-top"><img src="../images/Tools/Cycling Motorcycle Bicycle Chain Crankset Brush.jpg" alt="not found"></div>
+                <div class="card-bottom">
+
+                    <label>TrailMaster X</label>
+                    <p>3000$</p>
+
+
+                </div>
+            </div>
+
+
+        <div class="item-card">
+            <div class="card-top"><img src="../images/Tools/MySouq-Store Bicycle Tyre Lever Tube Remover.jpg" alt="not found"></div>
+            <div class="card-bottom">
+
+                <label>TrailMaster X</label>
+                <p>3000$</p>
+
+
+            </div>
+        </div>
+        <div class="item-card">
+            <div class="card-top"><img src="../images/branding/accessories.jpg" alt="not found"></div>
+            <div class="card-bottom">
+
+                <label>TrailMaster X</label>
+                <p>3000$</p>
+
+
+            </div>
+        </div>
+
     </div>
+
     <!-- Footer Section -->
     <footer class="footer-main">
         <div class="footer-container">
             <!-- Brand Information -->
             <div class="footer-section footer-brand">
-                <img src="images/branding/logo.png" alt="Daraga Logo">
+                <img src="../images/branding/logo.png" alt="Daraga Logo">
                 <h3 class="brand-name">DARAGA</h3>
                 <p>We are three Computer Science students passionate about technology and cycling. Our project aims to
                     create a platform that serves cyclists by connecting them with everything they need — from bikes and

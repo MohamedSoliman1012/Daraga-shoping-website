@@ -2,20 +2,14 @@
 <html lang="en">
 
 <head>
-    <!-- Meta Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200">
-    <title>Bike Lights - Daraga Shop</title>
-
-    <!-- Stylesheets -->
+    <title>item page</title>
     <link rel="stylesheet" href="../styles/style.css">
-
-    <!-- JavaScript -->
-    <script src="../js/navigation.js" defer></script>
+    <script src="../js/navigation.js"></script>
 </head>
 
 <body>
-    <!-- Header Section -->
    <header class="header">
         <a href="home.html" class="logo">User Panel</a>
         <nav class="navbar">
@@ -27,49 +21,37 @@
             <a href="orders.html">Your Orders</a>
         </nav>
         <div class="icons">
-            <a href="#" id="logout-icon">👤</a>
+            <a href="#" id="logout-icon" onclick="logout()">👤</a>
         </div>
     </header>
 
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <div class="product-image-container">
+                <div class="card-image" style="background-image:url('../images/bikes/road/2.jpg')"
+                    aria-label="TREK DOMAN+SLR 6"></div>
+            </div>
 
+            <div class="product-info">
+                <h1>TREK DOMAN+SLR 6</h1>
+                <div class="product-price">$7,999</div>
 
-    <h1 class="bikes-page-title">Bike Lights</h1>
+                <p class="product-description">
+                    The TREK DOMAN+SLR 6 is a premium road bike designed for serious cyclists who demand the best in
+                    performance,
+                    comfort, and style. Built with cutting-edge materials and precision engineering, this bike delivers
+                    exceptional
+                    speed and handling on both long-distance rides and competitive racing. Experience the perfect blend
+                    of aerodynamics
+                    and comfort with the TREK DOMAN+SLR 6.
+                </p>
 
-    <div class="category">
-        <a href="../itempage.html" class="item-card-link">
-            <div class="item-card">
-                <div class="card-top"><img src="../images/bikes/city/1.jpg" alt="not found"></div>
-                <div class="card-bottom">
-
-                    <label>TrailMaster X</label>
-                    <p>3000$</p>
-
-
+                <div class="product-actions">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
                 </div>
             </div>
-        </a>
-
-        <div class="item-card">
-            <div class="card-top"><img src="../images/bikes/city/1.jpg" alt="not found"></div>
-            <div class="card-bottom">
-
-                <label>TrailMaster X</label>
-                <p>3000$</p>
-
-
-            </div>
         </div>
-        <div class="item-card">
-            <div class="card-top"><img src="../images/bikes/city/1.jpg" alt="not found"></div>
-            <div class="card-bottom">
-
-                <label>TrailMaster X</label>
-                <p>3000$</p>
-
-
-            </div>
-        </div>
-
     </div>
 
     <!-- Footer Section -->
@@ -77,7 +59,7 @@
         <div class="footer-container">
             <!-- Brand Information -->
             <div class="footer-section footer-brand">
-                <img src="images/branding/logo.png" alt="Daraga Logo">
+                <img src="../images/branding/logo.png" alt="Daraga Logo">
                 <h3 class="brand-name">DARAGA</h3>
                 <p>We are three Computer Science students passionate about technology and cycling. Our project aims to
                     create a platform that serves cyclists by connecting them with everything they need — from bikes and

@@ -2,58 +2,8 @@
 window.onload = function() {
     
     
-  var logout = document.getElementById('logout-icon');
-
-    if (logout) {
-        logout.onclick = function(e) {
-            e.preventDefault();
-
-            var confirmLogout = confirm('Are you sure you want to log out?');
-
-            if (confirmLogout) {
-                window.location.href = '../index.html';
-            }
-        };
-    }
+  
     
-    // Menu Button
-    var menuBtn = document.getElementById('menuToggle');
-    var menu = document.getElementById('navMenu');
-    var overlay = document.getElementById('navOverlay');
-    
-    if (menuBtn) {
-        menuBtn.onclick = function() {
-            if (menu) menu.classList.toggle('active');
-            if (overlay) overlay.classList.toggle('active');
-        };
-    }
-    
-    if (overlay) {
-        overlay.onclick = function() {
-            if (menu) menu.classList.remove('active');
-            overlay.classList.remove('active');
-        };
-    }
-    
-    // Profile Button
-    var profileBtn = document.getElementById('profileIcon');
-    var profileMenu = document.getElementById('profileDropdown');
-    
-    if (profileBtn && profileMenu) {
-        profileBtn.onclick = function(e) {
-            e.preventDefault();
-            profileMenu.classList.toggle('active');
-        };
-    }
-    
-    // Close profile when clicking outside
-    document.onclick = function(e) {
-        if (profileBtn && profileMenu) {
-            if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
-                profileMenu.classList.remove('active');
-            }
-        }
-    };
     
     // Login Button
     var loginForm = document.getElementById('loginForm');
@@ -66,7 +16,7 @@ window.onload = function() {
                 window.location.href = '../admin-panel/adminHome.html';
             } else {
                 // go to home by default
-                window.location.href = 'home.html';
+                window.location.href = '../user-panel/home.html';
             }
         });
     }
@@ -92,38 +42,35 @@ window.onload = function() {
         });
     }
     
-    // Cart Icon
-    var cartIcon = document.getElementById('cartIcon');
-    if (cartIcon && !cartIcon.getAttribute('href') || cartIcon.getAttribute('href') === '#') {
-        cartIcon.onclick = function(e) {
-            e.preventDefault();
-            window.location.href = 'shopping-cart.html';
-        };
-    }
-    
-    // Notification Icon
-    var notifIcon = document.getElementById('notificationIcon');
-    if (notifIcon) {
-        notifIcon.onclick = function(e) {
-            e.preventDefault();
-            alert('No new notifications');
-        };
-    }
-  
-    
-    
-    
 
-    
-  
-
-    
-   
-  
-    
- 
-    
    
    
     
 };
+
+function login(){
+    usercheck = document.getElementById("user").value;
+    admimcheck = document.getElementById("admin").value;
+    if(usercheck==user){
+        window.location.href = '../index.html';
+    }else{
+        window.location.href = '../adminHome.html';
+    }
+}
+
+function logout(){
+            checklogout = confirm('Are you sure you want to log out?');
+             if (checklogout) {
+                window.location.href = '../index.html';
+            }
+
+}
+
+function continueBtn(){
+    window.location.href = '../user-panel/home.html';
+
+}
+function checkout(){
+    window.location.href = '../user-panel/checkout.html';
+
+}
