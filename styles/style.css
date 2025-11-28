@@ -25,7 +25,7 @@
 
 * h1{
     color: var(--third);
-  
+    font-size: 2.5em;
     margin: 20px auto;
     font-weight: 700;
 }
@@ -274,8 +274,7 @@ body {
 /* ============================================
    ITEM CARDS (Product Cards)
    ============================================ */
-.item-card {
-    background: var(--main);
+.item-card { 
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     height: 280px;
@@ -322,13 +321,14 @@ body {
 
 
 .footer-container {
-    
-   width: 100%;
-    gap: 200px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
 }
 .footer-section{
     padding: 20px;
-    border-bottom: 0.5px solid var(--main);
 }
 .footer-section h3 {
     color: var(--rare);
@@ -427,6 +427,7 @@ body {
 
 }
 .item-details {
+    text-align: center;
 width: 70%;
 }
 
@@ -465,6 +466,8 @@ width: 70%;
     width: 200px;
     height: 50px;
     font-size: large;
+        font-weight: bold;
+
     background-color: var(--rare);
     padding: 10px;
     border-radius: 10px;
@@ -480,6 +483,7 @@ width: 70%;
     width: 200px;
     height: 50px;
     font-size: large;
+    font-weight: bold;
     color: var(--main);
     background-color: rgb(19, 176, 19);
     padding: 10px;
@@ -659,6 +663,8 @@ width: 70%;
      border-top: 0.5px solid var(--main);
    }
    .cart-buttons button{
+        font-weight: bold;
+
     font-size: 1.2em;
     cursor: pointer;
     padding: 10px;
