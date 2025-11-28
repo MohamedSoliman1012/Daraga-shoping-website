@@ -23,6 +23,13 @@
     text-decoration: none;
 }
 
+* h1{
+    color: var(--third);
+    font-size: 2.5em;
+    margin: 20px auto;
+    font-weight: 700;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -433,566 +440,85 @@ body {
     opacity: 0.8;
 }
 
-/* ============================================
-   BICYCLES PAGE STYLES
-   ============================================ */
-.bike-subcategory {
-    width: 80%;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: var(--main);
-    border: 1px solid var(--third);
-    border-radius: 8px;
-}
 
-.bike-subcategory h2 {
-    font-size: 2rem;
-    color: var(--second);
-    border-bottom: 2px solid var(--rare);
-    margin: 0 0 20px 0;
-    padding-bottom: 10px;
-}
-
-.subcategory-items {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-}
-
-.item {
-    width: 350px;
-    margin: 10px;
-    border: 1px solid var(--main);
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: white;
-}
-
-.item img {
-    width: 100%;
-    height: 200px;
-    border-radius: 8px 8px 0 0;
-    object-fit: contain;
-    object-position: center;
-    background-color: #f6f6f6;
-    display: block;
-}
-
-.price {
-    font-size: 20px;
-    color: var(--buy);
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.view-more {
-    width: 200px;
-    margin: 10px;
-    padding: 15px 30px;
-    background-color: var(--rare);
-    color: var(--third);
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-}
-
-.view-more:hover {
-    background-color: #fdcc1b;
-}
 
 /* ============================================
    PRODUCT DETAIL PAGE STYLES
    ============================================ */
-.product-detail-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.product-detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: white;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-.product-image-container {
-    width: 100%;
-    background-color: #f6f6f6;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-    max-height: 500px;
-}
-
-.product-image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-.product-image-container .card-image {
-    width: 100%;
-    height: 500px;
-    min-height: 500px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #f6f6f6;
-    display: block;
-}
-
-.product-info h1 {
-    color: var(--third);
-    font-size: 2.5rem;
-    margin: 0 0 20px 0;
-    font-weight: 700;
-}
-
-.product-price {
-    font-size: 2rem;
-    color: var(--buy);
-    font-weight: 800;
-    margin: 20px 0;
-}
-
-.product-description {
-    color: var(--third);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin: 30px 0;
-}
-
-.product-specs {
-    margin: 30px 0;
-}
-
-.product-features {
-    margin: 30px 0;
-}
-
-.product-specs h2 {
-    color: var(--rare);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--rare);
-    padding-bottom: 10px;
-}
-
-.product-features h2 {
-    color: var(--rare);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--rare);
-    padding-bottom: 10px;
-}
-
-.specs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.spec-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background-color: #f6f6f6;
-    border-radius: 8px;
-}
-
-.spec-label {
-    font-weight: 600;
-    color: var(--second);
-}
-
-.spec-value {
-    color: var(--third);
-}
-
-.features-list {
-    list-style: none;
-    padding: 0;
-}
-
-.features-list li {
-    padding: 12px 0 12px 30px;
-    position: relative;
-    color: var(--third);
-    font-size: 1rem;
-}
-
-.features-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--buy);
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.add-to-cart-btn {
-    width: 100%;
-    padding: 18px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    background-color: var(--rare);
-    color: var(--third);
-    margin-top: 30px;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #ffb347;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 203, 116, 0.4);
-}
-
-.buy-now-btn {
-    width: 100%;
-    padding: 18px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    background-color: var(--buy);
-    color: white;
-    margin-top: 15px;
-}
-
-.buy-now-btn:hover {
-    background-color: #45a844;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(77, 186, 71, 0.4);
-}
-
-.product-actions {
-    margin-top: 30px;
-}
-
-/* ============================================
-   CART & ORDERS - LIST ITEMS (Shared)
-   ============================================ */
-.cart-item,
-.order-item {
+.item-details-container{
+    width: 60%;
+    height: 30%;
+    background-color: var(--second);
     display: flex;
     gap: 20px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    margin-bottom: 15px;
-    align-items: center;
-}
-
-.cart-item {
+    margin: 40px auto 20px auto ;
     padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 15px;
+
+}
+.item-details {
+width: 70%;
 }
 
-.cart-item-image,
-.order-item-image {
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #f6f6f6;
+.item-details h1{
+    margin: 10px auto;
+    color: var(--rare); 
+}
+.item-details h2{
+    text-align: center;
+    margin: 10px auto;
+    color: rgb(1, 180, 1); 
 }
 
-.cart-item-image {
-    width: 120px;
-    height: 120px;
+.item-details p{
+    color: var(--main); 
+    
 }
 
-.cart-item-image .card-image,
-.order-item-image .card-image {
+.item-img{
+    width: 30%;
+    height: 100%;
+}
+.item-img img{
+    border-radius: 15px;
     width: 100%;
     height: 100%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
-.cart-item-details,
-.order-item-details {
-    flex: 1;
+.item-btns{
+    margin: 20px auto;
+    
 }
 
-.cart-item-details h3,
-.order-item-details h3 {
-    color: var(--main);
-    font-size: 1.1rem;
-    margin: 0 0 8px 0;
-}
-
-.cart-item-details h3 {
-    font-size: 1.2rem;
-    margin: 0 0 10px 0;
-}
-
-.cart-item-price,
-.order-item-price {
-    color: var(--buy);
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 8px 0;
-}
-
-.cart-item-price {
-    font-size: 1.3rem;
-    margin: 10px 0;
-}
-
-.cart-item-quantity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.cart-item-quantity label {
-    color: var(--main);
-    font-size: 0.95rem;
-}
-
-.quantity-input {
-    width: 80px;
-    padding: 8px 12px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--main);
-    font-size: 1rem;
-    text-align: center;
-}
-
-.quantity-input:focus {
-    outline: none;
-    border-color: var(--rare);
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.cart-item-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.remove-btn,
-.cancel-order-btn {
-    padding: 10px 20px;
-    background-color: transparent;
-    color: #ff6b6b;
-    border: 2px solid #ff6b6b;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
+.item-btns-add{
     cursor: pointer;
-    transition: all 0.3s ease;
+    width: 200px;
+    height: 50px;
+    font-size: large;
+    background-color: var(--rare);
+    padding: 10px;
+    border-radius: 10px;
+
 }
 
-.remove-btn:hover,
-.cancel-order-btn:hover {
-    background-color: #ff6b6b;
-    color: white;
+.item-btns-add:hover{
+    background-color: rgb(250, 170, 23);
 }
 
-.order-summary {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.summary-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
+.item-btns-buy{
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    font-size: large;
     color: var(--main);
-    font-size: 1.1em;
-}
+    background-color: rgb(19, 176, 19);
+    padding: 10px;
+    border-radius: 10px;
 
-.summary-total {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: var(--rare);
-    margin-top: 10px;
-    padding-top: 15px;
-    border-top: 2px solid rgba(255, 203, 116, 0.3);
 }
-
-.cart-actions {
-    display: flex;
-    gap: 15px;
+.item-btns-buy:hover{
+    background-color: #045800;
 }
-
-.continue-shopping-btn {
-    flex: 1;
-    padding: 14px 30px;
-    color: var(--rare);
-    border: 2px solid var(--rare);
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.continue-shopping-btn:hover {
-    background-color: var(--rare);
-    color: var(--third);
-}
-
-.checkout-btn {
-    flex: 1;
-    padding-top: 25px;
-    background-color: var(--rare);
-    color: var(--third);
-    border-radius: 8px;
-    font-size: 1.1em;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.checkout-btn:hover {
-    background-color: #ffb347;
-}
-
-/* ============================================
-   ORDERS PAGE STYLES
-   ============================================ */
-.order-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid rgba(255, 203, 116, 0.2);
-}
-
-.order-info h2 {
-    color: var(--rare);
-    font-size: 1.3em;
-    margin: 8px;
-}
-
-.order-date {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1em;
-}
-
-.order-status {
-    display: flex;
-    align-items: center;
-}
-
-.status-badge {
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.status-delivered {
-    background-color: var(--buy);
-    color: white;
-}
-
-.status-shipping {
-    background-color: var(--rare);
-    color: var(--third);
-}
-
-.status-processing {
-    background-color: #3498db;
-    color: white;
-}
-
-.status-cancelled {
-    background-color: #e74c3c;
-    color: white;
-}
-
-.order-items {
-    margin-bottom: 25px;
-}
-
-.order-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    border-top: 2px solid rgba(255, 203, 116, 0.2);
-    gap: 15px;
-}
-
-.order-total {
-    color: var(--rare);
-    font-size: 1.3rem;
-}
-
-.order-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.track-order-btn,
-.reorder-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.track-order-btn {
-    background-color: var(--rare);
-    color: var(--third);
-}
-
-.track-order-btn:hover {
-    background-color: #ffb347;
-    transform: translateY(-2px);
-}
-
-.reorder-btn {
-    background-color: var(--buy);
-    color: white;
-}
-
-.reorder-btn:hover {
-    background-color: #45a844;
-    transform: translateY(-2px);
-}
-
 
 /* ============================================
    CHECKOUT PAGE STYLES
@@ -1095,112 +621,8 @@ body {
 }
 
 
-/* ============================================
-   USER ORDERS PAGE
-   ============================================ */
-.orders-list {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-.order-card-user {
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
 
-.order-info-user {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.order-info-user p {
-    margin: 0;
-    color: var(--third);
-    font-size: 1rem;
-}
-
-.order-date-user {
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 0.9rem;
-}
-
-.order-items-user {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.95rem;
-    padding-left: 15px;
-}
-
-.order-total-user {
-    color: var(--buy);
-    font-size: 1.1rem;
-    margin-top: 5px;
-}
-
-.status-badge-user {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-top: 5px;
-    width: fit-content;
-}
-
-.status-badge-user.status-delivered {
-    background-color: var(--buy);
-    color: white;
-}
-
-.status-badge-user.status-shipping {
-    background-color: var(--rare);
-    color: var(--third);
-}
-
-.status-badge-user.status-processing {
-    background-color: #3498db;
-    color: white;
-}
-
-.empty-cart-message,
-.empty-orders-message {
-    text-align: center;
-    padding: 40px 20px;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 1.1rem;
-}
-
-/* ============================================
-   ORDER CARD STYLES
-   ============================================ */
-.order-card {
-    margin-bottom: 30px;
-}
-
-/* ============================================
-   FOOTER LEGAL TITLE STYLES
-   ============================================ */
-.footer-legal-title {
-    margin-top: 30px;
-}
-
-/* ============================================
-   PAGE TITLE INLINE STYLES (moved from HTML)
-   ============================================ */
-.bikes-page-title {
-    text-align: center;
-    color: var(--rare);
-    text-decoration: underline var(--third);
-    font-size: 2.4rem;
-    margin: 40px 0 20px;
-    font-weight: 700;
-}
 
 /* ============================================
    Orders PAGE STYLES
@@ -1220,16 +642,16 @@ body {
     font-size: 1.1em;
    }
 
-   /* ============================================
+/*============================================
    Shopping Cart PAGE STYLES
-   ============================================ */
+   ============================================*/
    .cart-details{
     width: 40%;
     height: 40%;
     border-radius: 15px;
     background-color: var(--second);
     align-items: center;
-    margin: 100px auto 160px;
+    margin: 40px auto;
     display: block;
     padding: 20px;
     text-align: center;
@@ -1268,9 +690,10 @@ body {
 
    .cart-buttons{
     padding: 10px;
-     border-top: 0.5px solid gray;
+     border-top: 0.5px solid var(--main);
    }
    .cart-buttons button{
+    font-size: 1.2em;
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
