@@ -14,7 +14,13 @@
    GLOBAL RESET & BASE STYLES
    ============================================ */
 * {
+    font-family: 'Segoe UI', sans-serif;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
 }
 
 body {
@@ -31,94 +37,60 @@ body {
 /* ============================================
    HEADER STYLES
    ============================================ */
-.header-main {
-    background-color: var(--second);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin-bottom: 10px;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 .header {
     background-color: var(--second);
     position: sticky;
     top: 0;
-    z-index: 100;
-    margin-bottom: 10px;
-    height: 70px;
+    z-index: 1000;
+    padding: 20px 5%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
 }
 
-.header-main h1 {
+.header .logo {
+    font-size: 25px;
+    color: var(--main);
+    font-weight: bold;
+}
+
+
+.header .navbar a {
+    margin: 0 10px;
+    font-size: 18px;
     color: var(--rare);
-    font-size: 1.8rem;
-    margin: 0;
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
-.header h1 {
-    color: var(--rare);
-    font-size: 1.8rem;
-    margin: 0;
+.header .navbar a:hover {
+    background-color: var(--third);
+    color: var(--main);
 }
 
-.L {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.R {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.M {
-    border-radius: 16px;
-    background-color: var(--second);
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-}
-
-.logo-text {
-    color: var(--rare);
-    font-size: 2.5rem;
-    margin: 0;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.logo-img {
-    display: block;
-}
-
-.header div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.header .icons div {
+    font-size: 18px;
+    color: var(--third);
     cursor: pointer;
+    padding: 10px;
 }
 
-.header div a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+.header .icons div:hover {
+    color: var(--rare);
 }
 
+.header .icons a{
+    margin: 0 10px;
+    font-size: 18px;
+    color: var(--rare);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.header .icons a:hover{
+     background-color: var(--third);
+    color: var(--main);
+}
 /* ============================================
    PROFILE DROPDOWN MENU
    ============================================ */
