@@ -14,20 +14,64 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header class="header">
-        <a href="home.html" class="logo">User Panel</a>
-        <nav class="navbar">
-            <a href="home.html">Home</a>
-            <a href="bicycles.html">Bicycles</a>
-            <a href="repair.html">Repair Tools</a>
-            <a href="accessories.html">Accessories</a>
-            <a href="shopping-cart.html">Shopping Cart</a>
-            <a href="orders.html">Your Orders</a>
-        </nav>
-        <div class="icons">
-            <a href="#" id="adminLogoutLink">👤</a>
+    <header class="header-main">
+        <div class="L" id="menuToggle">
+            <img src="../images/icons/burger-bar.png" height="50px" width="50px" alt="Menu" title="Menu">
+        </div>
+        
+        <!-- Center: Logo and Brand Name -->
+        <a href="../home.html" class="M">
+            <img src="../images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
+            <h1 class="logo-text">DARAGA</h1>
+        </a>
+        
+        <!-- Right: User Actions -->
+        <div class="R">
+            <!-- Shopping Cart Icon -->
+            <a href="#" id="cartIcon" title="Shopping Cart">
+                <img src="../images/icons/shopping-cart.png" height="50px" width="50px" alt="Shopping Cart">
+            </a>
+            
+            <!-- Notifications Icon -->
+            <a href="#" id="notificationIcon" title="Notifications">
+                <img src="../images/icons/notification.png" height="50px" width="50px" alt="Notifications">
+            </a>
+            
+            <!-- Profile Dropdown Menu -->
+            <div class="profile-dropdown-container">
+                <a href="#" id="profileIcon" title="Profile" class="profile-icon-link">
+                    <img src="../images/icons/avatar.png" height="50px" width="50px" alt="Profile">
+                </a>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="../profile.html" class="dropdown-item">
+                        <span>👤</span> Your Profile
+                    </a>
+                    <a href="#" class="dropdown-item" id="ordersLink">
+                        <span>📦</span> Your Orders
+                    </a>
+                    <a href="#" class="dropdown-item" id="cartLink">
+                        <span>🛒</span> Shopping Cart
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="../index.html" class="dropdown-item logout">
+                        <span>🚪</span> Log Out
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
+    
+    <div class="nav-overlay" id="navOverlay"></div>
+    
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="../bicycles.html">Bicycles</a></li>
+            <li><a href="../repair.html">Bike Repair</a></li>
+            <li><a href="../accessories.html">Accessories</a></li>
+            <li><a href="../profile.html">Profile</a></li>
+        </ul>
+    </nav>
     
     <!-- Main Content: Tire Repair Tools Page -->
     <div class="bicycles-page">

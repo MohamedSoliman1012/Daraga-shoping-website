@@ -26,10 +26,11 @@ body {
 
 /* --- Header (Top Bar) Styling --- */
 .header {
-    background-color: var(--second);
+    background-color: var(--main);
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 .5em 1.1em rgba(0, 0, 0, .1);
     padding: 20px 5%;
     display: flex;
     align-items: center;
@@ -38,22 +39,26 @@ body {
 
 .header .logo {
     font-size: 25px;
-    color: var(--main);
+    color: var(--third);
     font-weight: bold;
 }
 
+.logo-highlight {
+    color: var(--rare);
+}
 
 .header .navbar a {
     margin: 0 10px;
     font-size: 18px;
-    color: var(--rare);
+    color: var(--second);
     padding: 8px 15px;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .header .navbar a:hover {
-    background-color: var(--third);
-    color: var(--main);
+    background-color: var(--rare);
+    color: var(--third);
 }
 
 .header .icons div {
@@ -65,19 +70,6 @@ body {
 
 .header .icons div:hover {
     color: var(--rare);
-}
-
-.header .icons a{
-    margin: 0 10px;
-    font-size: 18px;
-    color: var(--rare);
-    padding: 8px 15px;
-    border-radius: 5px;
-}
-
-.header .icons a:hover{
-     background-color: var(--third);
-    color: var(--main);
 }
 
 /* --- Main Content Styling --- */
