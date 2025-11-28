@@ -155,63 +155,6 @@ body {
     color: #ff6b6b;
 }
 
-
-
-/* ============================================
-   NAVIGATION MENU
-   ============================================ */
-.nav-menu {
-    position: fixed;
-    top: 70px;
-    left: -300px;
-    width: 280px;
-    height: calc(100vh - 70px);
-    background-color: var(--second);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-    z-index: 99;
-    overflow-y: auto;
-    padding: 20px 0;
-}
-
-.nav-menu.active {
-    left: 0;
-}
-
-.nav-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-menu ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-menu ul li a {
-    display: block;
-    padding: 15px 25px;
-    color: var(--main);
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.nav-overlay {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background-color: rgba(0,0,0,0.5);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 98;
-}
-
-.nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 /* ============================================
    FORM CARDS (Login & Signup)
    ============================================ */
@@ -483,14 +426,6 @@ body {
     font-size: 1.2em;
     color: var(--buy);
 }
-
-
-
-
-
-
-
-
 
 /* ============================================
    FOOTER STYLES
@@ -1387,4 +1322,45 @@ body {
    .order-container p{
     color: var(--third);
     font-size: 1.1em;
+   }
+
+   /* ============================================
+   Shopping Cart PAGE STYLES
+   ============================================ */
+   .cart-details{
+    width: 40%;
+    height: 40%;
+    border-radius: 15px;
+    background-color: var(--second);
+    align-items: center;
+    margin: 100px auto 160px;
+    display: block;
+    padding: 20px;
+   }
+   .cart-details h1{
+    color: var(--rare);
+    }
+   .cart-items{
+    display: flex;
+    gap: 30px;
+    margin: 15px;
+   }
+   .cart-items img{
+    height: 20%;
+    width: 20%;
+   }
+   .cart-items p{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--main);
+   }
+   .order-sum{
+    font-size: 2.5em;
+    color: var(--rare);
+   }
+   .order-sum label{
+    font-weight: bold;
+    }
+   .order-sum p{
+    color: var(--main);
    }
