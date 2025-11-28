@@ -94,69 +94,7 @@ body {
 .header h1{
     color: var(--rare);
 }
-/* ============================================
-   PROFILE DROPDOWN MENU
-   ============================================ */
-.profile-dropdown-container {
-    position: relative;
-}
 
-.profile-icon-link {
-    display: flex;
-    align-items: center;
-}
-
-.profile-dropdown {
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    background-color: var(--second);
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    min-width: 200px;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-    padding: 8px 0;
-    margin-top: 5px;
-}
-
-.profile-dropdown.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    color: var(--main);
-    text-decoration: none;
-    font-size: 0.95rem;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-}
-
-.dropdown-item span {
-    font-size: 1.2rem;
-    width: 24px;
-    display: inline-block;
-    text-align: center;
-}
-
-.dropdown-divider {
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 8px 0;
-}
-
-.dropdown-item.logout {
-    color: #ff6b6b;
-}
 
 /* ============================================
    FORM CARDS (Login & Signup)
@@ -313,38 +251,9 @@ body {
     font-weight: 700;
 }
 
-.bicycles-page h1 {
-    text-align: center;
-    color: var(--rare);
-    text-decoration: underline var(--third);
-    font-size: 3rem;
-    margin: 40px 0 20px;
-    font-weight: 700;
-}
 
-.search-home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 30px 0;
-    padding: 0 20px;
-}
 
-.search-home input {
-    width: 100%;
-    max-width: 500px;
-    height: 50px;
-    border: 2px solid var(--third);
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0 20px;
-}
 
-.search-home img {
-    cursor: pointer;
-}
 
 .category {
     display: block;
@@ -398,8 +307,6 @@ body {
     cursor: pointer;
 }
 
-
-
 .card-top {
     width: 100%;
     height: 70%;
@@ -410,11 +317,6 @@ body {
     height: 100%;
 
 }
-
-
-
-
-
 
 .card-bottom {
   font-weight: bold;
@@ -438,56 +340,47 @@ body {
     color: var(--main);
     margin-top: auto;
     padding: 50px 20px 20px;
-    border-top: 3px solid var(--rare);
+    
 }
 
-.footer {
-    background-color: var(--second);
-    color: var(--main);
-    margin-top: auto;
-    padding: 50px 20px 20px;
-    border-top: 3px solid var(--rare);
-}
 
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    
+   width: 100%;
+    gap: 200px;
 }
-
+.footer-section{
+    padding: 20px;
+    border-bottom: 0.5px solid var(--main);
+}
 .footer-section h3 {
     color: var(--rare);
     font-size: 1.2rem;
     margin-bottom: 20px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+
 }
 
 .footer-section p {
     color: var(--main);
-    line-height: 1.8;
-    font-size: 0.95rem;
-    margin: 0;
 }
 
 .footer-section ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-.footer-section ul li {
-    margin-bottom: 12px;
-}
 
 .footer-section ul li a {
     color: var(--main);
     text-decoration: none;
     font-size: 0.95rem;
     display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.footer-section ul li a:hover {
+    background-color: var(--third);
 }
 
 .footer-brand {
@@ -528,7 +421,7 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
     padding-top: 20px;
     text-align: center;
     color: var(--main);
