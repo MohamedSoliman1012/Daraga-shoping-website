@@ -15,6 +15,26 @@ window.onload = function() {
     }
 };
 
+function login(e){
+    user = document.getElementById("user").addEventListener;
+    admin = document.getElementById("admin");
+    e.preventDefault();
+
+    if(user.checked){
+                        window.location.href = '../user-panel/home.html';
+
+    }if(admin.checked){
+
+                window.location.href = '../admin-panel/adminHome.html';
+
+    }
+    
+
+
+    
+}
+
+
 function logout(){
             checklogout = confirm('Are you sure you want to log out?');
              if (checklogout) {
@@ -33,8 +53,8 @@ function checkout(){
 
 
 function buynow(){
-    alert("Coming soon")
+    window.location.href = 'checkout.html';
 }
 function addtocart(){
-    alert("Coming soon")
+    window.location.href = 'shopping-cart.html';
 }

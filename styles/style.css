@@ -433,6 +433,7 @@ body {
 .item-details-container table td{
    text-align: center;
 
+
 }
 .item-details-container img{
     border-radius: 10px;
@@ -440,7 +441,6 @@ body {
     height: 250px;
 
 }
-
 
 
 .item-details-container  h1{
@@ -512,10 +512,15 @@ body {
     border-radius: 8px;
 }
 
+.input-section {
+    text-align: center;
+    
+}
 .input-section h2 {
+    
     color: var(--rare);
     font-size: 1.5em;
-    margin: 6px;
+    margin: 6px ;
 }
 
 .input-section input {
