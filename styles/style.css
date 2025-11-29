@@ -609,20 +609,21 @@ width: 70%;
 }
 
    .cart-items img{
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
    }
-   .cart-items h1{
+   .cart-items h2{
     font-weight: bold;
     color: var(--main);
    }
    .cart-items p{
 
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
     color: var(--buy);
    }
-   .order-sum{
+   .order-sum table{
+    margin: auto;
     font-size: 1.5em;
     color: var(--rare);
    }
@@ -635,7 +636,7 @@ width: 70%;
 
    .cart-buttons{
     padding: 10px;
-     border-top: 0.5px solid var(--main);
+     border-top: 0.5px solid gray;
    }
    .cart-buttons button{
     font-size: large;
