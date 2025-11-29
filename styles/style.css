@@ -425,6 +425,13 @@ body {
     border-radius: 15px;
 
 }
+.item-details-container img{
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    
+
+}
 .item-details {
     text-align: center;
 width: 70%;
