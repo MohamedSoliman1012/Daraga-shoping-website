@@ -1,38 +1,23 @@
+function login(event) {
+    event.preventDefault();
 
-window.onload = function() {
-    // Login Button
-    var loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var adminRadio = loginForm.querySelector('input[type="radio"][value="admin"]');
-            if (adminRadio && adminRadio.checked) {
-                window.location.href = '../admin-panel/adminHome.html';
-            } else {  
-                window.location.href = '../user-panel/home.html';
-            }
-        });
-    }
-};
+    var userRadio = document.getElementById("user");
+    var adminRadio = document.getElementById("admin");
 
-function login(e){
-    user = document.getElementById("user").addEventListener;
-    admin = document.getElementById("admin");
-    e.preventDefault();
+    if (userRadio.checked) {
+               window.location.href = '../user-panel/home.html';
 
-    if(user.checked){
-                        window.location.href = '../user-panel/home.html';
-
-    }if(admin.checked){
-
-                window.location.href = '../admin-panel/adminHome.html';
-
-    }
+    } 
+    else if (adminRadio.checked) {
+        window.location.href = '../admin-panel/adminHome.html';
+    } 
+    else {
     
-
-
-    
+        alert("Please select a login type!");
+    }
 }
+
+
 
 
 function logout(){
