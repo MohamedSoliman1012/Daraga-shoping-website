@@ -224,7 +224,7 @@ body {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    color: var(--main);
+    accent-color: var(--rare);
     font-size: 1.1em;
     padding: 10px;
     border-radius: 6px;
