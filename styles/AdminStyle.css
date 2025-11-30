@@ -85,7 +85,6 @@ body {
 
 /* --- Main Content Styling --- */
 
-
 .box-container {
    display: block;
     margin: 40px auto;
@@ -118,7 +117,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* --- Specific Box Styles --- */
+/* --- Order Page --- */
 .order-container {
     margin: 40px auto;
     text-align: center;
@@ -134,16 +133,23 @@ body {
 .order-container th{
     border-radius: 5px;
     background-color: var(--rare);
-    width: 87.5px;
+    width: 90px;
 
 }
 .order-container td{
      border-radius: 2px;
     background-color: var(--second);
     color: var(--main);
-    width: 87.5px;
+    width: 90px;
 
 }
+
+/* --- Users Page --- */
+
+.users-table{
+    
+}
+
 
 /* --- Button Styles (FIXED: Added .delete-btn to base styles) --- */
 .btn,
@@ -220,28 +226,8 @@ body {
     padding: 20px;
 }
 
-/* ============================================
-   ADMIN ORDERS STYLES (NEW STATIC STATUS)
-   ============================================ */
-.order-status-static {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px 0;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
 
-.order-status-static.pending {
-    background-color: var(--rare);
-    color: var(--third);
-}
 
-.order-status-static.completed {
-    background-color: var(--buy);
-    color: white;
-}
 
 /* ============================================
    ADMIN PRODUCTS STYLES
