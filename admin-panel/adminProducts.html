@@ -25,6 +25,7 @@
     </header>
 
     <h1>SHOP PRODUCTS</h1>
+    <div class="add-product-container">
 
     <div class="add-product-form">
         <h3>ADD PRODUCT</h3>
@@ -33,40 +34,82 @@
             <input type="number" name="price" min="0" placeholder="Enter product price" class="box" required>
             <input type="text" name="details" min="0" placeholder="Enter product details" class="box" required>
             <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png">
-            <input type="submit" value="Add product" name="add_product" class="btn">
+            <br>
+            <select>
+                <option value="">bicycles</option>
+                <option value="">repair</option>
+                <option value="">accessories</option>
+            </select>
+            <br>
+            <button class="box" onclick="addproduct()">Add product</button>
         </form>
     </div>
 
-    <h1 class="title">PRODUCTS</h1>
+    </div>
+    <div class="added-products" >
+        <h1 id="Added-product">Added Products</h1>
 
-    <div class="box-container">
+        <div class="product">
+            <img src="../images/bikes/city/4.jpg" alt="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class="price">1000$</td>
+                </tr>
+            </table>
+            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
 
-        <div class="box">
-            <img src="../images/bikes/mountain/6.jpg" alt="not found" class="product-image-box">
-            <div class="name product-name-admin">Mountain Bike X1</div>
-            <div class="price product-price-admin">$500/-</div>
-            <a href="#" class="option-btn">Update</a>
-            <a href="#" class="delete-btn">Delete</a>
         </div>
 
-        <div class="box">
-            <img src="../images/tools/Flyftrey Snowflake Multi-Tool, 18-in-1.jpg" alt="not found"
-                class="product-image-box">
-            <div class="name product-name-admin">Repair Kit Pro</div>
-            <div class="price product-price-admin">$45/-</div>
-            <a href="#" class="option-btn">Update</a>
-            <a href="#" class="delete-btn">Delete</a>
+        <div class="product">
+            <img src="../images/bikes/city/4.jpg" alt="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class="price">1000$</td>
+                </tr>
+            </table>
+            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
+
         </div>
 
-        <div class="box">
-            <img src="../images/branding/accessories.jpg" alt="not found" class="product-image-box">
-            <div class="name product-name-admin">Safety Helmet</div>
-            <div class="price product-price-admin">$75/-</div>
-            <a href="#" class="option-btn">Update</a>
-            <a href="#" class="delete-btn">Delete</a>
+        <div class="product">
+            <img src="../images/bikes/city/4.jpg" alt="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class="price">1000$</td>
+                </tr>
+            </table>
+            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
+
+        </div>
+        <div class="product">
+            <img src="../images/bikes/city/4.jpg" alt="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class="price">1000$</td>
+                </tr>
+            </table>
+            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
+
+        </div>
+        <div class="product">
+            <img src="../images/bikes/city/4.jpg" alt="">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class="price">1000$</td>
+                </tr>
+            </table>
+            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
+
         </div>
 
     </div>
+
+
 </body>
 
 </html>

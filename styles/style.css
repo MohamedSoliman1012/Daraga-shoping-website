@@ -273,40 +273,36 @@ body {
 /* ============================================
    ITEM CARDS (Product Cards)
    ============================================ */
-.item-card { 
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    height: 280px;
-    width: 300px;
+
+ .product{
     display: inline-block;
     margin: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 280px;
+    height: 280px;
     overflow: hidden;
     cursor: pointer;
-}
-
-.card-top {
+    background-color: white;
+   }
+   .product img{
     width: 100%;
-    height: 70%;
-}
-.card-top img{
-    width: 100%;
-    height: 100%;
+    height: 80%;
 
-}
+   }
+   .product table td{
+    padding: 5px;
+    font-size: large;
+    font-weight: bold;
+    height: 20;
+    width: 140px;
 
-.card-bottom {
-  font-weight: bold;
- width: 100%;
- height: 30%;
-}
-.card-bottom label{
-    font-size: 1.4em;
-    color: var(--third);
-}
-.card-bottom p{
-    font-size: 1.2em;
+ 
+
+   }
+   .price{
     color: var(--buy);
-}
+   }
 
 /* ============================================
    FOOTER STYLES
@@ -499,10 +495,11 @@ body {
    CHECKOUT PAGE STYLES
    ============================================ */
 .checkout-container {
-    margin: auto;
-    width: 40%;
-    padding: 12px;
-    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    margin: 40px auto 20px auto;
+    padding: 10px;
+    width: 30%;
 }
 
 .checkout-form {
@@ -529,23 +526,17 @@ body {
     margin: 8px auto;
     border-radius: 6px;
 }
-
-.input-section label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    color: var(--main);
-    font-size: 1.1em;
-    margin: 5px 0 0 5px;
-
+.input-section select {
+    margin-top: 10px;
+     border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
 }
 
-.input-section input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--rare);
-}
+
 
 .order-btn {
     width: 100%;
