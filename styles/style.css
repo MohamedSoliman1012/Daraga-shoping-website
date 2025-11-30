@@ -651,3 +651,12 @@ body {
     
     background-color: rgb(255, 190, 70);
    }
+
+
+   /* about-us */
+
+   .about-us{
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+   }
