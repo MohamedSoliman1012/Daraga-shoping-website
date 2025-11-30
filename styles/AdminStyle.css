@@ -24,7 +24,16 @@ body {
     min-height: 100vh;
 }
 
-/* --- Header (Top Bar) Styling --- */
+* h1{
+    color: var(--third);
+    font-size: 2.5em;
+    margin: 20px auto;
+    font-weight: 700;
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
 .header {
     background-color: var(--second);
     position: sticky;
@@ -68,32 +77,33 @@ body {
      background-color: var(--third);
 }
 
-
-/* --- Main Content Styling --- */
-.title {
-    text-align: center;
+.header h1{
     color: var(--rare);
-    text-decoration: underline var(--third);
-    font-size: 30px;
-    margin: 40px 0 20px;
-    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 0 auto;
 }
 
+/* --- Main Content Styling --- */
+
+
 .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto 50px;
-    padding: 20px;
+   display: block;
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 20px;
+    width: 70%;
 }
 
 .box {
+    display: inline-block;
+    margin: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 200px;
+    height: fit-content;
+    overflow: hidden;
+    cursor: pointer;
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 .5em 1.1em rgba(0, 0, 0, .1);
-    text-align: center;
 }
 
 .box h3 {
@@ -109,25 +119,30 @@ body {
 }
 
 /* --- Specific Box Styles --- */
-.order-box p {
-    text-align: left;
-    margin-bottom: 8px;
-    line-height: 1.5;
-    font-size: 16px;
-    color: var(--second);
-    border-bottom: 1px dotted var(--main);
-    padding-bottom: 5px;
+.order-container {
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 20px;
+    width: 80%;
 }
 
-.order-box .value-text {
-    font-weight: bold;
-    color: var(--third);
-    float: right;
+.order-container table{
+  
+    width: 100%;
+    
 }
+.order-container th{
+    border-radius: 5px;
+    background-color: var(--rare);
+    width: 87.5px;
 
-.type-admin {
-    color: var(--discounts);
-    font-weight: bold;
+}
+.order-container td{
+     border-radius: 2px;
+    background-color: var(--second);
+    color: var(--main);
+    width: 87.5px;
+
 }
 
 /* --- Button Styles (FIXED: Added .delete-btn to base styles) --- */
