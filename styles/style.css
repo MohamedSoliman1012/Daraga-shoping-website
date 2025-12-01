@@ -526,6 +526,7 @@ body {
     border-radius: 6px;
 }
 .input-section select {
+    cursor: pointer;
     margin-top: 10px;
      border-radius: 5px;
     text-align: center;

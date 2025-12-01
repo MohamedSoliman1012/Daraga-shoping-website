@@ -102,7 +102,9 @@ body {
     overflow: hidden;
     cursor: pointer;
     background-color: white;
+    resize: none;
 }
+
 
 .box h3 {
     font-size: 25px;

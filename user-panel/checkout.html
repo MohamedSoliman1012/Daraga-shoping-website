@@ -12,7 +12,7 @@
 <body>
     <!-- Header Section -->
     <header class="header">
-        <a href="home.html" class="logo">User Panel</a>
+        <a href="home.html" class="logo">DARAGA</a>
         <nav class="navbar">
             <a href="home.html">Home</a>
             <a href="bicycles.html">Bicycles</a>
@@ -32,11 +32,11 @@
         <form class="checkout-form">
             <div class="input-section">
                 <h2>Shipping Address</h2>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Phone Number" required>
-                <input type="text" placeholder="Address" required>
-                <input type="text" placeholder="City" required>
+                <input type="text" placeholder="Full Name" id="checkname" required>
+                <input type="email" placeholder="Email" id="checkemail" required>
+                <input type="text" placeholder="Phone Number" id="checkphone" required>
+                <input type="text" placeholder="Address" id="checkaddress" required>
+                <input type="text" placeholder="City" id="checkcity" required>
             </div>
             <br>
             <div class="input-section">
@@ -53,7 +53,7 @@
                 <p><b>Total Price: </b>24,669$</p>
             </div>
             <br>
-            <button type="submit" class="order-btn">Complete Order</button>
+            <button type="submit" class="order-btn" onclick="placeOrder()">Complete Order</button>
         </form>
     </div>
 

@@ -10,23 +10,48 @@ function logout() {
 
 // --- Deletion Functions ---
 function deluser() {
-
-    confirm('Delete this user?');
+   if(confirm('Delete this user?')){
+    alert("user deleted successfully")
+   }
 }
 
 function delproduct() {
-
-    confirm('Delete this user?');
+    if(confirm('Delete this product?')){
+    alert("item deleted successfully")
+   }
 }
 
 // --- Product Management Functions ---
-function addproduct() {
 
-    alert("product addeed completed");
+function addproduct() {
+    let name=document.getElementById("addname").value;
+    let price=document.getElementById("addprice").value;
+    let details=document.getElementById("adddetails").value;
+    let imageInput=document.getElementById("addimage");
+
+    if(name.trim() === ""){
+        alert("Enter product name")
+    }else if(price.trim() === ""){
+        alert("Enter product price")
+    }else if(details.trim() === ""){
+        alert("Enter product details")
+
+    }else if(imageInput.files.length === 0){
+        alert("Enter product image")
+
+    }else{
+    alert("product addeed completed")
+
+    document.getElementById("addname").value = "";
+    document.getElementById("addprice").value = "";
+    document.getElementById("adddetails").value = "";
+    document.getElementById("addimage").value = "";
+    
+    }
+
 }
 
 function addedproduct() {
-
     window.location.href = 'adminProducts.html#Added-product';
 }
 
