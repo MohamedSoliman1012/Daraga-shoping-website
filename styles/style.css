@@ -565,13 +565,8 @@ body {
     padding: 15px;
     margin: 20px;
    }
-   .order-container h1{
-    color: var(--rare);
-    font-size: 3em;
-    font-weight: bold;
-   }
    .order-container p{
-    color: var(--third);
+    color: var(--second);
     font-size: 1.1em;
    }
 
