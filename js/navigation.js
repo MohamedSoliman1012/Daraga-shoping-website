@@ -2,28 +2,15 @@
 
 function login() {
 
-// 1. Get values
-    const email = document.getElementById("logemail").value;
-    const password = document.getElementById("logpassword").value;
     const userRadio = document.getElementById("user");
     const adminRadio = document.getElementById("admin");
 
-    if (email.trim() === "") {
-        alert("Please enter your Email.");
+    if (userRadio.checked) {
+        window.location.href = '../user-panel/home.html';
     } 
-    else if (password === "") {
-        alert("Please enter your Password.");
-    } 
-    
-    else if (userRadio.checked) {
-        alert("Login Successful! Welcome User.");
-        window.location.href = '../user-panel/home.html'; 
-    } 
-   
     else if (adminRadio.checked) {
-        alert("Login Successful! Welcome Admin.");
-        window.location.href = '../admin-panel/adminHome.html'; 
-    }
+        window.location.href = '../admin-panel/adminHome.html';
+    } 
     else {
 
         alert("Please select a login type!");
