@@ -39,7 +39,7 @@ function Signup() {
 
 
     if (username.trim() === "") {
-        alert("Username is required");
+        alert("Username is required.");
     } 
     
     else if (email.trim() === "") {
