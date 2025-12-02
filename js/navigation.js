@@ -4,8 +4,13 @@ function login() {
 
     const userRadio = document.getElementById("user");
     const adminRadio = document.getElementById("admin");
+    var password = document.getElementById("logpassword").value;
+    var email = document.getElementById("logemail").value;
 
-    if (userRadio.checked) {
+    if (email.trim() === "" || password.trim() === "") {
+        alert("please fill in all fields");
+        return;
+    }else if (userRadio.checked) {
         window.location.href = '../user-panel/home.html';
     } 
     else if (adminRadio.checked) {
@@ -53,8 +58,8 @@ function Signup() {
     else if (password !== confirmPassword) {
         alert("Passwords do not match");
     } else {
-
-        alert("Sign Up Successfully");
+        
+        alert("Sign Up Successfully!");
         window.location.href = '../user-panel/home.html';
     }
 
@@ -90,7 +95,7 @@ function buynow() {
 }
 
 function addtocart() {
-    window.location.href = 'shopping-cart.html';
+    alert("Item added to cart!");
 }
 
 
