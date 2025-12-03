@@ -6,6 +6,8 @@ function login() {
     const adminRadio = document.getElementById("admin");
     var password = document.getElementById("logpassword").value;
     var email = document.getElementById("logemail").value;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 
     if (email === "" || password === "") {
         alert("Please enter both email and password!");
