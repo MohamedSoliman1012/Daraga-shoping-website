@@ -7,17 +7,20 @@ function login() {
     var password = document.getElementById("logpassword").value;
     var email = document.getElementById("logemail").value;
 
-    if (email.trim() === "" || password.trim() === "") {
-        alert("please fill in all fields");
-        return;
-    }else if (userRadio.checked) {
+    if (email === "" || password === "") {
+        alert("Please enter both email and password!");
+    }
+
+    else if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address (e.g., user@example.com)");
+    }
+    else if (userRadio.checked) {
         window.location.href = '../user-panel/home.html';
-    } 
+    }
     else if (adminRadio.checked) {
         window.location.href = '../admin-panel/adminHome.html';
-    } 
+    }
     else {
-
         alert("Please select a login type!");
     }
 }
@@ -25,7 +28,7 @@ function login() {
 function logout() {
 
     let checklogout = confirm('Are you sure you want to log out?');
-    
+
     if (checklogout) {
         window.location.href = '../user-validation/index.html';
     }
@@ -45,8 +48,8 @@ function Signup() {
 
     if (username.trim() === "") {
         alert("Username is required.");
-    } 
-    
+    }
+
     else if (email.trim() === "") {
         alert("Email is required");
     }
@@ -58,7 +61,7 @@ function Signup() {
     else if (password !== confirmPassword) {
         alert("Passwords do not match");
     } else {
-        
+
         alert("Sign Up Successfully!");
         window.location.href = '../user-panel/home.html';
     }
@@ -115,7 +118,7 @@ function placeOrder() {
         alert("Please enter your Full Name");
     } else if (email.trim() === "") {
         alert("Please enter your Email");
-    }  else if (phone.trim() === "") {
+    } else if (phone.trim() === "") {
         alert("Please enter your Phone Number");
     } else if (address.trim() === "") {
         alert("Please enter your Address");
@@ -129,6 +132,6 @@ function placeOrder() {
         document.getElementById("checkphone").value = "";
         document.getElementById("checkaddress").value = "";
         document.getElementById("checkcity").value = "";
- 
+
     }
 }
