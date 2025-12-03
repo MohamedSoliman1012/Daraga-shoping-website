@@ -46,6 +46,7 @@ function Signup() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
     if (username.trim() === "") {
@@ -56,6 +57,10 @@ function Signup() {
         alert("Email is required");
     }
 
+     else if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address (e.g., user@example.com)");
+    }
+    
     else if (password === "") {
         alert("Password is required");
     }
