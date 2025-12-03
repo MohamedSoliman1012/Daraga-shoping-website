@@ -46,7 +46,6 @@ function addproduct() {
     document.getElementById("addprice").value = "";
     document.getElementById("adddetails").value = "";
     document.getElementById("addimage").value = "";
-    
     }
 
 }
