@@ -22,7 +22,7 @@
         <h1>Login</h1>
         
         <!-- Login Form -->
-        <form name="loginForm" id="loginForm">
+        <form action="../BackEnd/validation" id="loginForm" method="POST" >
             <input type="email" id="logemail" placeholder="Email" required>
             <input type="password" id="logpassword" placeholder="Password" required>
             
