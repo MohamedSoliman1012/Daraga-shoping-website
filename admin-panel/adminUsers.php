@@ -30,7 +30,12 @@ while ($row = $result->fetch_assoc()) {
 
 
     <h1>USER ACCOUNTS</h1>
-    <?php if (empty($users)): ?>
+    <?php 
+    if (!empty($_SESSION['admin_message'])) {
+        echo '<script>alert(' . json_encode($_SESSION['admin_message']) . ');</script>';
+        unset($_SESSION['admin_message']);
+    }
+    if (empty($users)): ?>
         <p>No users found.</p>
     <?php else: ?>
         <div class="users-container">
