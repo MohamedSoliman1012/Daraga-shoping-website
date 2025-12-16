@@ -3,14 +3,14 @@ CREATE TABLE users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL UNIQUE,
     email VARCHAR(150) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 
 CREATE TABLE admins (
     email VARCHAR(150) PRIMARY KEY,
-    password VARCHAR(255) NOT NULL,
-)
+    password VARCHAR(255) NOT NULL
+);
 
 
 
@@ -20,8 +20,7 @@ CREATE TABLE products (
     price DECIMAL(10, 2) NOT NULL,
     details TEXT,
     image_url VARCHAR(255),
-    category VARCHAR(99999)
-    
+    category VARCHAR(100) NOT NULL
 );
 
 
