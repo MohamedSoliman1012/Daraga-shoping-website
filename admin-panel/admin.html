@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Daraga Shop</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../js/navigation.js" defer></script>
+</head>
+<body>
+    <header class="header-main">
+        <div class="L" id="menuToggle">
+            <img src="../images/icons/burger-bar.png" height="50px" width="50px" alt="Menu" title="Menu">
+        </div>
+        <a href="../home.html" class="M">
+            <img src="../images/branding/logo.png" height="70px" alt="Daraga Logo" class="logo-img">
+            <h1>DARAGA</h1>
+        </a>
+        <div class="R">
+            <a href="../home.html" title="Back to Home">
+                <img src="../images/icons/avatar.png" height="50px" width="50px" alt="Back to Home">
+            </a>
+        </div>
+    </header>
+    
+    <!-- Navigation Menu -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    <nav class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Bicycles</a></li>
+            <li><a href="#">Bike Repair</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Special Offers</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="../index.html">Login</a></li>
+            <li><a href="../signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <p>Manage your store, products, orders, and customers</p>
+        </div>
+
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <div class="stat-value">1,247</div>
+                <p>+12% from last month</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <div class="stat-value">$89,450</div>
+                <p>+8% from last month</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Products</h3>
+                <div class="stat-value">156</div>
+                <p>12 new this month</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Customers</h3>
+                <div class="stat-value">3,892</div>
+                <p>+156 new customers</p>
+            </div>
+        </div>
+
+        <div class="admin-sections">
+            <div class="admin-section">
+                <h2>Product Management</h2>
+                <ul>
+                    <li><a href="#">📦 View All Products</a></li>
+                    <li><a href="#">➕ Add New Product</a></li>
+                    <li><a href="#">✏️ Edit Products</a></li>
+                    <li><a href="#">🗑️ Delete Products</a></li>
+                    <li><a href="#">📊 Product Analytics</a></li>
+                    <li><a href="#">🏷️ Manage Categories</a></li>
+                </ul>
+                <div class="admin-actions">
+                    <a href="#" class="admin-btn">Manage Products</a>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>Order Management</h2>
+                <ul>
+                    <li><a href="#">📋 View All Orders</a></li>
+                    <li><a href="#">⏳ Pending Orders</a></li>
+                    <li><a href="#">✅ Processed Orders</a></li>
+                    <li><a href="#">🚚 Shipping Management</a></li>
+                    <li><a href="#">📦 Inventory Status</a></li>
+                </ul>
+                <div class="admin-actions">
+                    <a href="#" class="admin-btn">View Orders</a>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>Customer Management</h2>
+                <ul>
+                    <li><a href="#">👥 View All Customers</a></li>
+                    <li><a href="#">🔍 Search Customers</a></li>
+                    <li><a href="#">📧 Customer Messages</a></li>
+                    <li><a href="#">⭐ Customer Reviews</a></li>
+                    <li><a href="#">📊 Customer Analytics</a></li>
+                </ul>
+                <div class="admin-actions">
+                    <a href="#" class="admin-btn">Manage Customers</a>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>Content Management</h2>
+                <ul>
+                    <li><a href="#">📝 Manage Pages</a></li>
+                    <li><a href="#">🎨 Update Homepage</a></li>
+                    <li><a href="#">🏷️ Manage Promotions</a></li>
+                    <li><a href="#">📰 Blog Posts</a></li>
+                    <li><a href="#">🖼️ Media Library</a></li>
+                </ul>
+                <div class="admin-actions">
+                    <a href="#" class="admin-btn">Manage Content</a>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>Settings & Configuration</h2>
+                <ul>
+                    <li><a href="#">⚙️ General Settings</a></li>
+                    <li><a href="#">💳 Payment Settings</a></li>
+                    <li><a href="#">🚚 Shipping Settings</a></li>
+                    <li><a href="#">📧 Email Templates</a></li>
+                    <li><a href="#">🔐 Security Settings</a></li>
+                </ul>
+                <div class="admin-actions">
+                    <a href="#" class="admin-btn">Settings</a>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h2>Reports & Analytics</h2>
+                <ul>
+                    <li><a href="#">📊 Sales Reports</a></li>
+                    <li><a href="#">📈 Revenue Analytics</a></li>
+                    <li><a href="#">👥 Customer Reports</a></li>
+                    <li><a href="#">📦 Inventory Reports</a></li>
+                    <li><a href="#">📥 Export Data</a></li>
+                </ul>
+                <div class="admin-actions">
+                    <a href="#" class="admin-btn">View Reports</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section" style="width: 100%;">
+            <h2>Recent Orders</h2>
+            <div class="recent-orders">
+                <div class="order-item">
+                    <strong>Order #1247</strong> - John Doe - $1,299 - <span style="color: #27ae60;">Completed</span>
+                </div>
+                <div class="order-item">
+                    <strong>Order #1246</strong> - Jane Smith - $849 - <span style="color: #f39c12;">Processing</span>
+                </div>
+                <div class="order-item">
+                    <strong>Order #1245</strong> - Mike Johnson - $599 - <span style="color: #3498db;">Shipped</span>
+                </div>
+                <div class="order-item">
+                    <strong>Order #1244</strong> - Sarah Williams - $1,499 - <span style="color: #f39c12;">Pending</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-main">
+        <div class="footer-container">
+            <div class="footer-section footer-brand">
+                <img src="../images/branding/logo.png" alt="Daraga Logo">
+                <h3 class="brand-name">DARAGA</h3>
+                <p>We are three Computer Science students passionate about technology and cycling. Our project aims to create a platform that serves cyclists by connecting them with everything they need — from bikes and repair tools to accessories and spare parts.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../home.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Bike Repair Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <h3 style="margin-top: 30px;">Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Daraga Shop. All rights reserved. | Designed with ❤️ for cyclists</p>
+        </div>
+    </footer>
+</body>
+</html>
+
