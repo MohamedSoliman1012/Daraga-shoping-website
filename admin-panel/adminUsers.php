@@ -11,18 +11,8 @@
 
 <body>
 
-    <header class="header">
-        <a href="adminHome.html" class="logo">AdminPanel</a>
-        <nav class="navbar">
-            <a href="adminHome.html">Home</a>
-            <a href="adminProducts.html">Products</a>
-            <a href="adminOrders.html">Orders</a>
-            <a href="adminUsers.html">Users</a>
-        </nav>
-        <div class="icons">
-            <a href="#" id="logout-icon" onclick="logout()">👤</a>
-        </div>
-    </header>
+    <?php include 'header-admin.php';?>
+
 
     <h1>USER ACCOUNTS</h1>
 

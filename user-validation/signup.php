@@ -14,10 +14,8 @@
 </head>
 <body>
     <!-- Header Section -->
-     <header class="header">
-       <h1>DARAGA</h1>
-    
-    </header>
+    <?php include 'header-validation.php';?>
+
     
     <!-- Main Content: Sign Up Form -->
     <div class="signup-card">

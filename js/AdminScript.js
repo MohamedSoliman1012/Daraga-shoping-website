@@ -4,7 +4,7 @@ function logout() {
     let checklogout = confirm('Are you sure you want to log out?');
 
     if (checklogout) {
-        window.location.href = '../user-validation/index.html';
+        window.location.href = '../user-validation/index.php';
     }
 }
 
@@ -51,17 +51,17 @@ function addproduct() {
 }
 
 function addedproduct() {
-    window.location.href = 'adminProducts.html#Added-product';
+    window.location.href = 'adminProducts.php#Added-product';
 }
 
 // --- Navigation Functions ---
 
 function userspage() {
     // Redirect to the User Administration page
-    window.location.href = 'adminUsers.html';
+    window.location.href = 'adminUsers.php';
 }
 
 function orderspage() {
     // Redirect to the Order Administration page
-    window.location.href = 'adminOrders.html';
+    window.location.href = 'adminOrders.php';
 }

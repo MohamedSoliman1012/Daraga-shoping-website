@@ -22,12 +22,12 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="bicycles.html">Bicycles</a></li>
-                        <li><a href="repair.html">Repair Tools</a></li>
-                        <li><a href="accessories.html">Accessories</a></li>
-                        <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                        <li><a href="orders.html">Your Orders</a></li>
+                        <li><a href="home.php">Home</a></li>
+                        <li><a href="bicycles.php">Bicycles</a></li>
+                        <li><a href="repair.php">Repair Tools</a></li>
+                        <li><a href="accessories.php">Accessories</a></li>
+                        <li><a href="shopping-cart.php">Shopping Cart</a></li>
+                        <li><a href="orders.php">Your Orders</a></li>
                     </ul>
                 </div>
 
@@ -44,8 +44,8 @@
                 <div class="footer-section">
                     <h3>About Us</h3>
                      <ul>
-                        <li><a href="About-Us.html">Our Story</a></li>
-                        <li><a href="About-Us.html">Team</a></li>
+                        <li><a href="About-Us.php">Our Story</a></li>
+                        <li><a href="About-Us.php">Team</a></li>
 
                     </ul>
 

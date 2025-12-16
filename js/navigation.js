@@ -17,10 +17,10 @@ function login() {
         alert("Please enter a valid email address (e.g., user@example.com)");
     }
     else if (userRadio.checked) {
-        window.location.href = '../user-panel/home.html';
+        window.location.href = '../user-panel/home.php';
     }
     else if (adminRadio.checked) {
-        window.location.href = '../admin-panel/adminHome.html';
+        window.location.href = '../admin-panel/adminHome.php';
     }
     else {
         alert("Please select a login type!");
@@ -32,7 +32,7 @@ function logout() {
     let checklogout = confirm('Are you sure you want to log out?');
 
     if (checklogout) {
-        window.location.href = '../user-validation/index.html';
+        window.location.href = '../user-validation/index.php';
     }
 }
 
@@ -70,7 +70,7 @@ function Signup() {
     } else {
 
         alert("Sign Up Successfully!");
-        window.location.href = '../user-panel/home.html';
+        window.location.href = '../user-panel/home.php';
     }
 
 }
@@ -78,30 +78,30 @@ function Signup() {
 // --- Navigation Buttons ---
 
 function bicyclespage() {
-    window.location.href = 'bicycles.html';
+    window.location.href = 'bicycles.php';
 }
 function repairpage() {
-    window.location.href = 'repair.html';
+    window.location.href = 'repair.php';
 }
 function accessoriespage() {
-    window.location.href = 'accessories.html';
+    window.location.href = 'accessories.php';
 }
 function continueBtn() {
-    window.location.href = 'home.html';
+    window.location.href = 'home.php';
 }
 
 function checkout() {
-    window.location.href = 'checkout.html';
+    window.location.href = 'checkout.php';
 }
 
 function itempage() {
-    window.location.href = 'itempage.html';
+    window.location.href = 'itempage.php';
 }
 
 // --- Shopping Actions ---
 
 function buynow() {
-    window.location.href = 'checkout.html';
+    window.location.href = 'checkout.php';
 }
 
 function addtocart() {
