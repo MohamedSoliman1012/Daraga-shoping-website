@@ -1,30 +1,6 @@
 // --- Authentication & User Flow ---
-
-function login() {
-
-    const userRadio = document.getElementById("user");
-    const adminRadio = document.getElementById("admin");
-    var password = document.getElementById("logpassword").value;
-    var email = document.getElementById("logemail").value;
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if (email === "" || password === "") {
-        alert("Please enter both email and password!");
-    }
-
-    else if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address (e.g., user@example.com)");
-    }
-    else if (userRadio.checked) {
-        window.location.href = '../user-panel/home.php';
-    }
-    else if (adminRadio.checked) {
-        window.location.href = '../admin-panel/adminHome.php';
-    }
-    else {
-        alert("Please select a login type!");
-    }
+function passdontmatch() {
+    alert("Passwords do not match");
 }
 
 function logout() {

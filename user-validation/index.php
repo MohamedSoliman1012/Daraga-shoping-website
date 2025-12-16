@@ -21,30 +21,44 @@
     <div class="login-card">
         <h1>Login</h1>
         
+        <!-- Error Message Display -->
+        <?php if (!empty($_GET['error'])): ?>
+            <div class="form-error" style="color:darkred;margin-bottom:10px;">
+                <?php echo htmlspecialchars($_GET['error']); ?>
+            </div>
+        <?php endif; ?>
+
         <!-- Login Form -->
-        <form action="../BackEnd/validation" id="loginForm" method="POST" >
-            <input type="email" id="logemail" placeholder="Email" required>
-            <input type="password" id="logpassword" placeholder="Password" required>
+        <form action="../BackEnd/validation.php" id="loginForm" method="POST" >
+            <input type="email" id="logemail" name="email" placeholder="Email" required>
+            <input type="password" id="logpassword" name="password" placeholder="Password" required>
             
             <!-- User Role Selection -->
             <div class="role-selection">
                 <label class="role-label">Login as</label>
                 <div class="radio-group">
                     <label class="radio-option">
-                        <input type="radio" id="user" name="radio" value="user" >
+                        <input type="radio" id="user" name="radio" value="user" required>
                         User
                     </label>
                     <label class="radio-option">
-                        <input type="radio" id="admin" name="radio" value="admin">
+                        <input type="radio" id="admin" name="radio" value="admin" required>
                        Admin
                     </label>
                 </div>
             </div>
                 
-                <button type="button" onclick="login()">Login</button>
+                <button type="submit">Login</button>
                 
         </form>
       
+        
+        <!-- Success Message Display -->
+        <?php if (!empty($_GET['success'])): ?>
+            <div class="form-success" style="color:darkgreen;margin-bottom:10px;">
+                <?php echo htmlspecialchars($_GET['success']); ?>
+            </div>
+        <?php endif; ?>
         
         <!-- Sign Up Link -->
         <p>Don't have an account? <a href="signup.php">Sign up here</a></p>

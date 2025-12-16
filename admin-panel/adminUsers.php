@@ -1,3 +1,18 @@
+<?php 
+
+include '../BackEnd/db.php';
+session_start();
+//if (!isset($_SESSION['admin_id'])) {
+//    header('Location: ../admin-validation/index.php');
+//    exit;
+//}
+$result = $conn->query('SELECT * FROM users ');
+$users = [];
+while ($row = $result->fetch_assoc()) {
+    $users[] = $row;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,100 +30,29 @@
 
 
     <h1>USER ACCOUNTS</h1>
-
-    <div class="users-container">
-
-        <div class="box">
-            <table class="users-table">
-                <tr>
-                    <th>User Name :</th>
-                    <td>name</td>
-                </tr>
-                <tr>
-                    <th>Email :</th>
-                    <td>Email@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>User Type :</th>
-                    <td>user</td>
-                </tr>
-            </table>
-            <button class="delete-btn"  onclick="deluser()">Delete User</button>
+    <?php if (empty($users)): ?>
+        <p>No users found.</p>
+    <?php else: ?>
+        <div class="users-container">
+            <?php foreach ($users as $user): ?>
+                <div class="box">
+                    <table class="users-table">
+                        <tr>
+                            <th>User Name :</th>
+                            <td><?php echo htmlspecialchars($user['username']); ?></td>
+                        </tr>
+                        <tr>
+                            <th>Email :</th>
+                            <td><?php echo htmlspecialchars($user['email']); ?></td>
+                        </tr>
+                    </table>
+                    <button class="delete-btn" onclick="deluser(<?php echo $user['user_id']; ?>)">Delete User</button>
+                </div>
+            <?php endforeach; ?>
         </div>
+    <?php endif; ?>
 
-        <div class="box">
-            <table class="users-table">
-                <tr>
-                    <th>User Name :</th>
-                    <td>name</td>
-                </tr>
-                <tr>
-                    <th>Email :</th>
-                    <td>Email@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>User Type :</th>
-                    <td>user</td>
-                </tr>
-            </table>
-            <button class="delete-btn"  onclick="deluser()">Delete User</button>
-        </div>
 
-        <div class="box">
-            <table class="users-table">
-                <tr>
-                    <th>User Name :</th>
-                    <td>name</td>
-                </tr>
-                <tr>
-                    <th>Email :</th>
-                    <td>Email@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>User Type :</th>
-                    <td>user</td>
-                </tr>
-            </table>
-            <button class="delete-btn"  onclick="deluser()">Delete User</button>
-        </div>
-
-        <div class="box">
-            <table class="users-table">
-                <tr>
-                    <th>User Name :</th>
-                    <td>name</td>
-                </tr>
-                <tr>
-                    <th>Email :</th>
-                    <td>Email@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>User Type :</th>
-                    <td>user</td>
-                </tr>
-            </table>
-            <button class="delete-btn"  onclick="deluser()">Delete User</button>
-        </div>
-        
-        <div class="box">
-            <table class="users-table">
-                <tr>
-                    <th>User Name :</th>
-                    <td>name</td>
-                </tr>
-                <tr>
-                    <th>Email :</th>
-                    <td>Email@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>User Type :</th>
-                    <td>user</td>
-                </tr>
-            </table>
-            <button class="delete-btn"  onclick="deluser()">Delete User</button>
-        </div>
-
-    </div>
 </body>
 
 </html>

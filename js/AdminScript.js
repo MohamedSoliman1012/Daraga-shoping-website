@@ -9,9 +9,9 @@ function logout() {
 }
 
 // --- Deletion Functions ---
-function deluser() {
+function deluser(userId) {
    if(confirm('Delete this user?')){
-    alert("user deleted successfully")
+    window.location.href = '../BackEnd/admin.php?delete_user_id='+userId;
    }
 }
 

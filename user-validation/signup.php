@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,14 +23,22 @@
     <!-- Main Content: Sign Up Form -->
     <div class="signup-card">
         <h1>Sign Up</h1>
+        <?php
+        if (!empty($_SESSION['signup_messages'])) {
+            foreach ($_SESSION['signup_messages'] as $m) {
+                echo '<script>alert(' . json_encode($m) . ');</script>';
+            }
+            unset($_SESSION['signup_messages']);
+        }
+        ?>
         
         <!-- Sign Up Form -->
-        <form >
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-            <button type="button" onclick="Signup()">Sign Up</button>
+        <form method="POST" action="../BackEnd/signup.php">
+            <input type="text" id="username" name="name" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
         </form>
         
         <!-- Login Link -->
