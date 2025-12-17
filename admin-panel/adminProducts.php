@@ -1,104 +1,80 @@
+<?php 
+include '../BackEnd/db.php';
+session_start();
+
+// Fetch products from database
+$select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Products</title>
     <link rel="stylesheet" href="../styles/AdminStyle.css">
-    <script src="../js/AdminScript.js" ></script>
+    <script src="../js/AdminScript.js"></script>
 </head>
-
 <body>
 
     <?php include 'header-admin.php';?>
 
-
     <h1>SHOP PRODUCTS</h1>
+
     <div class="add-product-container">
-
-    <div class="add-product-form">
-        <h3>ADD PRODUCT</h3>
-        <form>
-            <input type="text" id="addname" placeholder="Enter product name" class="box" required>
-            <input type="number" id="addprice" min="0" placeholder="Enter product price" class="box" required>
-           <textarea id="adddetails" placeholder="Enter product details" class="box" rows="5" required></textarea> 
-            <input type="file" id="addimage" class="box" accept="image/jpg, image/jpeg, image/png">
-            <select class="box">
-                <option value="">bicycles</option>
-                <option value="">repair</option>
-                <option value="">accessories</option>
-            </select>
-            <br>
-            <button type="button" class="box" onclick="addproduct()">Add product</button>
-        </form>
+        <div class="add-product-form">
+            <h3>ADD PRODUCT</h3>
+            <form action="../BackEnd/add_product.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="p_name" placeholder="Enter product name" class="box" required>
+                <input type="number" name="p_price" min="0" placeholder="Enter product price" class="box" required>
+                <textarea name="p_details" placeholder="Enter product details" class="box" rows="5" required></textarea> 
+                <input type="file" name="p_image" class="box" accept="image/jpg, image/jpeg, image/png" required>
+                <select name="p_category" class="box" required>
+                    <option value="bikes">bicycles</option>
+                    <option value="Tools">repair</option>
+                    <option value="accessories">accessories</option>
+                </select>
+                <br>
+                <button type="submit" name="add_product" class="box">Add product</button>
+            </form>
+        </div>
     </div>
 
-    </div>
-    <div class="added-products" >
+    <div class="added-products">
         <h1 id="Added-product">Added Products</h1>
-
-        <div class="product">
-            <img src="../images/bikes/city/4.jpg" alt="">
-            <table>
-                <tr>
-                    <td>BTWIN 26</td>
-                    <td class="price">24,499$</td>
-                </tr>
-            </table>
-            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
-
+        <div class="product-box-container">
+            <?php
+            if (mysqli_num_rows($select_products) > 0) {
+                while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+            ?>
+                <div class="product">
+                    <img src="../images/<?php echo $fetch_products['category']; ?>/<?php echo $fetch_products['image']; ?>" alt="product image">
+                    
+                    <table>
+                        <tr>
+                            <td><?php echo htmlspecialchars($fetch_products['name']); ?></td>
+                            <td class="price"><?php echo number_format($fetch_products['price']); ?>$</td>
+                        </tr>
+                    </table>
+                    
+                    <button class="delete-btn" onclick="delproduct(<?php echo $fetch_products['id']; ?>)">
+                        Delete Product
+                    </button>
+                </div>
+            <?php
+                }
+            } else {
+                echo '<p style="text-align:center;">No products added yet.</p>';
+            }
+            ?>
         </div>
-
-        <div class="product">
-            <img src="../images/bikes/city/1.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Forever 24</td>
-                    <td class="price">7,999$</td>
-                </tr>
-            </table>
-            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
-
-        </div>
-
-        <div class="product">
-            <img src="../images/bikes/city/3.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Zoom 20</td>
-                    <td class="price">7,403$</td>
-                </tr>
-            </table>
-            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
-
-        </div>
-        <div class="product">
-            <img src="../images/Tools/Gunpla 46 Piece  Drive Socket Wrench Driver.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Socket Kit</td>
-                    <td class="price">40$</td>
-                </tr>
-            </table>
-            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
-
-        </div>
-        <div class="product">
-            <img src="../images/Tools/Cycling Motorcycle Bicycle Chain Crankset Brush.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Chain Brush</td>
-                    <td class="price">10$</td>
-                </tr>
-            </table>
-            <button class="delete-btn" onclick="delproduct()">Delete Product</button>
-
-        </div>
-
     </div>
 
-
+    <script>
+    function delproduct(pid) {
+        if (confirm("Are you sure you want to delete this product?")) {
+            window.location.href = "../BackEnd/delete_product.php?id=" + pid;
+        }
+    }
+    </script>
 </body>
-
 </html>

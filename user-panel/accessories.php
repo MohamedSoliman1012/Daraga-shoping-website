@@ -1,68 +1,35 @@
+<?php 
+include '../BackEnd/db.php';
+session_start();
+$select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'accessories'") or die('Query failed');
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Meta Information -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200">
     <title>Accessories</title>
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="../styles/style.css">
-
-    <!-- JavaScript -->
-    <script src="../js/navigation.js" ></script>
 </head>
-
 <body>
-    <!-- Header Section -->
     <?php include 'header.php';?>
-
-
-
     <h1>Accessories</h1>
-
-<div class="category">
-
-       <div class="product" onclick="itempage()">
-            <img src="../images/Tools/Gunpla 46 Piece  Drive Socket Wrench Driver.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Socket Kit</td>
-                    <td class="price">40$</td>
-                </tr>
-            </table>
-
-        </div>
-
-
-        <div class="product">
-            <img src="../images/Tools/Portable Bike Chain Tool Compact Bicycle Chain Splitter Cutter.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Spring Tool</td>
-                    <td class="price">50$</td>
-                </tr>
-            </table>
-
-        </div>
-            
-
-      <div class="product">
-            <img src="../images/Tools/VOSAREA 48Pcs 30mm Motor Bicycle Bike Tyre Tire Inner Tube Puncture Rubber Patches Repair Kit.jpg" alt="">
-            <table>
-                <tr>
-                    <td>Spacer Set</td>
-                    <td class="price">25$</td>
-                </tr>
-            </table>
-
-        </div>
-    
-  </div>
-
-     <!-- Footer Section -->
-           <?php include 'footer.php';?>
+    <div class="category">
+        <?php if (mysqli_num_rows($select_products) > 0): ?>
+            <?php while ($fetch_product = mysqli_fetch_assoc($select_products)): ?>
+                <div class="product" onclick="window.location.href='itemPage.php?id=<?php echo $fetch_product['id']; ?>'">
+                    <img src="../images/accessories/<?php echo $fetch_product['image']; ?>" alt="accessory">
+                    <table>
+                        <tr>
+                            <td><?php echo htmlspecialchars($fetch_product['name']); ?></td>
+                            <td class="price"><?php echo number_format($fetch_product['price']); ?>$</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p style="text-align:center; width:100%;">No accessories found.</p>
+        <?php endif; ?>
+    </div>
+    <?php include 'footer.php';?>
 </body>
-
 </html>
