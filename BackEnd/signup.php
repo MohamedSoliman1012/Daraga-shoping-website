@@ -1,64 +1,57 @@
-    <?php
-    session_start();
-    include 'db.php';
+<?php
+mysqli_report(MYSQLI_REPORT_OFF);
+include 'db.php';
 
-    $messages = [];
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $name = trim($_POST['name'] ?? '');
-        $email = trim($_POST['email'] ?? '');
-        $password = $_POST['password'] ?? '';
-        $confirm = $_POST['confirmPassword'] ?? '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $user = $_POST['name'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+    $conf = $_POST['confirmPassword'];
 
-        if ($name === '' || $email === '' || $password === '' || $confirm === '') {
-            echo '<script>alert("please fill all fields 3ashan ta3bna");</script>';
-        }
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo '<script>alert("Please provide a valid email address.");</script>';
-        }
-
-        if ($password !== $confirm) {
-            echo '<script>alert("Passwords do not match");</script>';
-        }
-
-        if (empty($messages)) {
-            // Check if email already exists (only by email)
-            $stmt = $conn->prepare('SELECT user_id FROM users WHERE email = ?');
-            if ($stmt === false) {
-                $messages[] = 'Database error: failed to prepare statement.';
-            } else {
-                $stmt->bind_param('s', $email);
-                $stmt->execute();
-                $stmt->store_result();
-                if ($stmt->num_rows > 0) {
-                    $messages[] = 'Email is already registered.';
-                } else {
-
-                    $hash = password_hash($password, PASSWORD_DEFAULT);
-                    $ins = $conn->prepare('INSERT INTO users (username, email, password) VALUES (?, ?, ?)');
-                    if ($ins === false) {
-                        $messages[] = 'Database error: failed to prepare insert.';
-                    } else {
-                        $ins->bind_param('sss', $name, $email, $hash);
-                        if ($ins->execute()) {
-                            // Registration successful: redirect to login
-                            $_SESSION['signup_messages'] = ['Registration successful. You may now log in.'];
-                            header('Location: ../user-validation/index.php');
-                            exit;
-                        } else {
-                            $messages[] = 'Registration failed. Please try again.';
-                        }
-                    }
-                }
-                $stmt->close();
-            }
-        }
-
-        // store messages and redirect back to signup form
-        $_SESSION['signup_messages'] = $messages;
-        header('Location: ../user-validation/signup.php');
-        exit;
+    if ($pass !== $conf) {
+        echo "<script>alert('Error: Passwords do not match!'); window.history.back();</script>";
+        exit();
     }
 
-    ?>
- 
+    // 1. IMPROVED CHECK: Use 'username' instead of 'id' in case 'id' doesn't exist
+    $check = mysqli_prepare($conn, "SELECT username FROM users WHERE email = ? OR username = ?");
+    
+    // Check if the prepare actually worked
+    if ($check) {
+        mysqli_stmt_bind_param($check, "ss", $email, $user);
+        mysqli_stmt_execute($check);
+        mysqli_stmt_store_result($check);
+
+        if (mysqli_stmt_num_rows($check) > 0) {
+            echo "<script>alert('Error: Username or Email is already taken!'); window.history.back();</script>";
+            mysqli_stmt_close($check);
+            exit();
+        }
+        mysqli_stmt_close($check);
+    } else {
+        // This will tell you EXACTLY what is wrong with your SQL or Table
+        die("Database Error: " . mysqli_error($conn));
+    }
+
+    // 2. Proceed with Insert
+    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "sss", $user, $email, $pass);
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<script>
+                    alert('Registration successful!');
+                    window.location.href='../user-validation/index.php';
+                  </script>";
+        } else {
+            echo "<script>alert('Error: Execution failed.'); window.history.back();</script>";
+        }
+        mysqli_stmt_close($stmt);
+    } else {
+        die("Insert Prepare Error: " . mysqli_error($conn));
+    }
+}
+mysqli_close($conn);
+?>

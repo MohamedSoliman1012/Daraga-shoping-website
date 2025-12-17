@@ -1,76 +1,36 @@
 <?php
+mysqli_report(MYSQLI_REPORT_OFF);
 include 'db.php';
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../user-validation/index.php');
-    exit;
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $emailInput = $_POST['email'];
+    $passInput  = $_POST['password'];
 
-$email = trim($_POST['email'] ?? '');
-$password = $_POST['password'] ?? '';
-$role = $_POST['radio'] ?? '';
-
-if ($email === '' || $password === '') {
-    header('Location: ../user-validation/index.php?error=' . urlencode('Please enter email and password'));
-    exit;
-}
-
-if ($role === '' || ($role !== 'user' && $role !== 'admin')) {
-    header('Location: ../user-validation/index.php?error=' . urlencode('Please select a login type'));
-    exit;
-}
-
-if ($role === 'user') {
-    // Check users table
-    $stmt = $conn->prepare('SELECT user_id, username FROM users WHERE email = ?');
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows === 0) {
-        header('Location: ../user-validation/index.php?error=' . urlencode('Incorrect email or password'));
-        exit;
+    // 1. Hardcoded Admin Check
+    if ($emailInput === 'admin@daraga.com' && $passInput === 'admin') {
+        $_SESSION['username'] = 'Super Admin';
+        header("Location: ../admin-panel/adminHome.php");
+        exit();
     }
-    
-    $row = $result->fetch_assoc();
-    // Verify password (using password_hash)
-    $db_pass_stmt = $conn->prepare('SELECT password FROM users WHERE email = ?');
-    $db_pass_stmt->bind_param('s', $email);
-    $db_pass_stmt->execute();
-    $pass_result = $db_pass_stmt->get_result();
-    $pass_row = $pass_result->fetch_assoc();
-    
-    if (password_verify($password, $pass_row['password'])) {
-        $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['user_name'] = $row['username'];
-        $_SESSION['user_email'] = $email;
-        header('Location: ../user-panel/home.php');
-        exit;
-    } else {
-        header('Location: ../user-validation/index.php?error=' . urlencode('Incorrect email or password'));
-        exit;
-    }
-} elseif ($role === 'admin') {
-    // Check admins table
-    $stmt = $conn->prepare('SELECT password FROM admins WHERE email = ?');
-    $stmt->bind_param('s', $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows === 0) {
-        header('Location: ../user-validation/index.php?error=' . urlencode('Incorrect email or password'));
-        exit;
-    }
-    
-    $row = $result->fetch_assoc();
-    if (password_verify($password, $row['password'])) {
-        $_SESSION['admin_email'] = $email;
-        header('Location: ../admin-panel/adminHome.php');
-        exit;
-    } else {
-        header('Location: ../user-validation/index.php?error=' . urlencode('Incorrect email or password'));
-        exit;
+
+    // 2. Database Check: We check BOTH email AND password in the SQL
+    $sql = "SELECT username FROM users WHERE email = ? AND password = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "ss", $emailInput, $passInput);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        // If the query returns a row, the email AND password are correct
+        if ($user = mysqli_fetch_assoc($result)) {
+            $_SESSION['username'] = $user['username'];
+            echo "<script>alert('Login Successful!'); window.location.href='../user-panel/home.php';</script>";
+        } else {
+            // No match found
+            echo "<script>alert('Invalid email or password!'); window.history.back();</script>";
+        }
     }
 }
 ?>
