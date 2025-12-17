@@ -2,8 +2,8 @@
 include '../BackEnd/db.php';
 session_start();
 
-// 1. Security Check: Ensure Admin is logged in
-if(!isset($_SESSION['user_id'])){
+// Make sure only logged-in admins can see this page
+if(!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin'){
     header('location:../user-validation/index.php');
     exit;
 }

@@ -14,9 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 1. Hardcoded Admin Check
     if ($emailInput === 'admin@daraga.com' && $passInput === 'admin') {
         if ($roleInput === 'admin') {
+            $_SESSION['user_id'] = 0; // Set a dummy user_id for admin
             $_SESSION['username'] = 'Super Admin';
             $_SESSION['role'] = 'admin';
-            // Note: Admin typically doesn't need a user_id for cart operations
+            // Admin now has user_id set so adminHome.php won't redirect
             header("Location: ../admin-panel/adminHome.php");
             exit();
         } else {
@@ -49,9 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
         }
-    } else {
-        // If 'admin' radio was selected but hardcoded check failed, or role is missing
+    } else if ($roleInput === 'admin') {
+        // They selected admin but didn't match the hardcoded credentials
         echo "<script>alert('Invalid email, password, or role selection.'); window.history.back();</script>";
+        exit();
+    } else {
+        // No role selected
+        echo "<script>alert('Please select a role.'); window.history.back();</script>";
         exit();
     }
 }
