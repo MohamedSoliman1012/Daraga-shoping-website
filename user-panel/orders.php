@@ -45,7 +45,7 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
             font-size: 1.4em;
             font-weight: bold;
             color: var(--rare); /* Gold Color */
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             display: block;
             text-transform: capitalize;
         }
@@ -55,6 +55,19 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
             color: #aaa;
             margin-bottom: 5px;
             display: block;
+        }
+
+        /* Status Style */
+        .order-status {
+            font-weight: bold;
+            color: #fff;
+            background-color: #555;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         /* 2. Total Price */
@@ -85,6 +98,11 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
                 <div>
                     <span class="label">Customer Name</span>
                     <span class="user-name"><?php echo htmlspecialchars($fetch_order['name']); ?></span>
+                </div>
+
+                <div>
+                    <span class="label">Status</span>
+                    <span class="order-status"><?php echo !empty($fetch_order['status']) ? $fetch_order['status'] : 'Pending'; ?></span>
                 </div>
                 
                 <div>
