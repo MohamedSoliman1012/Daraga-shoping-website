@@ -7,7 +7,8 @@ function logout() {
     let checklogout = confirm('Are you sure you want to log out?');
 
     if (checklogout) {
-        window.location.href = '../user-validation/index.php';
+        // Use server-side logout so session is properly cleared
+        window.location.href = '../BackEnd/logout.php';
     }
 }
 
@@ -63,6 +64,9 @@ function addproduct() {
     }
 
 }
+// Page-specific deletion and product helper functions are defined
+// inside individual admin pages where they're used (e.g. adminUsers.php,
+// adminProducts.php). Removed duplicated helpers from this central file.
 
 // Redirect to products page after successfully adding a product
 function addedproduct() {

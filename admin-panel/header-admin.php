@@ -13,3 +13,14 @@
             <a href="#" id="logout-icon" onclick="logout()">👤</a>
         </div>
     </header>
+
+    <!-- Fallback logout in case page didn't load AdminScript.js -->
+    <script>
+    if (typeof logout === 'undefined') {
+        function logout(){
+            if(confirm('Are you sure you want to log out?')){
+                window.location.href = '../BackEnd/logout.php';
+            }
+        }
+    }
+    </script>
