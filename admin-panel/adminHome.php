@@ -1,17 +1,17 @@
 <?php
+// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
-// 1. Security Check: Ensure Admin is logged in
+// Make sure only logged-in admins can see this page
 if(!isset($_SESSION['user_id'])){
     header('location:../user-validation/index.php');
     exit;
 }
 
-// ------------------- DASHBOARD LOGIC ------------------- //
+// =============== DASHBOARD LOGIC ===============
 
-// 2. Calculate Total Completed Payments
-// We sum up the 'total_price' column for all orders where status is 'completed'
+// Calculate the total revenue from completed orders
 $total_completed = 0;
 $select_completed = mysqli_query($conn, "SELECT SUM(total_price) AS total_payment FROM orders WHERE status = 'completed'") or die('query failed');
 $fetch_completed = mysqli_fetch_assoc($select_completed);
@@ -19,15 +19,15 @@ if($fetch_completed['total_payment'] > 0){
     $total_completed = $fetch_completed['total_payment'];
 }
 
-// 3. Count Total Orders Placed
+// Count how many orders have been placed so far
 $select_orders = mysqli_query($conn, "SELECT * FROM orders") or die('query failed');
 $number_of_orders = mysqli_num_rows($select_orders);
 
-// 4. Count Total Products Added
+// Count how many products are in the inventory
 $select_products = mysqli_query($conn, "SELECT * FROM products") or die('query failed');
 $number_of_products = mysqli_num_rows($select_products);
 
-// 5. Count Total Users (Customers)
+// Count how many users (customers) have registered
 $select_users = mysqli_query($conn, "SELECT * FROM users") or die('query failed');
 $number_of_users = mysqli_num_rows($select_users);
 ?>

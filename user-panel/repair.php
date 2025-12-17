@@ -1,7 +1,8 @@
 <?php 
+// Include database connection
 include '../BackEnd/db.php';
 session_start();
-// Query matches the 'Tools' folder in your directory
+// Fetch all products in the 'Tools' category (repair tools)
 $select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'Tools'") or die('Query failed');
 ?>
 <!DOCTYPE html>

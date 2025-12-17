@@ -1,14 +1,16 @@
 <?php 
+// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
+// Make sure user is logged in
 if(!isset($_SESSION['user_id'])){
     header('location:../user-validation/index.php');
     exit;
 }
 
 $user_id = $_SESSION['user_id'];
-$select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$user_id' ORDER BY id DESC");
+// Fetch all orders for this user, newest first
 ?>
 
 <!DOCTYPE html>

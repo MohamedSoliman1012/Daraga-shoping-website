@@ -1,6 +1,8 @@
 <?php 
+// Include database connection
 include '../BackEnd/db.php';
 session_start();
+// Fetch all products in the 'accessories' category from the database
 $select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'accessories'") or die('Query failed');
 ?>
 <!DOCTYPE html>

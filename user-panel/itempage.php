@@ -1,19 +1,25 @@
 <?php 
+// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
+// Check if a product ID was passed in the URL
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($conn, $_GET['id']);
+    // Query for the product details
     $query = "SELECT * FROM products WHERE id = '$id'";
     $result = mysqli_query($conn, $query);
 
+    // If product exists, fetch its data
     if (mysqli_num_rows($result) > 0) {
         $product = mysqli_fetch_assoc($result);
     } else {
+        // Product doesn't exist - tell user and go back
         echo "<script>alert('Product not found!'); window.location.href='home.php';</script>";
         exit;
     }
 } else {
+    // No product ID provided - send them home
     header('location:home.php');
     exit;
 }

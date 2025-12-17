@@ -1,8 +1,9 @@
 <?php 
+// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
-// 1. Security Check: Ensure user is logged in
+// Make sure user is logged in before viewing cart
 if(!isset($_SESSION['user_id'])){
     // If not logged in, redirect to login page
     header('location:../user-validation/index.php');
@@ -12,7 +13,7 @@ if(!isset($_SESSION['user_id'])){
 $user_id = $_SESSION['user_id'];
 $grand_total = 0;
 
-// 2. Fetch all items in the cart for this specific user
+// Fetch all items currently in this user's shopping cart
 $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id'") or die('Query failed');
 ?>
 
