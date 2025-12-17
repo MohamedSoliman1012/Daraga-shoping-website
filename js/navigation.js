@@ -41,12 +41,6 @@ function Signup() {
         // All validations passed!
         alert("Sign Up Successfully!");
         window.location.href = '../user-panel/home.php';
-// --- Authentication & User Flow ---
-function logout() {
-    let checklogout = confirm('Are you sure you want to log out?');
-    if (checklogout) {
-        // Call server-side logout to destroy session, then redirect
-        window.location.href = '../BackEnd/logout.php';
     }
 }
 
