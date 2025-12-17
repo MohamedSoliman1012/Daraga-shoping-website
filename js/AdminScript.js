@@ -1,9 +1,6 @@
-// =========================
-// AUTHENTICATION FUNCTIONS
-// =========================
-
-// Logout function - ask for confirmation and redirect to login page
+// --- Authentication Functions ---
 function logout() {
+    
     let checklogout = confirm('Are you sure you want to log out?');
 
     if (checklogout) {
@@ -11,37 +8,27 @@ function logout() {
     }
 }
 
-// =========================
-// DELETION FUNCTIONS
-// =========================
-
-// Delete a user - ask for confirmation first
+// --- Deletion Functions ---
 function deluser(userId) {
    if(confirm('Delete this user?')){
     window.location.href = '../BackEnd/admin.php?delete_user_id='+userId;
    }
 }
 
-// Delete a product - ask for confirmation first
 function delproduct() {
     if(confirm('Delete this product?')){
     alert("item deleted successfully")
    }
 }
 
-// =========================
-// PRODUCT MANAGEMENT
-// =========================
+// --- Product Management Functions ---
 
-// Validate and add a new product to the inventory
 function addproduct() {
-    // Get the form input values
     let name=document.getElementById("addname").value;
     let price=document.getElementById("addprice").value;
     let details=document.getElementById("adddetails").value;
     let imageInput=document.getElementById("addimage");
 
-    // Check if all required fields are filled
     if(name.trim() === ""){
         alert("Enter product name")
     }else if(price.trim() === ""){
@@ -53,8 +40,7 @@ function addproduct() {
         alert("Enter product image")
 
     }else{
-    // All validations passed - tell user and clear the form
-    alert("product added completed")
+    alert("product addeed completed")
 
     document.getElementById("addname").value = "";
     document.getElementById("addprice").value = "";
@@ -64,22 +50,17 @@ function addproduct() {
 
 }
 
-// Redirect to products page after successfully adding a product
 function addedproduct() {
     window.location.href = 'adminProducts.php#Added-product';
 }
 
-// =========================
-// NAVIGATION FUNCTIONS
-// =========================
+// --- Navigation Functions ---
 
-// Navigate to the user management page
 function userspage() {
     // Redirect to the User Administration page
     window.location.href = 'adminUsers.php';
 }
 
-// Navigate to the order management page
 function orderspage() {
     // Redirect to the Order Administration page
     window.location.href = 'adminOrders.php';

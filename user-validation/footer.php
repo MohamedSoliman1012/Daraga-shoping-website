@@ -1,4 +1,3 @@
-<!-- Footer Section for validation pages -->
 <footer class="footer-main">
         <div class="footer-container">
             <div class="footer-section footer-brand">

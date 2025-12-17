@@ -1,7 +1,5 @@
-  <!-- Main navigation header - appears on all user pages -->
   <header class="header">
         <a href="home.php" class="logo">DARAGA</a>
-        <!-- Navigation menu with product categories and user pages -->
         <nav class="navbar">
             <a href="home.php">Home</a>
             <a href="bicycles.php">Bicycles</a>
@@ -10,7 +8,6 @@
             <a href="shopping-cart.php">Shopping Cart</a>
             <a href="orders.php">Your Orders</a>
         </nav>
-        <!-- Logout button -->
         <div class="icons">
             <a href="#" id="logout-icon" onclick="logout()">👤</a>
         </div>

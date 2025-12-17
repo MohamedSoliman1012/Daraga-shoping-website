@@ -1,9 +1,8 @@
 <?php 
-// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
-// Fetch all products from the database to display in the table
+// Fetch products from database
 $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
 ?>
 <!DOCTYPE html>

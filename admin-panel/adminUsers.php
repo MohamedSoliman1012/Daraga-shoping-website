@@ -1,13 +1,11 @@
 <?php 
-// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
-// Fetch all registered users from the database
+// Fetch all users from the database
 $result = $conn->query('SELECT user_id, username, email FROM users');
 $users = [];
 
-// Load all user data into an array
 if ($result) {
     while ($row = $result->fetch_assoc()) {
         $users[] = $row;

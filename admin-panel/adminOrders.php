@@ -1,36 +1,34 @@
 <?php
-// Include database connection
 include '../BackEnd/db.php';
 session_start();
 
-// Make sure only logged-in admins can see this page
+// 1. Check if Admin is logged in
 if(!isset($_SESSION['user_id'])){
     header('location:../user-validation/index.php');
     exit;
 }
 
-// Check if admin is trying to update an order's status
+// 2. LOGIC: Update Order Status
 if(isset($_POST['update_order'])){
     $order_id = $_POST['order_id'];
     $update_status = $_POST['update_status'];
-    // Update the order status in the database
     mysqli_query($conn, "UPDATE orders SET status = '$update_status' WHERE id = '$order_id'") or die('query failed');
     echo "<script>alert('Order status updated!');</script>";
 }
 
-// Check if admin wants to delete an order
+// 3. LOGIC: Delete Order
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     
-    // Execute the delete query to remove the order
+    // Execute Delete Query
     mysqli_query($conn, "DELETE FROM orders WHERE id = '$delete_id'") or die('query failed');
     
-    // Refresh the page to show the updated list
+    // Refresh the page to show changes
     header('location: ' . $_SERVER['PHP_SELF']);
     exit(); 
 }
 
-// Fetch all orders from the database, newest first
+// 4. Fetch All Orders (Newest First)
 $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or die('Query failed');
 ?>
 

@@ -1,5 +1,4 @@
-<!-- Footer Section - displayed on all pages -->
-<!-- Contains brand info, links, and social media -->
+<!-- Footer Section -->
         <footer class="footer-main">
             <div class="footer-container">
                 <!-- Brand Information -->
