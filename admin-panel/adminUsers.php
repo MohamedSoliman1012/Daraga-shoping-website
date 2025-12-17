@@ -1,44 +1,35 @@
 <?php 
-
 include '../BackEnd/db.php';
 session_start();
-//if (!isset($_SESSION['admin_id'])) {
-//    header('Location: ../admin-validation/index.php');
-//    exit;
-//}
-$result = $conn->query('SELECT * FROM users ');
-$users = [];
-while ($row = $result->fetch_assoc()) {
-    $users[] = $row;
-}
 
+// Fetch all users from the database
+$result = $conn->query('SELECT user_id, username, email FROM users');
+$users = [];
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $users[] = $row;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Users</title>
+    <title>Admin - User Management</title>
     <link rel="stylesheet" href="../styles/AdminStyle.css">
-    <script src="../js/AdminScript.js" ></script>
 </head>
-
 <body>
 
     <?php include 'header-admin.php';?>
 
-
     <h1>USER ACCOUNTS</h1>
-    <?php 
-    if (!empty($_SESSION['admin_message'])) {
-        echo '<script>alert(' . json_encode($_SESSION['admin_message']) . ');</script>';
-        unset($_SESSION['admin_message']);
-    }
-    if (empty($users)): ?>
-        <p>No users found.</p>
-    <?php else: ?>
-        <div class="users-container">
+
+    <div class="users-container">
+        <?php if (empty($users)): ?>
+            <p style="text-align:center;">No users found.</p>
+        <?php else: ?>
             <?php foreach ($users as $user): ?>
                 <div class="box">
                     <table class="users-table">
@@ -51,13 +42,23 @@ while ($row = $result->fetch_assoc()) {
                             <td><?php echo htmlspecialchars($user['email']); ?></td>
                         </tr>
                     </table>
-                    <button class="delete-btn" onclick="deluser(<?php echo $user['user_id']; ?>)">Delete User</button>
+                    
+                    <button class="delete-btn" onclick="deluser(<?php echo $user['user_id']; ?>)">
+                        Delete User
+                    </button>
                 </div>
             <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
+    </div>
 
+    <script>
+    // This function handles the confirmation and redirection
+    function deluser(userId) {
+        if (confirm("Are you sure you want to delete this user?")) {
+            window.location.href = "../BackEnd/delete_user.php?id=" + userId;
+        }
+    }
+    </script>
 
 </body>
-
 </html>
