@@ -175,6 +175,41 @@ body {
 }
 
 /* ============================================
+   FORM VALIDATION STYLES
+   ============================================ */
+.role-selection {
+    margin: 20px 0;
+}
+
+.role-label {
+    display: block;
+    color: var(--main);
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.form-error {
+    color: #d32f2f;
+    background-color: rgba(211, 47, 47, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #d32f2f;
+    font-weight: bold;
+}
+
+.form-success {
+    color: #2e7d32;
+    background-color: rgba(46, 125, 50, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #2e7d32;
+    font-weight: bold;
+}
+
+/* ============================================
    HOME PAGE STYLES
    ============================================ */
 .category {
@@ -864,3 +899,59 @@ body {
             font-size: 1.5em;
             margin-top: 50px;
         }
+
+/* ============================================
+   NO ITEMS MESSAGE STYLES
+   ============================================ */
+.no-items-msg {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.empty-cart-msg {
+    text-align: center;
+    padding: 50px;
+    font-size: 20px;
+}
+
+/* ============================================
+   SUBTOTAL STYLES
+   ============================================ */
+.subtotal-line {
+    font-weight: bold;
+    color: #afa6a6;
+}
+
+.total-line {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.total-price-final {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--buy);
+}
+
+/* ============================================
+   CART SUMMARY LABEL
+   ============================================ */
+.cart-total-label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ============================================
+   FORM INLINE STYLES
+   ============================================ */
+.form-inline {
+    display: inline;
+}
+
+/* ============================================
+   CENTERED BUTTONS
+   ============================================ */
+.cart-buttons-centered {
+    justify-content: center;
+}

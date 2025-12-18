@@ -281,3 +281,56 @@ body {
    .price{
     color: var(--buy);
    }
+
+/* ============================================
+   ADDITIONAL ADMIN STYLES
+   ============================================ */
+
+.product-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.home {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   CLICKABLE BOXES
+   ============================================ */
+.clickable-box {
+    cursor: pointer;
+}
+
+/* ============================================
+   ADMIN TABLE STYLES
+   ============================================ */
+.no-data-cell {
+    text-align: center;
+    padding: 20px;
+}
+
+.delete-link {
+    color: #d32f2f;
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   NO DATA MESSAGE
+   ============================================ */
+.no-data-msg {
+    text-align: center;
+}

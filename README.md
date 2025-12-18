@@ -1,6 +1,6 @@
 # 🚴 Daraga Shop - Bicycle E-Commerce Platform
 
-A modern e-commerce website for bicycles, repair tools, and cycling accessories. Built with HTML, CSS, and JavaScript, Daraga Shop provides a seamless shopping experience for cycling enthusiasts.
+A full-stack e-commerce website for bicycles, repair tools, and cycling accessories. Built with PHP, MySQL, HTML5, CSS3, and JavaScript, Daraga Shop provides a seamless shopping experience for cycling enthusiasts.
 
 ## 📋 Table of Contents
 
@@ -8,9 +8,11 @@ A modern e-commerce website for bicycles, repair tools, and cycling accessories.
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Pages Overview](#pages-overview)
-- [File Structure](#file-structure)
+- [Installation & Setup](#installation--setup)
+- [Database Schema](#database-schema)
+- [User Roles](#user-roles)
+- [Key Pages](#key-pages)
+- [Security Notes](#security-notes)
 - [Future Enhancements](#future-enhancements)
 - [Contributors](#contributors)
 
@@ -20,149 +22,252 @@ Daraga Shop is an e-commerce platform designed by three Computer Science student
 
 ## ✨ Features
 
-### 🛍️ Product Categories
-- **Bicycles**: Mountain bikes, Road bikes, and City bikes
-- **Repair Tools**: Multi-tools, tire repair kits, chain tools, and wrenches
-- **Accessories**: Cycling accessories and spare parts
+### 🛍️ Product Management
+- Browse bicycles (Mountain, Road, City bikes)
+- Repair tools and maintenance products
+- Cycling accessories and spare parts
+- Detailed product pages with images and specifications
 
-### 🎨 User Interface
-- **Desktop Optimized**: Designed for optimal desktop viewing experience (1200px width)
-- **Modern UI/UX**: Clean, intuitive interface with smooth navigation
-- **Interactive Elements**: Dropdown menus, shopping cart, notifications, and profile management
-- **Category Organization**: Well-organized product categories with subcategories
+### 🛒 Shopping Features
+- Add products to shopping cart
+- View cart with total price calculation
+- Tax calculation (14%)
+- Checkout with shipping details
+- Payment method selection (Cash on Delivery, Credit Card)
 
-### 🔐 User Features
-- User authentication (Login/Signup)
+### 👥 User Management
+- User registration (Sign Up)
+- User authentication (Login)
 - User profile management
-- Shopping cart functionality (placeholder)
-- Product browsing and filtering
-- Order tracking (placeholder)
-- Notification system (placeholder)
+- Order history tracking
+- Admin and regular user roles
+
+### 📦 Order Management
+- Place orders from cart or buy now
+- View order status (Pending, Completed)
+- Order tracking dashboard
+- Admin order management
+
+### 🔐 Admin Panel
+- Product management (Add, Edit, Delete)
+- User management
+- Order management and status updates
+- Dashboard with statistics
 
 ## 🛠️ Technologies Used
 
-- **HTML5**: Semantic markup for structure
-- **CSS3**: Modern styling with fixed-width layout
-- **JavaScript (Vanilla)**: Interactive functionality and navigation
-- **No Framework Dependencies**: Pure vanilla implementation for fast loading
+- **Backend**: PHP 7+ with MySQLi
+- **Database**: MySQL
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Server**: Apache (XAMPP)
+- **Session Management**: PHP Sessions
 
 ## 📁 Project Structure
 
 ```
-web-development-project/
+Daraga-shoping-website/
 │
-├── index.html              # Login page
-├── signup.html             # User registration
-├── home.html               # Homepage
-├── bicycles.html           # Bicycles category page
-├── repair.html             # Repair tools category page
-├── profile.html            # User profile page
-├── roadster-3000.html     # Product detail page (example)
+├── user-panel/                 # User-facing pages
+│   ├── home.php                # Homepage with categories
+│   ├── bicycles.php            # Bicycles category
+│   ├── repair.php              # Repair tools category
+│   ├── accessories.php         # Accessories category
+│   ├── itempage.php            # Product detail page
+│   ├── shopping-cart.php       # Shopping cart
+│   ├── checkout.php            # Order checkout
+│   ├── orders.php              # Order history
+│   ├── About-Us.php            # About page
+│   ├── header.php              # Reusable header
+│   └── footer.php              # Reusable footer
 │
-├── bikes/                  # Bicycle subcategory pages
-│   ├── mountain-bikes.html
-│   ├── road-bikes.html
-│   └── city-bikes.html
+├── admin-panel/                # Admin pages
+│   ├── adminHome.php           # Admin dashboard
+│   ├── adminProducts.php       # Product management
+│   ├── adminOrders.php         # Order management
+│   ├── adminUsers.php          # User management
+│   └── header-admin.php        # Admin header
 │
-├── styles/
-│   └── style.css           # Main stylesheet
+├── user-validation/            # Authentication pages
+│   ├── index.php               # Login page
+│   ├── signup.php              # Registration page
+│   ├── header-validation.php   # Validation header
+│   └── footer.php              # Validation footer
 │
-├── js/
-│   └── navigation.js       # Navigation and interactive features
+├── BackEnd/                    # Backend logic
+│   ├── db.php                  # Database connection
+│   ├── validation.php          # Login/signup validation
+│   ├── add_product.php         # Add product logic
+│   ├── add_to_cart.php         # Add to cart logic
+│   ├── remove_item.php         # Remove from cart
+│   ├── place_order.php         # Place order logic
+│   ├── delete_product.php      # Delete product
+│   ├── delete_user.php         # Delete user
+│   ├── logout.php              # Logout logic
+│   └── admin.php               # Admin functions
 │
-└── images/
-    ├── bikes/              # Bicycle product images
-    │   ├── mountain/
-    │   ├── road/
-    │   └── city/
-    ├── Tools/              # Repair tool images
-    ├── branding/           # Logo and branding assets
-    └── icons/              # UI icons (cart, profile, menu, etc.)
+├── styles/                     # Stylesheets
+│   ├── style.css               # Main user styles
+│   └── AdminStyle.css          # Admin panel styles
+│
+├── js/                         # JavaScript files
+│   ├── navigation.js           # User navigation functions
+│   └── AdminScript.js          # Admin navigation scripts
+│
+├── images/                     # Product images
+│   ├── bikes/                  # Bicycle images
+│   │   ├── city/
+│   │   ├── mountain/
+│   │   └── road/
+│   ├── Tools/                  # Repair tools images
+│   ├── accessories/            # Accessories images
+│   └── branding/               # Logo and branding
+│
+├── ddl.sql                     # Database schema
+├── dml.sql                     # Sample data
+└── README.md                   # This file
 ```
 
-## 🚀 Getting Started
+## 💻 Installation & Setup
 
 ### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (optional, for development)
+- XAMPP (Apache, MySQL, PHP)
+- PHP 7.0+
+- MySQL 5.7+
+- Modern web browser
 
-### Installation
+### Steps
 
-1. **Clone the repository**
+1. **Clone Repository**
    ```bash
+   cd C:\xampp\htdocs
    git clone <repository-url>
-   cd web-development-project
+   cd Daraga-shoping-website
    ```
 
-2. **Open in browser**
-   - Simply open `index.html` in your web browser
-   # 🚴 Daraga Shop (Daraga-shopping-website)
+2. **Create Database**
+   - Open phpMyAdmin: `http://localhost/phpmyadmin`
+   - Create new database: `daraga_shop`
+   - Import `ddl.sql` for schema
+   - Import `dml.sql` for sample data
 
-   Static, client-side website for a bicycle e-commerce demo. This repository contains user-facing pages, an admin panel, assets, styles, and scripts. It is intended as a front-end prototype — backend services (authentication, database, payments) are not included.
+3. **Start XAMPP**
+   - Start Apache and MySQL services
 
-   **Quick preview:** serve the repository root with a static server and open the user or admin pages in your browser.
+4. **Access the Website**
+   - User Site: `http://localhost/Daraga-shoping-website/user-panel/home.php`
+   - Admin Panel: `http://localhost/Daraga-shoping-website/admin-panel/adminHome.php`
+   - Login: `http://localhost/Daraga-shoping-website/user-validation/index.php`
 
-   **Recommended (Python)**:
+## 🗄️ Database Schema
 
-   ```
-   cd c:\Users\moham\Documents\GitHub\web-development-project
-   python -m http.server 8000
+### Users Table
+- `user_id` (INT, Primary Key)
+- `username` (VARCHAR 100, Unique)
+- `email` (VARCHAR 150, Unique)
+- `password` (VARCHAR 255)
 
-   # then open http://localhost:8000/user-panel/home.html
-   ```
+### Products Table
+- `id` (INT, Primary Key)
+- `name` (VARCHAR 255)
+- `price` (DECIMAL 10,2)
+- `details` (TEXT)
+- `image` (VARCHAR 255)
+- `category` (VARCHAR 100)
 
-   **Repository layout (important files & folders):**
+### Orders Table
+- `id` (INT, Primary Key)
+- `user_id` (INT, Foreign Key)
+- `name` (VARCHAR 255)
+- `email` (VARCHAR 255)
+- `phone` (VARCHAR 20)
+- `address` (TEXT)
+- `city` (VARCHAR 100)
+- `payment_method` (VARCHAR 50)
+- `total_price` (DECIMAL 10,2)
+- `status` (VARCHAR 50)
+- `placed_on` (DATETIME)
 
-   - `user-panel/` : User-facing pages
-      - `home.html`, `bicycles.html`, `accessories.html`, `itempage.html`, `shopping-cart.html`, `checkout.html`, `orders.html`, `repair.html`, `About-Us.html`
-   - `admin-panel/` : Admin static pages
-      - `adminHome.html`, `adminProducts.html`, `adminOrders.html`, `adminUsers.html`
-   - `user-validation/` : Login & signup pages
-      - `index.html` (login), `signup.html`
-   - `styles/` : Stylesheets (`style.css`, `AdminStyle.css`)
-   - `js/` : JavaScript files (`navigation.js`, `AdminScript.js`)
-   - `images/` : Asset images (organized under `bikes/` then `city/`, `mountain/`, `road/`, plus `branding/`, `category`)
-   - `colors/` : `colors.txt` (color references)
-   - `ddl.sql` : Database DDL (schema) — reference if you add a backend
+### Cart Table
+- `id` (INT, Primary Key)
+- `user_id` (INT, Foreign Key)
+- `product_id` (INT, Foreign Key)
+- `name` (VARCHAR 255)
+- `price` (DECIMAL 10,2)
+- `image` (VARCHAR 255)
+- `category` (VARCHAR 100)
+- `quantity` (INT)
 
-   **What this project provides**
+## 👥 User Roles
 
-   - A static user interface for browsing bicycles and accessories.
-   - An admin panel with static pages for managing products, orders, and users (UI only).
-   - Local assets (images, CSS, JS) to support UI interactions and navigation.
+### Regular User
+- Register and login
+- Browse products
+- Add items to cart
+- Place orders
+- View order history
 
-   **How to use**
+### Admin User
+- Manage products (Create, Read, Update, Delete)
+- Manage users
+- Manage orders and update status
+- View dashboard statistics
 
-   - Start a static server in the repository root (Python example above) and navigate to:
-      - `http://localhost:8000/user-panel/home.html` — user site
-      - `http://localhost:8000/admin-panel/adminHome.html` — admin panel
-   - Alternatively, open individual HTML files directly in the browser, but some JavaScript behaviors or fetches may require serving over HTTP.
+**Default Admin Credentials:**
+- Email: `admin@daraga.com`
+- Password: `admin`
 
-   **Notes about structure differences**
+## 📄 Key Pages
 
-   - Authentication pages are in `user-validation/` (not at repo root). Use those to preview login/signup UI.
-   - The site is front-end only — actions such as checkout, order submission, and user authentication are placeholders and will require a backend to work in production.
+| Page | URL | Description |
+|------|-----|-------------|
+| Home | `/user-panel/home.php` | Homepage with categories |
+| Bicycles | `/user-panel/bicycles.php` | Browse bicycles |
+| Repair Tools | `/user-panel/repair.php` | Browse repair tools |
+| Accessories | `/user-panel/accessories.php` | Browse accessories |
+| Product Detail | `/user-panel/itempage.php` | Product information |
+| Shopping Cart | `/user-panel/shopping-cart.php` | View cart items |
+| Checkout | `/user-panel/checkout.php` | Order checkout |
+| Orders | `/user-panel/orders.php` | Order history |
+| Login | `/user-validation/index.php` | User login |
+| Sign Up | `/user-validation/signup.php` | User registration |
+| Admin Home | `/admin-panel/adminHome.php` | Admin dashboard |
+| Admin Products | `/admin-panel/adminProducts.php` | Manage products |
+| Admin Orders | `/admin-panel/adminOrders.php` | Manage orders |
+| Admin Users | `/admin-panel/adminUsers.php` | Manage users |
 
-   **Extending the project (suggested next steps)**
+## 🔐 Security Notes
 
-   - Add a backend API (Node/Express, Flask, Django, etc.) and connect the front-end to persistent storage. Use `ddl.sql` to create the initial database schema.
-   - Implement authentication (sessions/JWT) and protect admin routes.
-   - Persist shopping cart and orders in a database, integrate a payment gateway, and add server-side validation.
+- Passwords should be hashed using `password_hash()` in production
+- Use prepared statements to prevent SQL injection
+- Implement CSRF protection tokens
+- Validate all user inputs server-side
+- Use HTTPS in production
+- Implement proper error logging
 
-   **Contributing**
+## 🚀 Future Enhancements
 
-   - Fork the repository and submit a pull request. Describe the change and list which pages/assets you updated.
+- [ ] Email notifications for orders
+- [ ] Payment gateway integration (Stripe, PayPal)
+- [ ] Product search and filtering
+- [ ] Product ratings and reviews
+- [ ] Wishlist functionality
+- [ ] Mobile responsive design
+- [ ] API documentation
+- [ ] Automated testing
+- [ ] Password hashing implementation
+- [ ] Two-factor authentication
 
-   **License & contact**
+## 👨‍💻 Contributors
 
-   - No license file is included. Add a `LICENSE` if you want to publish with a specific open-source license.
-   - Repository owner: `MohamedSoliman1012` on GitHub.
+Developed by three Computer Science students:
+- Focus on e-commerce platform design
+- Team collaboration and development
+- Database design and implementation
 
-   ---
+## 📞 Support
 
-   If you'd like, I can also:
+For questions or issues, please create an issue in the repository.
 
-   - Run a quick local server and verify that `user-panel/home.html` and `admin-panel/adminHome.html` render correctly in a browser snapshot.
-   - Add brief usage notes to specific pages (e.g., where to edit product lists or images).
-- [ ] Payment integration
+---
 
+**Last Updated:** December 2024

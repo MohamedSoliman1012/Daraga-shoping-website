@@ -28,7 +28,7 @@ if ($result) {
 
     <div class="users-container">
         <?php if (empty($users)): ?>
-            <p style="text-align:center;">No users found.</p>
+            <p class="no-data-msg">No users found.</p>
         <?php else: ?>
             <?php foreach ($users as $user): ?>
                 <div class="box">

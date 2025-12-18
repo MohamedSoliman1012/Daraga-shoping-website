@@ -63,7 +63,7 @@ $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query f
             <?php
                 }
             } else {
-                echo '<p style="text-align:center;">No products added yet.</p>';
+                echo '<p class="no-data-msg">No products added yet.</p>';
             }
             ?>
         </div>

@@ -56,17 +56,17 @@ $number_of_users = mysqli_num_rows($select_users);
             <p>Completed Payments</p>
         </div>
 
-        <div class="box" onclick="orderspage()" style="cursor: pointer;">
+        <div class="box clickable-box" onclick="orderspage()">
             <h3><?php echo $number_of_orders; ?></h3>
             <p>Order Placed</p>
         </div>
 
-        <div class="box" onclick="addedproduct()" style="cursor: pointer;">
+        <div class="box clickable-box" onclick="addedproduct()">
             <h3><?php echo $number_of_products; ?></h3>
             <p>Products Added</p>
         </div>
 
-        <div class="box" onclick="userspage()" style="cursor: pointer;">
+        <div class="box clickable-box" onclick="userspage()">
             <h3><?php echo $number_of_users; ?></h3>
             <p>Total Users</p>
         </div>

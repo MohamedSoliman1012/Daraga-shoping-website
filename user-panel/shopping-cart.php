@@ -131,11 +131,11 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
                         
                         <td>
                             <p><?php echo number_format($fetch_cart['price']); ?>$ x <?php echo $quantity; ?></p>
-                            <p style="font-weight: bold; color: #afa6a6ff;">= <?php echo number_format($sub_total); ?>$</p>
+                            <p class="subtotal-line">= <?php echo number_format($sub_total); ?>$</p>
                         </td>
                         
                         <td>
-                            <a href="../BackEnd/remove_item.php?id=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('Remove this item from cart?');" style="color: red; text-decoration: none; border: 1px solid red; padding: 5px 10px; border-radius: 5px;">Remove</a>
+                            <a href="../BackEnd/remove_item.php?id=<?php echo $fetch_cart['id']; ?>" class="remove-btn" onclick="return confirm('Remove this item from cart?');">Remove</a>
                         </td>
                     </tr>
                 </tbody>
@@ -144,7 +144,7 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
         <?php
             }
         } else {
-            echo '<div style="text-align:center; padding:50px; font-size: 20px;">Your cart is empty!</div>';
+            echo '<div class="empty-cart-msg">Your cart is empty!</div>';
         }
         ?>
 
@@ -165,8 +165,8 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
                     <td><p><?php echo number_format($tax); ?>$</p></td>
                 </tr>
                 <tr>
-                    <td><label style="font-weight: bold; font-size: 18px;">Total :</label></td>
-                    <td><p style="font-weight: bold; font-size: 18px; color: green;"><?php echo number_format($final_total); ?>$</p></td>
+                    <td><label class="cart-total-label">Total :</label></td>
+                    <td><p class="total-price-final"><?php echo number_format($final_total); ?>$</p></td>
                 </tr>
             </table>
         </div>
@@ -176,7 +176,7 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
             <button id="checkout" onclick="window.location.href='checkout.php'">Checkout</button>
         </div>
         <?php } else { ?>
-            <div class="cart-buttons" style="justify-content: center;">
+            <div class="cart-buttons cart-buttons-centered">
                 <button id="continue-shopping" onclick="window.location.href='home.php'">Start Shopping</button>
             </div>
         <?php } ?>

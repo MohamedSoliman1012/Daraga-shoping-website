@@ -138,7 +138,7 @@ if (isset($_GET['id'])) {
     </div>
 
     <div class="item-btns">
-        <form action="../BackEnd/add_to_cart.php" method="POST" style="display:inline;">
+        <form action="../BackEnd/add_to_cart.php" method="POST" class="form-inline">
             <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
             <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($product['name']); ?>">
             <input type="hidden" name="product_price" value="<?php echo $product['price']; ?>">

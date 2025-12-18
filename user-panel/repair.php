@@ -28,7 +28,7 @@ $select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
-            <p style="text-align:center; width:100%;">No tools found.</p>
+            <p class="no-items-msg">No tools found.</p>
         <?php endif; ?>
     </div>
     <?php include 'footer.php';?>

@@ -89,14 +89,14 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
                         
                         <input type="submit" name="update_order" value="Update">
                         
-                        <a href="?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" style="color:red; margin-left:5px;">Delete</a>
+                        <a href="?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-link">Delete</a>
                     </form>
                 </td>
             </tr>
             <?php
                 }
             } else {
-                echo '<tr><td colspan="9" style="text-align:center; padding:20px;">No orders placed yet!</td></tr>';
+                echo '<tr><td colspan="9" class="no-data-cell">No orders placed yet!</td></tr>';
             }
             ?>
 

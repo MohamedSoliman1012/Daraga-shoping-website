@@ -23,7 +23,7 @@
         
         <!-- Error Message Display -->
         <?php if (!empty($_GET['error'])): ?>
-            <div class="form-error" style="color:darkred;margin-bottom:10px;">
+            <div class="form-error">
                 <?php echo htmlspecialchars($_GET['error']); ?>
             </div>
         <?php endif; ?>
@@ -55,7 +55,7 @@
         
         <!-- Success Message Display -->
         <?php if (!empty($_GET['success'])): ?>
-            <div class="form-success" style="color:darkgreen;margin-bottom:10px;">
+            <div class="form-success">
                 <?php echo htmlspecialchars($_GET['success']); ?>
             </div>
         <?php endif; ?>

@@ -114,7 +114,7 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
         <?php
             }
         } else {
-            echo '<p style="text-align:center; width:100%; color:#555;">No orders found.</p>';
+            echo '<p class="no-items-msg">No orders found.</p>';
         }
         ?>
     </div>
