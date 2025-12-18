@@ -295,10 +295,11 @@ body {
 .item-details-container table {
     width: 100%;
     height: 100%;
+    
 }
 
 .item-details-container table td {
-    text-align: left;
+    text-align: center;
     padding: 10px;
 }
 
@@ -373,85 +374,8 @@ body {
 }
 
 /* ============================================
-   SHOPPING CART PAGE STYLES (UPDATED)
+   SHOPPING CART PAGE STYLES
    ============================================ */
-
-   /*============================================
-   Shopping Cart PAGE STYLES
-   ============================================*/
-   .cart-details{
-    width: 40%;
-    height: 40%;
-    border-radius: 15px;
-    background-color: var(--second);
-    align-items: center;
-    margin: 40px auto;
-    display: block;
-    padding: 20px;
-    text-align: center;
-   }
-   .cart-details h1{
-    color: var(--rare);
-    }
- 
-    .cart-items table {
-    margin: auto;
-   border-bottom: 0.5px solid gray;
-   
-} 
-
-.cart-items table td{
-    padding: 10px;
-    margin: auto;
-    width: 30%;
-   
-}
-
-   .cart-items img{
-    border-radius: 10px;
-    height: 125px;
-    width: 125px;
-   }
-   .cart-items h2{
-    font-weight: bold;
-    color: var(--main);
-   }
-   .cart-items p{
-
-    font-size: 1.4em;
-    font-weight: bold;
-    color: var(--buy);
-   }
-   .order-sum table{
-    margin: auto;
-    font-size: 1.5em;
-    color: var(--rare);
-   }
-   .order-sum label{
-    font-weight: bold;
-    }
-   .order-sum p{
-    color: var(--main);
-   }
-
-   .cart-buttons{
-    padding: 10px;
-     border-top: 0.5px solid gray;
-   }
-   .cart-buttons button{
-    font-size: large;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--rare);
-   }
-
-   .cart-buttons button:hover{
-    
-    background-color: rgb(255, 190, 70);
-   }
-
 
 /* The main Card Container */
 .cart-card {
@@ -549,14 +473,6 @@ body {
     width: 100%;
 }
 
-.summary-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
 .label {
     color: var(--rare); /* Gold Label */
     font-weight: bold;
@@ -564,35 +480,6 @@ body {
 
 .value {
     color: var(--main);
-}
-
-.value.green {
-    color: var(--buy); /* Green Total */
-    font-weight: bold;
-}
-
-/* Action Buttons */
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.gold-btn {
-    background-color: var(--rare);
-    color: var(--third);
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.gold-btn:hover {
-    background-color: #e6b85c;
 }
 
 /* ============================================
@@ -762,143 +649,58 @@ body {
 }
 
 /* ============================================
-   ABOUT US
+   ORDER HISTORY STYLES
    ============================================ */
-.about-us {
-    margin: 20px auto;
-    width: 50%;
-    text-align: center;
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
 }
 
+/* Simple card for displaying orders */
+.simple-card {
+    background-color: var(--second);
+    color: var(--main);
+    width: 300px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-/* orderrr */
+.user-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--rare);
+    margin-bottom: 10px;
+    display: block;
+    text-transform: capitalize;
+}
 
+.order-status {
+    font-weight: bold;
+    color: #fff;
+    background-color: #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-bottom: 15px;
+}
 
-
-        .orders-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px; /* Space between cards */
-            padding: 40px;
-        }
-
-        /* --- THE FLOATING CARD --- */
-        .order-card {
-            background-color: var(--second); /* Dark Grey */
-            color: var(--main);              /* Light Text */
-            width: 350px;                    /* Fixed width for uniform cards */
-            border-radius: 20px;             /* Smooth rounded corners */
-            padding: 25px;
-            position: relative;
-            
-            /* The "Floating" Shadow Default */
-            box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-            
-            /* Smooth Animation for Hover */
-            transition: all 0.4s ease;
-            cursor: default;
-            border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
-        }
-
-        /* HOVER EFFECT: This makes it 'Float' */
-        .order-card:hover {
-            transform: translateY(-10px); /* Moves card UP */
-            box-shadow: 0 20px 30px rgba(0,0,0,0.5); /* Deepens shadow */
-            border-color: var(--rare); /* Gold border glow */
-        }
-
-        /* Card Decoration (Innovative Look) */
-        .card-top-decor {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40%;
-            height: 5px;
-            background-color: var(--rare); /* Gold Bar at top */
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        .order-header {
-            text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 15px;
-            margin-top: 10px;
-        }
-
-        .order-id {
-            color: var(--rare);
-            font-size: 1.5em;
-            font-weight: bold;
-            display: block;
-        }
-
-        .order-date {
-            color: #888;
-            font-size: 0.85em;
-            margin-top: 5px;
-            display: block;
-        }
-
-        .order-body {
-            font-size: 0.95em;
-            margin-bottom: 20px;
-        }
-
-        .order-body p {
-            margin: 8px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .label {
-            color: #aaa;
-        }
-
-        .value {
-            font-weight: bold;
-            text-align: right;
-            max-width: 60%;
-        }
-
-        .order-footer {
-            text-align: center;
-            background-color: rgba(0,0,0,0.2); /* Slightly darker footer area */
-            margin: -25px; /* Pulls it to the edges */
-            margin-top: 10px;
-            padding: 15px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-
-        .total-price {
-            color: var(--buy); /* Green */
-            font-size: 1.8em;
-            font-weight: bold;
-            display: block;
-        }
-
-        .status-badge {
-            background-color: #444;
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            display: inline-block;
-        }
-
-        .empty-msg {
-            text-align: center;
-            color: var(--third);
-            font-size: 1.5em;
-            margin-top: 50px;
-        }
+.total-price {
+    font-size: 2em;
+    color: var(--buy);
+    font-weight: bold;
+    display: block;
+    border-top: 1px solid #555;
+    padding-top: 15px;
+    margin-top: 10px;
+}
 
 /* ============================================
    NO ITEMS MESSAGE STYLES
