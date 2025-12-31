@@ -119,11 +119,12 @@ body {
 }
 
 /* --- Order Page --- */
-.order-container {
+        .order-container {
+    align-items: center;
     margin: 40px auto;
     text-align: center;
     padding: 0 20px;
-    width: 80%;
+    width: 95%;
 }
 
 .order-container table{
@@ -138,6 +139,7 @@ body {
 
 }
 .order-container td{
+    text-align: center;
     height: 40px;
     border-radius: 2px;
     background-color: var(--second);
@@ -146,6 +148,7 @@ body {
 
 }
 
+    
 /* --- Users Page --- */
 
 .users-table {

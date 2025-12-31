@@ -19,7 +19,14 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1200">
+    <title>Shopping Cart</title>
+    <script src="../js/navigation.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+
+     <style>
          .cart-details{
     width: 40%;
     height: 40%;
@@ -94,12 +101,7 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
    }
 
 
-    </style> -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=1200">
-    <title>Shopping Cart</title>
-    <script src="../js/navigation.js"></script>
-    <link rel="stylesheet" href="../styles/style.css">
+    </style>
 </head>
 <body>
     

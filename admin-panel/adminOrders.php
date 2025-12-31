@@ -39,8 +39,9 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Orders</title>
-    <link rel="stylesheet" href="../styles/AdminStyle.css">
     <script src="../js/AdminScript.js"></script>
+    <link rel="stylesheet" href="../styles/AdminStyle.css">
+
 </head>
 
 <body>
