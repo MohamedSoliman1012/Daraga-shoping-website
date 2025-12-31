@@ -21,16 +21,10 @@
     <div class="login-card">
         <h1>Login</h1>
         
-        <!-- Error Message Display -->
-        <?php if (!empty($_GET['error'])): ?>
-            <div class="form-error">
-                <?php echo htmlspecialchars($_GET['error']); ?>
-            </div>
-        <?php endif; ?>
 
         <!-- Login Form -->
         <form action="../BackEnd/validation.php" id="loginForm" method="POST" >
-            <input type="email" id="logemail" name="email" placeholder="Email" required>
+            <input type="email" id="logemail" name="email" placeholder="Email@daraga.com" required>
             <input type="password" id="logpassword" name="password" placeholder="Password" required>
             
             <!-- User Role Selection -->
@@ -53,12 +47,6 @@
         </form>
       
         
-        <!-- Success Message Display -->
-        <?php if (!empty($_GET['success'])): ?>
-            <div class="form-success">
-                <?php echo htmlspecialchars($_GET['success']); ?>
-            </div>
-        <?php endif; ?>
         
         <!-- Sign Up Link -->
         <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
