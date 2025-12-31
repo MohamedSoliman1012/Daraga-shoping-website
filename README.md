@@ -1,5 +1,144 @@
 # 🚴 Daraga Shop - Bicycle E-Commerce Platform
 
+A full-stack e-commerce website for bicycles, repair tools, and cycling accessories. Built with PHP, MySQL, HTML5, CSS3, and JavaScript.
+
+## 📋 Table of Contents
+
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation & Setup](#installation--setup)
+- [Database Schema](#database-schema)
+- [User Roles](#user-roles)
+- [Key Pages](#key-pages)
+- [Troubleshooting](#troubleshooting)
+- [Security Notes](#security-notes)
+- [Future Enhancements](#future-enhancements)
+- [Contributors](#contributors)
+
+## 🎯 About
+
+Daraga Shop is an e-commerce platform created to sell bicycles, repair tools, and cycling accessories. It is intended for local development using XAMPP (Apache + MySQL) and demonstrates basic e-commerce flows and admin management.
+
+## ✨ Features
+
+- Product categories (City, Mountain, Road)
+- Product detail pages with images
+- Shopping cart with quantity and total
+- Checkout and order placement
+- User registration and login
+- Admin panel for product, user and order management
+
+## 🛠️ Technologies Used
+
+- Backend: PHP 7+ (MySQLi)
+- Database: MySQL
+- Frontend: HTML5, CSS3, JavaScript
+- Server: Apache (XAMPP)
+
+## 📁 Project Structure
+
+See the repository root for a full listing. Main folders:
+
+- `user-panel/` — user-facing pages and templates
+- `admin-panel/` — admin dashboard and management pages
+- `user-validation/` — login/signup pages
+- `BackEnd/` — server-side scripts and `db.php` (connection)
+- `styles/` — `style.css` (user) and `AdminStyle.css` (admin)
+- `js/` — client-side scripts
+- `ddl.sql`, `dml.sql` — DB schema and sample data
+
+## 💻 Installation & Setup
+
+### Prerequisites
+- XAMPP (Apache + MySQL)
+- PHP 7.0+
+- MySQL
+
+### Steps
+
+1. Place the project folder inside XAMPP's web root (for example `C:\xampp\htdocs\Daraga-shoping-website`).
+2. Start Apache and MySQL using the XAMPP control panel.
+3. Open phpMyAdmin at `http://localhost/phpmyadmin`.
+4. Create a database named `daraga_shop` (or update `BackEnd/db.php` to match your DB name).
+5. Import `ddl.sql` (schema) and `dml.sql` (sample data).
+6. Visit the site:
+   - User: `http://localhost/Daraga-shoping-website/user-panel/home.php`
+   - Admin: `http://localhost/Daraga-shoping-website/admin-panel/adminHome.php`
+   - Login: `http://localhost/Daraga-shoping-website/user-validation/index.php`
+
+### Database connection
+The project uses `BackEnd/db.php` for the DB connection. Current default values (development):
+
+- host: `localhost`
+- user: `root`
+- password: `` (empty)
+- database: `daraga_shop`
+
+You can confirm/edit these in [BackEnd/db.php](BackEnd/db.php#L1-L20).
+
+## 🗄️ Database Schema
+
+Main tables: `users`, `products`, `orders`, `cart`. See `ddl.sql` for exact columns and constraints.
+
+## 👥 User Roles
+
+- Regular users: browse, add to cart, checkout, view orders.
+- Admin users: manage products, orders, users and view dashboard stats.
+
+**Default Admin Credentials (for development/testing only):**
+- Email: `admin@daraga.com`
+- Password: `admin`
+
+## 📄 Key Pages
+
+- `/user-panel/home.php` — homepage
+- `/user-panel/bicycles.php` — bicycles category
+- `/user-panel/itempage.php` — product detail
+- `/user-panel/shopping-cart.php` — cart
+- `/user-panel/checkout.php` — checkout
+- `/admin-panel/adminHome.php` — admin dashboard
+
+## 🛠️ Troubleshooting
+
+- CSS changes not showing? Your browser may be caching the stylesheet. Perform a hard refresh (`Ctrl+F5`) or clear cached files.
+- To prevent caching during development, append a query string to the stylesheet link, for example:
+
+  `<link rel="stylesheet" href="../styles/style.css?v=1.0">`
+
+  Increment the `v` value after updates (e.g. `?v=1.1`).
+- Confirm the pages are loading the expected stylesheet:
+  - User pages link `../styles/style.css` (check `user-panel/*.php`).
+  - Admin pages use `../styles/AdminStyle.css` (check `admin-panel/*.php`).
+
+## 🔐 Security Notes
+
+- Hash passwords using `password_hash()` before storing in production.
+- Use prepared statements (or parameterized queries) to avoid SQL injection.
+- Add CSRF tokens for state-changing requests.
+- Use HTTPS in production and proper error handling/logging.
+
+## 🚀 Future Enhancements
+
+- Payment gateway integration
+- Email notifications and order receipts
+- Product search, filtering, and pagination
+- Mobile responsive improvements
+
+## 👨‍💻 Contributors
+
+Project developed as a student/team exercise in full-stack web development.
+
+## 📞 Support
+
+Open an issue in the repository or contact the maintainers.
+
+---
+
+**Last Updated:** December 31, 2025
+# 🚴 Daraga Shop - Bicycle E-Commerce Platform
+
 A full-stack e-commerce website for bicycles, repair tools, and cycling accessories. Built with PHP, MySQL, HTML5, CSS3, and JavaScript, Daraga Shop provides a seamless shopping experience for cycling enthusiasts.
 
 ## 📋 Table of Contents
@@ -70,204 +209,142 @@ Daraga-shoping-website/
 ├── user-panel/                 # User-facing pages
 │   ├── home.php                # Homepage with categories
 │   ├── bicycles.php            # Bicycles category
-│   ├── repair.php              # Repair tools category
-│   ├── accessories.php         # Accessories category
-│   ├── itempage.php            # Product detail page
-│   ├── shopping-cart.php       # Shopping cart
-│   ├── checkout.php            # Order checkout
-│   ├── orders.php              # Order history
-│   ├── About-Us.php            # About page
-│   ├── header.php              # Reusable header
-│   └── footer.php              # Reusable footer
-│
-├── admin-panel/                # Admin pages
-│   ├── adminHome.php           # Admin dashboard
-│   ├── adminProducts.php       # Product management
-│   ├── adminOrders.php         # Order management
-│   ├── adminUsers.php          # User management
-│   └── header-admin.php        # Admin header
-│
-├── user-validation/            # Authentication pages
-│   ├── index.php               # Login page
-│   ├── signup.php              # Registration page
-│   ├── header-validation.php   # Validation header
-│   └── footer.php              # Validation footer
-│
-├── BackEnd/                    # Backend logic
-│   ├── db.php                  # Database connection
-│   ├── validation.php          # Login/signup validation
-│   ├── add_product.php         # Add product logic
-│   ├── add_to_cart.php         # Add to cart logic
-│   ├── remove_item.php         # Remove from cart
-│   ├── place_order.php         # Place order logic
-│   ├── delete_product.php      # Delete product
-│   ├── delete_user.php         # Delete user
-│   ├── logout.php              # Logout logic
-│   └── admin.php               # Admin functions
-│
-├── styles/                     # Stylesheets
-│   ├── style.css               # Main user styles
-│   └── AdminStyle.css          # Admin panel styles
-│
-├── js/                         # JavaScript files
-│   ├── navigation.js           # User navigation functions
-│   └── AdminScript.js          # Admin navigation scripts
-│
-├── images/                     # Product images
-│   ├── bikes/                  # Bicycle images
-│   │   ├── city/
-│   │   ├── mountain/
-│   │   └── road/
-│   ├── Tools/                  # Repair tools images
-│   ├── accessories/            # Accessories images
-│   └── branding/               # Logo and branding
-│
-├── ddl.sql                     # Database schema
-├── dml.sql                     # Sample data
-└── README.md                   # This file
-```
+# 🚴 Daraga Shop - Bicycle E-Commerce Platform
+
+A full-stack e-commerce website for bicycles, repair tools, and cycling accessories. Built with PHP, MySQL, HTML5, CSS3, and JavaScript.
+
+## 📋 Table of Contents
+
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation & Setup](#installation--setup)
+- [Database Schema](#database-schema)
+- [User Roles](#user-roles)
+- [Key Pages](#key-pages)
+- [Troubleshooting](#troubleshooting)
+- [Security Notes](#security-notes)
+- [Future Enhancements](#future-enhancements)
+- [Contributors](#contributors)
+
+## 🎯 About
+
+Daraga Shop is an e-commerce platform created to sell bicycles, repair tools, and cycling accessories. It is intended for local development using XAMPP (Apache + MySQL) and demonstrates basic e-commerce flows and admin management.
+
+## ✨ Features
+
+- Product categories (City, Mountain, Road)
+- Product detail pages with images
+- Shopping cart with quantity and total
+- Checkout and order placement
+- User registration and login
+- Admin panel for product, user and order management
+
+## 🛠️ Technologies Used
+
+- Backend: PHP 7+ (MySQLi)
+- Database: MySQL
+- Frontend: HTML5, CSS3, JavaScript
+- Server: Apache (XAMPP)
+
+## 📁 Project Structure
+
+See the repository root for a full listing. Main folders:
+
+- `user-panel/` — user-facing pages and templates
+- `admin-panel/` — admin dashboard and management pages
+- `user-validation/` — login/signup pages
+- `BackEnd/` — server-side scripts and `db.php` (connection)
+- `styles/` — `style.css` (user) and `AdminStyle.css` (admin)
+- `js/` — client-side scripts
+- `ddl.sql`, `dml.sql` — DB schema and sample data
 
 ## 💻 Installation & Setup
 
 ### Prerequisites
-- XAMPP (Apache, MySQL, PHP)
+- XAMPP (Apache + MySQL)
 - PHP 7.0+
-- MySQL 5.7+
-- Modern web browser
+- MySQL
 
 ### Steps
 
-1. **Clone Repository**
-   ```bash
-   cd C:\xampp\htdocs
-   git clone <repository-url>
-   cd Daraga-shoping-website
-   ```
-
-2. **Create Database**
-   - Open phpMyAdmin: `http://localhost/phpmyadmin`
-   - Create new database: `daraga_shop`
-   - Import `ddl.sql` for schema
-   - Import `dml.sql` for sample data
-
-3. **Start XAMPP**
-   - Start Apache and MySQL services
-
-4. **Access the Website**
-   - User Site: `http://localhost/Daraga-shoping-website/user-panel/home.php`
-   - Admin Panel: `http://localhost/Daraga-shoping-website/admin-panel/adminHome.php`
+1. Place the project folder inside XAMPP's web root (for example `C:\xampp\htdocs\Daraga-shoping-website`).
+2. Start Apache and MySQL using the XAMPP control panel.
+3. Open phpMyAdmin at `http://localhost/phpmyadmin`.
+4. Create a database named `daraga_shop` (or update `BackEnd/db.php` to match your DB name).
+5. Import `ddl.sql` (schema) and `dml.sql` (sample data).
+6. Visit the site:
+   - User: `http://localhost/Daraga-shoping-website/user-panel/home.php`
+   - Admin: `http://localhost/Daraga-shoping-website/admin-panel/adminHome.php`
    - Login: `http://localhost/Daraga-shoping-website/user-validation/index.php`
+
+### Database connection
+The project uses `BackEnd/db.php` for the DB connection. Current default values (development):
+
+- host: `localhost`
+- user: `root`
+- password: `` (empty)
+- database: `daraga_shop`
+
+You can confirm/edit these in [BackEnd/db.php](BackEnd/db.php#L1-L20).
 
 ## 🗄️ Database Schema
 
-### Users Table
-- `user_id` (INT, Primary Key)
-- `username` (VARCHAR 100, Unique)
-- `email` (VARCHAR 150, Unique)
-- `password` (VARCHAR 255)
-
-### Products Table
-- `id` (INT, Primary Key)
-- `name` (VARCHAR 255)
-- `price` (DECIMAL 10,2)
-- `details` (TEXT)
-- `image` (VARCHAR 255)
-- `category` (VARCHAR 100)
-
-### Orders Table
-- `id` (INT, Primary Key)
-- `user_id` (INT, Foreign Key)
-- `name` (VARCHAR 255)
-- `email` (VARCHAR 255)
-- `phone` (VARCHAR 20)
-- `address` (TEXT)
-- `city` (VARCHAR 100)
-- `payment_method` (VARCHAR 50)
-- `total_price` (DECIMAL 10,2)
-- `status` (VARCHAR 50)
-- `placed_on` (DATETIME)
-
-### Cart Table
-- `id` (INT, Primary Key)
-- `user_id` (INT, Foreign Key)
-- `product_id` (INT, Foreign Key)
-- `name` (VARCHAR 255)
-- `price` (DECIMAL 10,2)
-- `image` (VARCHAR 255)
-- `category` (VARCHAR 100)
-- `quantity` (INT)
+Main tables: `users`, `products`, `orders`, `cart`. See `ddl.sql` for exact columns and constraints.
 
 ## 👥 User Roles
 
-### Regular User
-- Register and login
-- Browse products
-- Add items to cart
-- Place orders
-- View order history
+- Regular users: browse, add to cart, checkout, view orders.
+- Admin users: manage products, orders, users and view dashboard stats.
 
-### Admin User
-- Manage products (Create, Read, Update, Delete)
-- Manage users
-- Manage orders and update status
-- View dashboard statistics
-
-**Default Admin Credentials:**
+**Default Admin Credentials (for development/testing only):**
 - Email: `admin@daraga.com`
 - Password: `admin`
 
 ## 📄 Key Pages
 
-| Page | URL | Description |
-|------|-----|-------------|
-| Home | `/user-panel/home.php` | Homepage with categories |
-| Bicycles | `/user-panel/bicycles.php` | Browse bicycles |
-| Repair Tools | `/user-panel/repair.php` | Browse repair tools |
-| Accessories | `/user-panel/accessories.php` | Browse accessories |
-| Product Detail | `/user-panel/itempage.php` | Product information |
-| Shopping Cart | `/user-panel/shopping-cart.php` | View cart items |
-| Checkout | `/user-panel/checkout.php` | Order checkout |
-| Orders | `/user-panel/orders.php` | Order history |
-| Login | `/user-validation/index.php` | User login |
-| Sign Up | `/user-validation/signup.php` | User registration |
-| Admin Home | `/admin-panel/adminHome.php` | Admin dashboard |
-| Admin Products | `/admin-panel/adminProducts.php` | Manage products |
-| Admin Orders | `/admin-panel/adminOrders.php` | Manage orders |
-| Admin Users | `/admin-panel/adminUsers.php` | Manage users |
+- `/user-panel/home.php` — homepage
+- `/user-panel/bicycles.php` — bicycles category
+- `/user-panel/itempage.php` — product detail
+- `/user-panel/shopping-cart.php` — cart
+- `/user-panel/checkout.php` — checkout
+- `/admin-panel/adminHome.php` — admin dashboard
+
+## 🛠️ Troubleshooting
+
+- CSS changes not showing? Your browser may be caching the stylesheet. Perform a hard refresh (`Ctrl+F5`) or clear cached files.
+- To prevent caching during development, append a query string to the stylesheet link, for example:
+
+  `<link rel="stylesheet" href="../styles/style.css?v=1.0">`
+
+  Increment the `v` value after updates (e.g. `?v=1.1`).
+- Confirm the pages are loading the expected stylesheet:
+  - User pages link `../styles/style.css` (check `user-panel/*.php`).
+  - Admin pages use `../styles/AdminStyle.css` (check `admin-panel/*.php`).
 
 ## 🔐 Security Notes
 
-- Passwords should be hashed using `password_hash()` in production
-- Use prepared statements to prevent SQL injection
-- Implement CSRF protection tokens
-- Validate all user inputs server-side
-- Use HTTPS in production
-- Implement proper error logging
+- Hash passwords using `password_hash()` before storing in production.
+- Use prepared statements (or parameterized queries) to avoid SQL injection.
+- Add CSRF tokens for state-changing requests.
+- Use HTTPS in production and proper error handling/logging.
 
 ## 🚀 Future Enhancements
 
-- [ ] Email notifications for orders
-- [ ] Payment gateway integration (Stripe, PayPal)
-- [ ] Product search and filtering
-- [ ] Product ratings and reviews
-- [ ] Wishlist functionality
-- [ ] Mobile responsive design
-- [ ] API documentation
-- [ ] Automated testing
-- [ ] Password hashing implementation
-- [ ] Two-factor authentication
+- Payment gateway integration
+- Email notifications and order receipts
+- Product search, filtering, and pagination
+- Mobile responsive improvements
 
 ## 👨‍💻 Contributors
 
-Developed by three Computer Science students:
-- Focus on e-commerce platform design
-- Team collaboration and development
-- Database design and implementation
+Project developed as a student/team exercise in full-stack web development.
 
 ## 📞 Support
 
-For questions or issues, please create an issue in the repository.
+Open an issue in the repository or contact the maintainers.
 
 ---
 
-**Last Updated:** December 2024
+**Last Updated:** December 31, 2025

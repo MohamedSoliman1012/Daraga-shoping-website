@@ -21,7 +21,6 @@ if(isset($_POST['submit_order'])){
     
     $status = 'pending';
     
-    // FIX: MySQL requires Year-Month-Day format (e.g., 2025-12-30)
     $placed_on = date('Y-m-d');
 
     $insert_query = "INSERT INTO orders (user_id, name, email, phone, address, city, payment_method, total_price, status, placed_on) 

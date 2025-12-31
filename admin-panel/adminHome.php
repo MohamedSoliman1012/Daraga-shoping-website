@@ -2,7 +2,6 @@
 include '../BackEnd/db.php';
 session_start();
 
-// UPDATED CHECK: Check for 'role' instead of 'user_id'
 if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header('location:../user-validation/index.php');
     exit;

@@ -97,7 +97,7 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
                             <option value="completed">Completed</option>
                         </select>
 
-                        <button type="submit" name="update_order" style="cursor: pointer;">Update</button>
+                        <button type="submit" name="update_order" style="cursor: pointer; border-radius: 2px; color: #000000ff; background-color: greenyellow;">Update</button>
 
                         <a href="?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Delete this order?');" class="delete-link">Delete</a>
                     </form>

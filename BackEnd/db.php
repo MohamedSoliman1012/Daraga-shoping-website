@@ -1,8 +1,9 @@
 <?php
 
-$conn = new mysqli('localhost', 'root', '', 'daraga_shop');
+$conn = mysqli_connect('localhost', 'root', '', 'daraga_shop');
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+
 ?>
