@@ -32,11 +32,11 @@ if (!$result) {
                     <table class="users-table">
                         <tr>
                             <th>User Name :</th>
-                            <td><?php echo htmlspecialchars($row['username']); ?></td>
+                            <td><?php echo $row['username']; ?></td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td><?php echo htmlspecialchars($row['email']); ?></td>
+                            <td><?php echo $row['email']; ?></td>
                         </tr>
                     </table>
                     

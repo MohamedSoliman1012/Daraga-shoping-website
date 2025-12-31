@@ -74,7 +74,6 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
             <tr>
                 <td>
                     <?php 
-                        // Formats date like: 31-Dec-2025
                         echo date('d-M-Y', strtotime($fetch_orders['placed_on'])); 
                     ?>
                 </td>
