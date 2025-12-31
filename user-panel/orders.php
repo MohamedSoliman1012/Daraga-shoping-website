@@ -19,59 +19,6 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../js/navigation.js"></script>
     
-    <style>
-        .orders-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px;
-        }
-        .simple-card {
-            background-color: var(--second);
-            color: var(--main);
-            width: 300px;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #444;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .user-name {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: var(--rare);
-            margin-bottom: 10px;
-            display: block;
-            text-transform: capitalize;
-        }
-        .label {
-            font-size: 0.8em;
-            color: #aaa;
-            margin-bottom: 5px;
-            display: block;
-        }
-        .order-status {
-            font-weight: bold;
-            color: #fff;
-            background-color: #555;
-            padding: 5px 10px;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .total-price {
-            font-size: 2em;
-            color: var(--buy);
-            font-weight: bold;
-            display: block;
-            border-top: 1px solid #555;
-            padding-top: 15px;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -87,8 +34,15 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
             <div class="simple-card">
                 
                 <div>
+                    <span class="label">Order Date</span>
+                    <span class="order-date">
+                        <?php echo date('d-M-Y', strtotime($fetch_order['placed_on'])); ?>
+                    </span>
+                </div>
+
+                <div>
                     <span class="label">Customer Name</span>
-                    <span class="user-name"><?php echo htmlspecialchars($fetch_order['name']); ?></span>
+                    <span class="user-name"><?php echo $fetch_order['name']; ?></span>
                 </div>
 
                 <div>

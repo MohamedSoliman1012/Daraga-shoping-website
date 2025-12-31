@@ -2,7 +2,6 @@
 include '../BackEnd/db.php';
 session_start();
 
-// UPDATED CHECK: Check for 'role' instead of 'user_id'
 if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header('location:../user-validation/index.php');
     exit;
@@ -57,7 +56,7 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
     <div class="order-container">
         <table>
             <tr>
-                <th>Order ID</th>
+                <th>Order Date</th>
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -73,7 +72,12 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
                 while($fetch_orders = mysqli_fetch_array($select_orders)){
             ?>
             <tr>
-                <td><?php echo $fetch_orders['id']; ?></td>
+                <td>
+                    <?php 
+                        // Formats date like: 31-Dec-2025
+                        echo date('d-M-Y', strtotime($fetch_orders['placed_on'])); 
+                    ?>
+                </td>
                 <td><?php echo $fetch_orders['name']; ?></td>
                 <td><?php echo $fetch_orders['email']; ?></td>
                 <td><?php echo $fetch_orders['phone']; ?></td>
