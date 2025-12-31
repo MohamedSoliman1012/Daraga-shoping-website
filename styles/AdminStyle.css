@@ -119,36 +119,7 @@ body {
 }
 
 /* --- Order Page --- */
-        .order-container {
-    align-items: center;
-    margin: 40px auto;
-    text-align: center;
-    padding: 0 20px;
-    width: 95%;
-}
 
-.order-container table{
-  
-    width: 100%;
-    
-}
-.order-container th{
-    border-radius: 5px;
-    background-color: var(--rare);
-    width: 90px;
-
-}
-.order-container td{
-    text-align: center;
-    height: 40px;
-    border-radius: 2px;
-    background-color: var(--second);
-    color: var(--main);
-    width: 90px;
-
-}
-
-    
 /* --- Users Page --- */
 
 .users-table {
@@ -198,14 +169,7 @@ body {
    ADMIN PRODUCTS STYLES
    ============================================ */
 
-   .add-product-container{
-    background-color: var(--second);
-    text-align: center;
-    border-radius: 10px;
-    margin: 40px auto 10px auto;
-    padding: 10px;
-    width: 30%;
-   }
+
 
    .add-product-form h3{
     color: var(--rare);
