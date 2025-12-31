@@ -207,6 +207,4 @@ Project developed as a student/team exercise in full-stack web development.
 
 Open an issue in the repository or contact the maintainers.
 
----
 
-**Last Updated:** December 31, 2025
