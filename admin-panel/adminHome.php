@@ -44,7 +44,7 @@ $number_of_users = mysqli_num_rows($select_users);
     <div class="box-container">
 
         <div class="box">
-            <h3>$<?php echo number_format($total_completed); ?>/-</h3>
+            <h3>$<?php echo number_format($total_completed); ?></h3>
             <p>Completed Payments</p>
         </div>
 
