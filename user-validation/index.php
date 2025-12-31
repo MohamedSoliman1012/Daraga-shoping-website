@@ -24,7 +24,7 @@
 
         <!-- Login Form -->
         <form action="../BackEnd/validation.php" id="loginForm" method="POST" >
-            <input type="email" id="logemail" name="email" placeholder="Email@daraga.com" required>
+            <input type="email" id="logemail" name="email" placeholder="email@daraga.com" required>
             <input type="password" id="logpassword" name="password" placeholder="Password" required>
             
             <!-- User Role Selection -->
