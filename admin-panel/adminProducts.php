@@ -11,8 +11,11 @@ $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query f
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Products</title>
-    <link rel="stylesheet" href="../styles/AdminStyle.css">
     <script src="../js/AdminScript.js"></script>
+    <link rel="stylesheet" href="../styles/AdminStyle.css">
+    <style>
+        
+    </style>
 </head>
 <body>
 

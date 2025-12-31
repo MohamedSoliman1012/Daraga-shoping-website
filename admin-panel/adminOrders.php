@@ -41,38 +41,7 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
     <title>Admin Orders</title>
     <script src="../js/AdminScript.js"></script>
     <link rel="stylesheet" href="../styles/AdminStyle.css">
-    <style>
-                .order-container {
-    align-items: center;
-    margin: 40px auto;
-    text-align: center;
-    padding: 0 20px;
-    width: 95%;
-}
 
-.order-container table{
-  
-    width: 100%;
-    
-}
-.order-container th{
-    border-radius: 5px;
-    background-color: var(--rare);
-    width: 90px;
-
-}
-.order-container td{
-    text-align: center;
-    height: 40px;
-    border-radius: 2px;
-    background-color: var(--second);
-    color: var(--main);
-    width: 90px;
-
-}
-
-    
-    </style>
 
 </head>
 
