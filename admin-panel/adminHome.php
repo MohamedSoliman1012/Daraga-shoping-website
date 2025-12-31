@@ -2,33 +2,26 @@
 include '../BackEnd/db.php';
 session_start();
 
-// Make sure only logged-in admins can see this page
-if(!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin'){
+// UPDATED CHECK: Check for 'role' instead of 'user_id'
+if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header('location:../user-validation/index.php');
     exit;
 }
 
-// ------------------- DASHBOARD LOGIC ------------------- //
-
-// 2. Calculate Total Completed Payments
-// We sum up the 'total_price' column for all orders where status is 'completed'
 $total_completed = 0;
-$select_completed = mysqli_query($conn, "SELECT SUM(total_price) AS total_payment FROM orders WHERE status = 'completed'") or die('query failed');
-$fetch_completed = mysqli_fetch_assoc($select_completed);
+$select_completed = mysqli_query($conn, "SELECT SUM(total_price) AS total_payment FROM orders WHERE status = 'completed'") or die(mysqli_error($conn));
+$fetch_completed = mysqli_fetch_array($select_completed);
 if($fetch_completed['total_payment'] > 0){
     $total_completed = $fetch_completed['total_payment'];
 }
 
-// 3. Count Total Orders Placed
-$select_orders = mysqli_query($conn, "SELECT * FROM orders") or die('query failed');
+$select_orders = mysqli_query($conn, "SELECT * FROM orders") or die(mysqli_error($conn));
 $number_of_orders = mysqli_num_rows($select_orders);
 
-// 4. Count Total Products Added
-$select_products = mysqli_query($conn, "SELECT * FROM products") or die('query failed');
+$select_products = mysqli_query($conn, "SELECT * FROM products") or die(mysqli_error($conn));
 $number_of_products = mysqli_num_rows($select_products);
 
-// 5. Count Total Users (Customers)
-$select_users = mysqli_query($conn, "SELECT * FROM users") or die('query failed');
+$select_users = mysqli_query($conn, "SELECT * FROM users") or die(mysqli_error($conn));
 $number_of_users = mysqli_num_rows($select_users);
 ?>
 

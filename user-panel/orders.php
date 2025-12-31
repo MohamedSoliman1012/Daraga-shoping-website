@@ -27,11 +27,9 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
             gap: 20px;
             padding: 40px;
         }
-
-        /* Simple Card Style */
         .simple-card {
-            background-color: var(--second); /* Dark Grey */
-            color: var(--main);              /* White Text */
+            background-color: var(--second);
+            color: var(--main);
             width: 300px;
             padding: 30px;
             border-radius: 15px;
@@ -39,25 +37,20 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
             border: 1px solid #444;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        /* 1. User Name */
         .user-name {
             font-size: 1.4em;
             font-weight: bold;
-            color: var(--rare); /* Gold Color */
+            color: var(--rare);
             margin-bottom: 10px;
             display: block;
             text-transform: capitalize;
         }
-
         .label {
             font-size: 0.8em;
             color: #aaa;
             margin-bottom: 5px;
             display: block;
         }
-
-        /* Status Style */
         .order-status {
             font-weight: bold;
             color: #fff;
@@ -69,11 +62,9 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
             display: inline-block;
             margin-bottom: 15px;
         }
-
-        /* 2. Total Price */
         .total-price {
             font-size: 2em;
-            color: var(--buy); /* Green Color */
+            color: var(--buy);
             font-weight: bold;
             display: block;
             border-top: 1px solid #555;
@@ -91,7 +82,7 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = '$use
     <div class="orders-container">
         <?php
         if(mysqli_num_rows($select_orders) > 0){
-            while($fetch_order = mysqli_fetch_assoc($select_orders)){
+            while($fetch_order = mysqli_fetch_array($select_orders)){
         ?>
             <div class="simple-card">
                 

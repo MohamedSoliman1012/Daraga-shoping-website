@@ -2,14 +2,11 @@
 include '../BackEnd/db.php';
 session_start();
 
-// Fetch all users from the database
-$result = $conn->query('SELECT user_id, username, email FROM users');
-$users = [];
+$query = "SELECT user_id, username, email FROM users";
+$result = mysqli_query($conn, $query);
 
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $users[] = $row;
-    }
+if (!$result) {
+    die(mysqli_error($conn));
 }
 ?>
 <!DOCTYPE html>
@@ -27,32 +24,31 @@ if ($result) {
     <h1>USER ACCOUNTS</h1>
 
     <div class="users-container">
-        <?php if (empty($users)): ?>
+        <?php if (mysqli_num_rows($result) == 0): ?>
             <p class="no-data-msg">No users found.</p>
         <?php else: ?>
-            <?php foreach ($users as $user): ?>
+            <?php while ($row = mysqli_fetch_array($result)): ?>
                 <div class="box">
                     <table class="users-table">
                         <tr>
                             <th>User Name :</th>
-                            <td><?php echo htmlspecialchars($user['username']); ?></td>
+                            <td><?php echo htmlspecialchars($row['username']); ?></td>
                         </tr>
                         <tr>
                             <th>Email :</th>
-                            <td><?php echo htmlspecialchars($user['email']); ?></td>
+                            <td><?php echo htmlspecialchars($row['email']); ?></td>
                         </tr>
                     </table>
                     
-                    <button class="delete-btn" onclick="deluser(<?php echo $user['user_id']; ?>)">
+                    <button class="delete-btn" onclick="deluser(<?php echo $row['user_id']; ?>)">
                         Delete User
                     </button>
                 </div>
-            <?php endforeach; ?>
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
     <script>
-    // This function handles the confirmation and redirection
     function deluser(userId) {
         if (confirm("Are you sure you want to delete this user?")) {
             window.location.href = "../BackEnd/delete_user.php?id=" + userId;

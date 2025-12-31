@@ -1,7 +1,7 @@
 <?php 
 include '../BackEnd/db.php';
 session_start();
-$select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'accessories'") or die('Query failed');
+$select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'accessories'") or die(mysqli_error($conn));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@ $select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 
     <h1>Accessories</h1>
     <div class="category">
         <?php if (mysqli_num_rows($select_products) > 0): ?>
-            <?php while ($fetch_product = mysqli_fetch_assoc($select_products)): ?>
+            <?php while ($fetch_product = mysqli_fetch_array($select_products)): ?>
                 <div class="product" onclick="window.location.href='itemPage.php?id=<?php echo $fetch_product['id']; ?>'">
                     <img src="../images/accessories/<?php echo $fetch_product['image']; ?>" alt="accessory">
                     <table>

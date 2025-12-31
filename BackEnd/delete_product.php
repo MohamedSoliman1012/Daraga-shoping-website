@@ -4,25 +4,15 @@ include 'db.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // SQL to delete by 'pid'
-    $sql = "DELETE FROM products WHERE id = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "i", $id);
-        
-        if (mysqli_stmt_execute($stmt)) {
-            echo "<script>
-                    alert('Product deleted successfully.');
-                    window.location.href='../admin-panel/adminProducts.php';
-                  </script>";
-        } else {
-            echo "<script>
-                    alert('Error: Could not delete product.');
-                    window.location.href='../admin-panel/adminProducts.php';
-                  </script>";
-        }
-        mysqli_stmt_close($stmt);
+    $query = "DELETE FROM products WHERE id = '$id'";
+    
+    if (mysqli_query($conn, $query)) {
+        echo "<script>
+                alert('Product deleted successfully.');
+                window.location.href='../admin-panel/adminProducts.php';
+              </script>";
+    } else {
+        die("Error: Could not delete product. " . mysqli_error($conn));
     }
 }
 mysqli_close($conn);

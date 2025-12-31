@@ -2,34 +2,39 @@
 include '../BackEnd/db.php';
 session_start();
 
-// 1. Check if Admin is logged in
-if(!isset($_SESSION['user_id'])){
+// UPDATED CHECK: Check for 'role' instead of 'user_id'
+if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header('location:../user-validation/index.php');
     exit;
 }
 
-// 2. LOGIC: Update Order Status
 if(isset($_POST['update_order'])){
     $order_id = $_POST['order_id'];
     $update_status = $_POST['update_status'];
-    mysqli_query($conn, "UPDATE orders SET status = '$update_status' WHERE id = '$order_id'") or die('query failed');
-    echo "<script>alert('Order status updated!');</script>";
+    
+    $query = "UPDATE orders SET status = '$update_status' WHERE id = '$order_id'";
+    $result = mysqli_query($conn, $query);
+
+    if($result){
+        if(mysqli_affected_rows($conn) > 0){
+            echo "<script>alert('Order status updated!');</script>";
+        }
+    } else {
+        die(mysqli_error($conn));
+    }
 }
 
-// 3. LOGIC: Delete Order
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
     
-    // Execute Delete Query
-    mysqli_query($conn, "DELETE FROM orders WHERE id = '$delete_id'") or die('query failed');
+    $query = "DELETE FROM orders WHERE id = '$delete_id'";
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
     
-    // Refresh the page to show changes
     header('location: ' . $_SERVER['PHP_SELF']);
     exit(); 
 }
 
-// 4. Fetch All Orders (Newest First)
-$select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or die('Query failed');
+$select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or die(mysqli_error($conn));
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +46,6 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
     <title>Admin Orders</title>
     <script src="../js/AdminScript.js"></script>
     <link rel="stylesheet" href="../styles/AdminStyle.css">
-
-
 </head>
 
 <body>
@@ -67,16 +70,16 @@ $select_orders = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC") or
 
             <?php
             if(mysqli_num_rows($select_orders) > 0){
-                while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+                while($fetch_orders = mysqli_fetch_array($select_orders)){
             ?>
             <tr>
                 <td><?php echo $fetch_orders['id']; ?></td>
-                <td><?php echo htmlspecialchars($fetch_orders['name']); ?></td>
-                <td><?php echo htmlspecialchars($fetch_orders['email']); ?></td>
-                <td><?php echo htmlspecialchars($fetch_orders['phone']); ?></td>
-                <td><?php echo htmlspecialchars($fetch_orders['address']); ?></td>
-                <td><?php echo htmlspecialchars($fetch_orders['city']); ?></td>
-                <td><?php echo htmlspecialchars($fetch_orders['payment_method']); ?></td>
+                <td><?php echo $fetch_orders['name']; ?></td>
+                <td><?php echo $fetch_orders['email']; ?></td>
+                <td><?php echo $fetch_orders['phone']; ?></td>
+                <td><?php echo $fetch_orders['address']; ?></td>
+                <td><?php echo $fetch_orders['city']; ?></td>
+                <td><?php echo $fetch_orders['payment_method']; ?></td>
                 <td><?php echo number_format($fetch_orders['total_price']); ?>$</td>
                 
                 <td>

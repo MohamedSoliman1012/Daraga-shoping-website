@@ -1,8 +1,8 @@
 <?php 
 include '../BackEnd/db.php';
 session_start();
-// Query matches the 'Tools' folder in your directory
-$select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'Tools'") or die('Query failed');
+
+$select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 'Tools'") or die(mysqli_error($conn));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@ $select_products = mysqli_query($conn, "SELECT * FROM products WHERE category = 
     <h1>Repair Tools</h1>
     <div class="category">
         <?php if (mysqli_num_rows($select_products) > 0): ?>
-            <?php while ($fetch_product = mysqli_fetch_assoc($select_products)): ?>
+            <?php while ($fetch_product = mysqli_fetch_array($select_products)): ?>
                 <div class="product" onclick="window.location.href='itemPage.php?id=<?php echo $fetch_product['id']; ?>'">
                     <img src="../images/Tools/<?php echo $fetch_product['image']; ?>" alt="tool">
                     <table>

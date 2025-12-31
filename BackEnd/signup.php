@@ -14,43 +14,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // 1. IMPROVED CHECK: Use 'username' instead of 'id' in case 'id' doesn't exist
-    $check = mysqli_prepare($conn, "SELECT username FROM users WHERE email = ? OR username = ?");
-    
-    // Check if the prepare actually worked
-    if ($check) {
-        mysqli_stmt_bind_param($check, "ss", $email, $user);
-        mysqli_stmt_execute($check);
-        mysqli_stmt_store_result($check);
+    $check_query = "SELECT username FROM users WHERE email = '$email' OR username = '$user'";
+    $check_result = mysqli_query($conn, $check_query);
 
-        if (mysqli_stmt_num_rows($check) > 0) {
-            echo "<script>alert('Error: Username or Email is already taken!'); window.history.back();</script>";
-            mysqli_stmt_close($check);
-            exit();
-        }
-        mysqli_stmt_close($check);
-    } else {
-        // This will tell you EXACTLY what is wrong with your SQL or Table
-        die("Database Error: " . mysqli_error($conn));
+    if (mysqli_num_rows($check_result) > 0) {
+        echo "<script>alert('Error: Username or Email is already taken!'); window.history.back();</script>";
+        exit();
     }
 
-    // 2. Proceed with Insert
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $sql);
-
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "sss", $user, $email, $pass);
-        if (mysqli_stmt_execute($stmt)) {
-            echo "<script>
-                    alert('Registration successful!');
-                    window.location.href='../user-validation/index.php';
-                  </script>";
-        } else {
-            echo "<script>alert('Error: Execution failed.'); window.history.back();</script>";
-        }
-        mysqli_stmt_close($stmt);
+    $insert_query = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$pass')";
+    
+    if (mysqli_query($conn, $insert_query)) {
+        echo "<script>
+                alert('Registration successful!');
+                window.location.href='../user-validation/index.php';
+              </script>";
     } else {
-        die("Insert Prepare Error: " . mysqli_error($conn));
+        die("Error: " . mysqli_error($conn));
     }
 }
 mysqli_close($conn);

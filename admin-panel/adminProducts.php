@@ -2,8 +2,7 @@
 include '../BackEnd/db.php';
 session_start();
 
-// Fetch products from database
-$select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
+$select_products = mysqli_query($conn, "SELECT * FROM products") or die(mysqli_error($conn));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,8 +45,10 @@ $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query f
         <h1 id="Added-product">Added Products</h1>
         <div class="product-box-container">
             <?php
+            // LECTURE STYLE: Check row count
             if (mysqli_num_rows($select_products) > 0) {
-                while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+                // LECTURE STYLE: Fetch as array
+                while ($fetch_products = mysqli_fetch_array($select_products)) {
             ?>
                 <div class="product">
                     <img src="../images/<?php echo $fetch_products['category']; ?>/<?php echo $fetch_products['image']; ?>" alt="product image">

@@ -31,30 +31,11 @@
                     </ul>
                 </div>
 
-                <!-- Customer Service -->
-                <div class="footer-section">
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
 
-                <!-- About Us & Legal -->
-                <div class="footer-section">
-                    <h3>About Us</h3>
-                     <ul>
-                        <li><a href="About-Us.php">Our Story</a></li>
-                        <li><a href="About-Us.php">Team</a></li>
-
-                    </ul>
-
-
-                </div>
             </div>
 
             <!-- Footer Bottom: Copyright -->
             <div class="footer-bottom">
-                <p>&copy; Daraga Shop <?php echo 'Y' ?>| Designed with ❤️ for cyclists</p>
+                <p>&copy; Daraga Shop | Designed with ❤️ for cyclists</p>
             </div>
         </footer>

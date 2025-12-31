@@ -3,12 +3,12 @@ include '../BackEnd/db.php';
 session_start();
 
 if (isset($_GET['id'])) {
-    $id = mysqli_real_escape_string($conn, $_GET['id']);
+    $id = $_GET['id'];
     $query = "SELECT * FROM products WHERE id = '$id'";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        $product = mysqli_fetch_assoc($result);
+        $product = mysqli_fetch_array($result);
     } else {
         echo "<script>alert('Product not found!'); window.location.href='home.php';</script>";
         exit;
@@ -21,12 +21,10 @@ if (isset($_GET['id'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($product['name']); ?></title>
     <script src="../js/navigation.js"></script>
-        <link rel="stylesheet" href="../styles/style.css">
-
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <?php include 'header.php';?>

@@ -2,9 +2,7 @@
 include '../BackEnd/db.php';
 session_start();
 
-// 1. Security Check: Ensure user is logged in
 if(!isset($_SESSION['user_id'])){
-    // If not logged in, redirect to login page
     header('location:../user-validation/index.php');
     exit;
 }
@@ -12,24 +10,19 @@ if(!isset($_SESSION['user_id'])){
 $user_id = $_SESSION['user_id'];
 $grand_total = 0;
 
-// 2. Fetch all items in the cart for this specific user
-$select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id'") or die('Query failed');
+$select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id'") or die(mysqli_error($conn));
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=1200">
     <title>Shopping Cart</title>
     <script src="../js/navigation.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
-
-
 </head>
 <body>
-    
     <?php include 'header.php';?>
 
     <h1>Shopping Cart</h1> 
@@ -38,12 +31,9 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
         <h1>Cart details</h1>
         
         <?php
-        // 3. Check if cart is not empty
         if(mysqli_num_rows($select_cart) > 0){
-            while($fetch_cart = mysqli_fetch_assoc($select_cart)){
+            while($fetch_cart = mysqli_fetch_array($select_cart)){
                 
-                // MATH: Calculate subtotal for this item (Price * Quantity)
-                // If 'quantity' column doesn't exist yet, it defaults to 1 in calculation logic
                 $quantity = isset($fetch_cart['quantity']) ? $fetch_cart['quantity'] : 1;
                 $sub_total = $fetch_cart['price'] * $quantity;
                 $grand_total += $sub_total;
@@ -53,14 +43,10 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
                 <tbody>
                     <tr>
                         <td><img src="../images/<?php echo $fetch_cart['category']; ?>/<?php echo $fetch_cart['image']; ?>" alt="product" width="100"></td>
-                        
-                       
-                        
                         <td>
                             <p><?php echo number_format($fetch_cart['price']); ?>$ x <?php echo $quantity; ?></p>
                             <p class="subtotal-line">= <?php echo number_format($sub_total); ?>$</p>
                         </td>
-                        
                         <td>
                             <a href="../BackEnd/remove_item.php?id=<?php echo $fetch_cart['id']; ?>" class="remove-btn" onclick="return confirm('Remove this item from cart?');">Remove</a>
                         </td>
@@ -84,7 +70,6 @@ $select_cart = mysqli_query($conn, "SELECT * FROM cart WHERE user_id = '$user_id
                 </tr>
                 <tr>
                     <?php 
-                        // Example Tax Calculation (e.g., 5% or 14%)
                         $tax = $grand_total * 0.14; 
                         $final_total = $grand_total + $tax;
                     ?>
